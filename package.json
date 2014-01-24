@@ -1,5 +1,5 @@
 {
-  "name": "cylon-ng",
+  "name": "roboux",
   "version": "0.0.1",
   "description": "An Angular interface for the Cylon.js API",
   "homepage": "http://cylonjs.com",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hybridgroup/robot-ng"
+    "url": "https://github.com/hybridgroup/roboux"
   },
   "licenses": [
     { "type": "Apache 2.0" }
