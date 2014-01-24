@@ -1,6 +1,6 @@
 {
   "name": "roboux",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An Angular interface for the Cylon.js API",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/cylon/issues",

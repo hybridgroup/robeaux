@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "roboux"
-  s.version     = "0.0.1"
+  s.version     = "0.0.2"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Ron Evans", "Adrian Zankich", "Ari Lerner", "Mario Ricalde",
                    "Daniel Fischer", "Andrew Stewart"]
