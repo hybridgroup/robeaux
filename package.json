@@ -1,0 +1,19 @@
+{
+  "name": "cylon-ng",
+  "version": "0.0.1",
+  "description": "An Angular interface for the Cylon.js API",
+  "homepage": "http://cylonjs.com",
+  "bugs": "https://github.com/hybridgroup/cylon/issues",
+  "author": {
+    "name": "Ron Evans, Andrew Stewart, Edgar Silva, Mario 'Kuroir' Ricalde, Gize Bonilla, Adrian Zankich",
+    "email": "cylonjs@hybridgroup.com",
+    "url": "http://hybridgroup.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hybridgroup/robot-ng"
+  },
+  "licenses": [
+    { "type": "Apache 2.0" }
+  ]
+}
