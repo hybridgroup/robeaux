@@ -6,6 +6,10 @@ Robeaux is the [AngularJS](http://angularjs.org/) front-end to the API interface
 
 You can consider it a "universal admin panel to your robotic swarms".
 
+## Prenunciation
+
+Robeaux should be said aloud like "robo". We want to be the handsome user interface for all your robotic devices.
+
 ## Pushing new versions
 
 Before you push a new release, make sure to create a tag:
