@@ -1,9 +1,10 @@
-# Roboux
+# Robeaux
 
-Roboux is the Angular front-end to the API interface offered by
-[Cylon.js](http://cylonjs.com) and [Artoo](http://artoo.io). It looks like this:
+Robeaux is the [AngularJS](http://angularjs.org/) front-end to the API interface offered by [Cylon.js](http://cylonjs.com) and [Artoo](http://artoo.io). It looks like this:
 
-![Roboux Interface](http://i.imgur.com/VXZW2F0.png)
+![Robeaux Interface](http://i.imgur.com/VXZW2F0.png)
+
+You can consider it a "universal admin panel to your robotic swarms".
 
 ## Pushing new versions
 
@@ -17,8 +18,8 @@ And push it to GitHub
 
 ### RubyGems:
 
-    gem build roboux.gemspec
-    gem push roboux-[VERSION].gem
+    gem build robeaux.gemspec
+    gem push robeaux-[VERSION].gem
 
 ### NPM
 
@@ -28,14 +29,8 @@ And push it to GitHub
 
 Copyright (c) 2014 The Hybrid Group
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License. You may obtain a copy of the License at
 
    http://www.apache.org/licenses/LICENSE-2.0
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.

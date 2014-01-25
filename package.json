@@ -1,7 +1,7 @@
 {
-  "name": "roboux",
+  "name": "robeaux",
   "version": "0.0.2",
-  "description": "An Angular interface for the Cylon.js API",
+  "description": "An AngularJS interface for the Cylon.js API",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/cylon/issues",
   "author": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/hybridgroup/roboux"
+    "url": "https://github.com/hybridgroup/robeaux"
   },
   "licenses": [
     { "type": "Apache 2.0" }
