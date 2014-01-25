@@ -4,7 +4,20 @@ Robeaux is the [AngularJS](http://angularjs.org/) front-end to the API interface
 
 ![Robeaux Interface](http://i.imgur.com/VXZW2F0.png)
 
-You can consider it a "universal admin panel to your robotic swarms".
+You can consider Robeaux to be a universal dashboard to your robotic devices. Like the admin pages for a router, but for robots.
+
+## How It Works
+
+Thanks to using a standardized API based on the APIs of Artoo and Cylon.js, Robeaux can query or set values on with all the robots, and all of the devices connected to each robot, that are corrected to a compatible API server.
+
+### Robots
+
+
+### Connections
+
+
+### Devices
+
 
 ## Prenunciation
 
