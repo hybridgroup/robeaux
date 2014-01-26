@@ -8,7 +8,7 @@ Robeaux is written using [AngularJS](http://angularjs.org/), and provides a fron
 
 ## How It Works
 
-Thanks to using a standardized API based on the APIs of Artoo and Cylon.js, Robeaux can query or set values on with all the robots, and all of the devices connected to each robot, that are corrected to a compatible API server.
+Thanks to using a structured interface based on the RESTful and websockets APIs of Artoo and Cylon.js, Robeaux can query or set values on one or more robots, and all of the devices connected to each robot. As long as they are connected to a compatible API server.
 
 ### Robots
 
@@ -24,7 +24,7 @@ Each robot has one or more devices connected. You can view the device status and
 
 ## Pronunciation
 
-Robeaux should be said aloud like "robo". We want to be the handsome user interface for all your robotic devices.
+Robeaux should be pronounced "robo". We wish to be the handsome user interface for all your robotic devices.
 
 ## Pushing new versions
 
