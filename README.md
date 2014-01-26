@@ -12,12 +12,15 @@ Thanks to using a standardized API based on the APIs of Artoo and Cylon.js, Robe
 
 ### Robots
 
+You can see each robot that your are connected to, and then drill in to view or edit it.
 
 ### Connections
 
+How are you connected? Serial port? WiFi? View the details for each of your robots.
 
 ### Devices
 
+Each robot has one or more devices connected. You can view the device status and send commands all via the web interface. You can even stream the real-time websockets data for your buttons, switches, LEDs, sensors, and more.
 
 ## Pronunciation
 
