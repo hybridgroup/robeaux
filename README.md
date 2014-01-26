@@ -19,7 +19,7 @@ Thanks to using a standardized API based on the APIs of Artoo and Cylon.js, Robe
 ### Devices
 
 
-## Prenunciation
+## Pronunciation
 
 Robeaux should be said aloud like "robo". We want to be the handsome user interface for all your robotic devices.
 
