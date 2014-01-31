@@ -141,3 +141,11 @@
   margin-top: 6px;
   margin-right: 5px;
 }
+
+.devices {
+  padding-left: 0;
+}
+
+.connections {
+  padding-right: 0;
+}

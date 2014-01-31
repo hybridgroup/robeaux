@@ -25,50 +25,52 @@
   <div class="container device details" ng-show='deviceDetail' ng-include="'/partials/robot-device-detail.html'">
   </div>
 
-  <div class="row">
-    <div class="col-md-6">
-      <div class="device" ng-repeat="device in robot.devices" ng-click="getDeviceDetail(device.name)">
-        <div class="row-fluid">
-          <div class="col-md-2">
-            <div class="device-type display">
-              D
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 devices">
+        <div class="device" ng-repeat="device in robot.devices" ng-click="getDeviceDetail(device.name)">
+          <div class="row-fluid">
+            <div class="col-md-2">
+              <div class="device-type display">
+                D
+              </div>
             </div>
-          </div>
-          <div class="col-md-10">
-            <b>
-              <span class="name">{{device.name}}</span>
-              <dl class="controls">
-                <span ng-show="device.pin">
-                  <dt><i class="fa fa-bolt"></i> pin: </dt>
-                  <dd>{{device.pin}}</dd>
-                </span>
+            <div class="col-md-10">
+              <b>
+                <span class="name">{{device.name}}</span>
+                <dl class="controls">
+                  <span ng-show="device.pin">
+                    <dt><i class="fa fa-bolt"></i> pin: </dt>
+                    <dd>{{device.pin}}</dd>
+                  </span>
 
-                <dt><i class="fa fa-exchange"></i> </dt>
-                <dd>{{device.connection.name}}</dd>
-              </dl>
-            </b>
+                  <dt><i class="fa fa-exchange"></i> </dt>
+                  <dd>{{device.connection.name}}</dd>
+                </dl>
+              </b>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="col-md-6">
-      <div class="device" ng-repeat="connection in robot.connections">
-        <div class="row-fluid">
-          <div class="col-md-2">
-            <div class="device-type display">
-              <i class="fa fa-exchange"></i>
+      <div class="col-md-6 connections">
+        <div class="device" ng-repeat="connection in robot.connections">
+          <div class="row-fluid">
+            <div class="col-md-2">
+              <div class="device-type display">
+                <i class="fa fa-exchange"></i>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-10">
-            <b>
-              <span class="name">{{connection.name}}</span>
-              <dl class="controls">
-                <dt><i class="fa fa-circle" ng-class="isConnected(connection)"></i> </dt>
-                <dd ng-show="connection.port">{{connection.port}}</dd>
-              </dl>
-            </b>
+            <div class="col-md-10">
+              <b>
+                <span class="name">{{connection.name}}</span>
+                <dl class="controls">
+                  <dt><i class="fa fa-circle" ng-class="isConnected(connection)"></i> </dt>
+                  <dd ng-show="connection.port">{{connection.port}}</dd>
+                </dl>
+              </b>
+            </div>
           </div>
         </div>
       </div>
