@@ -1,7 +1,7 @@
 // Routes
-var roboux = angular.module("roboux", ['ngRoute']);
+var robeaux = angular.module("robeaux", ['ngRoute']);
 
-roboux.config(["$routeProvider", function($routeProvider) {
+robeaux.config(["$routeProvider", function($routeProvider) {
   $routeProvider.when("/robots", {
     templateUrl: "/partials/robot-index.html",
     controller: RobotIndexCtrl
