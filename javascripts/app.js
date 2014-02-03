@@ -93,6 +93,25 @@ var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
       }
     }
 
-    return params;
+    // check if empty (no params)
+    if (isEmptyParams(params)) {
+      return null;
+    } else {
+      return params;
+    }
+  }
+
+  var isEmptyParams = function(params) {
+    var empty = true;
+
+    for (var key in params) {
+      value = params[key];
+      if (key !== "" || value !== "") {
+        empty = false;
+        break;
+      }
+    }
+
+    return empty;
   }
 };
