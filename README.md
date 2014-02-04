@@ -2,13 +2,13 @@
 
 Robeaux is a universal dashboard to your robotic devices. Like the admin pages for a router, but for robots.
 
-Robeaux is written using [AngularJS](http://angularjs.org/), and provides a front-end to the API interface offered by [Cylon.js](http://cylonjs.com) and [Artoo](http://artoo.io). It looks like this:
+Robeaux is written using [AngularJS](http://angularjs.org/), and provides a front-end to the API interface offered by [Artoo](http://artoo.io), [Cylon.js](http://cylonjs.com) and [Gobot](http://gobot.io). It looks like this:
 
 ![Robeaux Interface](http://i.imgur.com/VXZW2F0.png)
 
 ## How It Works
 
-Thanks to using a structured interface based on the RESTful and websockets APIs of Artoo and Cylon.js, Robeaux can query or set values on one or more robots, and all of the devices connected to each robot. As long as they are connected to a compatible API server.
+Thanks to using a structured interface based on the RESTful and websockets APIs of Artoo, Cylon.js and Gobot, Robeaux can query or set values on one or more robots, and all of the devices connected to each robot. As long as they are connected to a compatible API server.
 
 ### Robots
 
