@@ -1,6 +1,6 @@
 {
   "name": "robeaux",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "An AngularJS interface for the Cylon.js API",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/cylon/issues",
