@@ -21,16 +21,22 @@ connected to a compatible API server.
 You can see each robot that your are connected to, and then drill in to view or
 edit it.
 
+![Robots View](http://i.imgur.com/4388Mce.png)
+
 ### Connections
 
 How are you connected? Serial port? WiFi? View the details for each of your
 robots.
+
+![Connections View](http://i.imgur.com/ewJ9Ec2.png)
 
 ### Devices
 
 Each robot has one or more devices connected. You can view the device status and
 send commands all via the web interface. You can even stream the real-time
 websockets data for your buttons, switches, LEDs, sensors, and more.
+
+![Devices View](http://i.imgur.com/aB5YL7Q.png)
 
 ## Pushing new versions
 
