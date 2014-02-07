@@ -16,7 +16,7 @@ robeaux.config(["$routeProvider", function($routeProvider) {
 robeaux.service("Themes", function() {
   var service = {};
 
-  service.list = ["default", "dark"];
+  service.list = ["default", "dark", "flat"];
   service.selected = "default";
 
   service.url = function() {
