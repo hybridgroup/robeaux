@@ -1,0 +1,54 @@
+.navbar {
+  background-color: #444;
+  border: none;
+  border-radius: 0px;
+}
+
+.navbar-default .navbar-brand {
+  color: #efefef;
+}
+
+.navbar-default .navbar-brand:hover {
+  color: #ccc;
+}
+
+.navbar-default .navbar-nav > li > a {
+  color: #ccc;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+  color: #ccc;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+  color: #eee;
+}
+
+.robot, .device {
+  border: 3px solid #ababab;
+  border-radius: 5px;
+}
+
+.robot .robot-type, .device .device-type {
+  background: #ababab;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+}
+
+.robot dt i.fa {
+  color: #aaa;
+}
+
+.details .console code {
+  border: 1px solid #ababab;
+  background: #fbfbfb;
+}
+
+.device-command input[type='text'] {
+  border-bottom: 1px solid #bbb;
+}
+
+.device-command select {
+  background: white;
+}

@@ -6,9 +6,15 @@
     <link rel="stylesheet" href="/stylesheets/bootstrap.css">
     <link rel="stylesheet" href="/stylesheets/font-awesome.css">
     <link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" ng-controller="ThemesCtrl" ng-href="{{themes.url()}}">
   </head>
   <body>
     <nav class="navbar navbar-default" role="navigation">
+      <div class="theme-selector" ng-controller="ThemesCtrl">
+        <select class="nav navbar-nav" ng-selected="themes.set(themes.selected)" ng-model="themes.selected" ng-options="theme for theme in themes.list">
+        </select>
+      </div>
+
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,6 +31,7 @@
             <li class="active"><a href="#">Robots</a></li>
           </ul>
         </div>
+
       </div>
     </nav>
 
