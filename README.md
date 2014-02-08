@@ -38,6 +38,14 @@ websockets data for your buttons, switches, LEDs, sensors, and more.
 
 ![Devices View](http://i.imgur.com/aB5YL7Q.png)
 
+## Themes
+
+You can change the theme! Pick from one of the presets, or write your own
+(coming soon). It'll be persisted in `localStorage` and ready to go for the next
+time you want to use Robeaux.
+
+![Theme](http://i.imgur.com/XwXxrmP.png)
+
 ## Pushing new versions
 
 Before you push a new release, make sure to create a tag:

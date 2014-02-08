@@ -11,9 +11,33 @@ robeaux.config(["$routeProvider", function($routeProvider) {
   }).otherwise({
     redirectTo: "/robots"
   });
-}])
+}]);
+
+robeaux.service("Themes", function() {
+  var service = {};
+
+  service.list = ["default", "dark", "flat"];
+  service.selected = "default";
+
+  service.url = function() {
+    return "/stylesheets/themes/" + service.selected + ".css"
+  };
+
+  service.set = function(name) {
+    localStorage.setItem("theme", name);
+  }
+
+  // load from localStorage if set
+  if (theme = localStorage.getItem("theme")) { service.selected = theme; }
+
+  return service;
+});
 
 // Controllers
+var ThemesCtrl = function($scope, Themes) {
+  $scope.themes = Themes;
+}
+
 var RobotIndexCtrl = function($scope, $http, $location, $route) {
   $http.get('/robots').success(function(data) {
     $scope.robots = data;
