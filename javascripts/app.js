@@ -38,6 +38,12 @@ var ThemesCtrl = function($scope, Themes) {
   $scope.themes = Themes;
 }
 
+var NavigationCtrl = function($scope, $location) {
+  $scope.active = function(path) {
+    return ($location.path().substring(1) || "robots") === path;
+  }
+}
+
 var RobotIndexCtrl = function($scope, $http, $location, $route) {
   $http.get('/robots').success(function(data) {
     $scope.robots = data;
