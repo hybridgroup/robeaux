@@ -2,33 +2,90 @@
 var robeaux = angular.module("robeaux", ['ngRoute']);
 
 robeaux.config(["$routeProvider", function($routeProvider) {
-  $routeProvider.when("/robots", {
+  $routeProvider
+
+  .when("/robots", {
     templateUrl: "/partials/robot-index.html",
     controller: RobotIndexCtrl
-  }).when("/robots/:robotId", {
+  })
+
+  .when("/robots/:robotId", {
     templateUrl: "/partials/robot-detail.html",
     controller: RobotDetailCtrl
-  }).otherwise({
+  })
+
+  .when("/themes", {
+    templateUrl: "/partials/themes.html",
+    controller: ThemesCtrl
+  })
+
+  .otherwise({
     redirectTo: "/robots"
   });
 }]);
 
 robeaux.service("Themes", function() {
   var service = {};
-
-  service.list = ["default", "dark", "flat"];
-  service.selected = "default";
-
-  service.url = function() {
-    return "/stylesheets/themes/" + service.selected + ".css"
+  var defaultThemes = {
+    "default": { custom: false, url: "/stylesheets/themes/default.css" },
+    "dark": { custom: false, url: "/stylesheets/themes/dark.css" },
+    "flat": { custom: false, url: "/stylesheets/themes/flat.css" }
   };
 
-  service.set = function(name) {
-    localStorage.setItem("theme", name);
+  var saveThemes = function() {
+    localStorage.setItem("themes", angular.toJson(service.themes));
+  };
+
+  var loadThemes = function() {
+    if (localStorage.getItem("themes")) {
+      return angular.fromJson(localStorage.getItem("themes"));
+    } else {
+      return defaultThemes;
+    }
+  };
+
+  var getActiveTheme = function() {
+    return localStorage.getItem("activeTheme") || "default";
+  };
+
+  service.themes = loadThemes();
+
+  service.activeTheme = getActiveTheme();
+
+  service.saveThemes = saveThemes;
+
+  service.current = function() {
+    return service.themes[service.activeTheme];
+  };
+
+  service.list = function() {
+    return Object.keys(service.themes);
+  };
+
+  service.customThemes = function() {
+    var themes = {};
+
+    for (var name in service.themes) {
+      if (service.themes[name].custom) {
+        themes[name] = service.themes[name];
+      }
+    }
+
+    return themes;
+  };
+
+  service.setActiveTheme = function() {
+    localStorage.setItem("activeTheme", service.activeTheme);
   }
 
-  // load from localStorage if set
-  if (theme = localStorage.getItem("theme")) { service.selected = theme; }
+  service.newTheme = function(name) {
+    if (service.themes[name] || name === '' || name === undefined) {
+      return false;
+    }
+
+    service.themes[name] = {css: "", custom: true};
+    return true;
+  };
 
   return service;
 });
@@ -36,6 +93,16 @@ robeaux.service("Themes", function() {
 // Controllers
 var ThemesCtrl = function($scope, Themes) {
   $scope.themes = Themes;
+
+  $scope.selectTheme = function(name) {
+    $scope.selectedTheme = Themes.themes[name];
+  }
+
+  $scope.newTheme = function(name) {
+    if (Themes.newTheme(name)) {
+      $scope.newThemeName = '';
+    }
+  }
 }
 
 var NavigationCtrl = function($scope, $location) {
