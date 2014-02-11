@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Themes</h1>
+
+  <div class="themes container">
+    <div class="row">
+      <div class="sidebar col-md-2">
+        <div class="theme-list">
+          <div class="theme" ng-click="selectTheme(name)" ng-repeat="(name, theme) in themes.customThemes()">
+            {{name}}
+          </div>
+        </div>
+
+        <div class="new-theme">
+          <input ng-model="newThemeName" placeholder="New Theme Name">
+          <button class="btn btn-success" ng-click="newTheme(newThemeName)">Add New Theme</button>
+        </div>
+      </div>
+
+      <div class="editor col-md-10">
+        <textarea class="col-md-10" ng-model="selectedTheme.css"></textarea>
+      </div>
+    </div>
+
+    <div class="save">
+      <button class="btn btn-primary" ng-click="themes.saveThemes()">Save Changes</button>
+      <button ng-if="selectedTheme" ng-click="deleteTheme(selectedThemeName)" class="btn btn-danger">Delete Theme "{{selectedThemeName}}"</button>
+    </div>
+  </div>
+</div>
