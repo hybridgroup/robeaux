@@ -23,6 +23,7 @@
 
     <div class="save">
       <button class="btn btn-primary" ng-click="themes.saveThemes()">Save Changes</button>
+      <button ng-if="selectedTheme" ng-click="deleteTheme(selectedThemeName)" class="btn btn-danger">Delete Theme "{{selectedThemeName}}"</button>
     </div>
   </div>
 </div>

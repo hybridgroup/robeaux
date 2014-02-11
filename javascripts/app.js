@@ -96,7 +96,14 @@ var ThemesCtrl = function($scope, Themes) {
 
   $scope.selectTheme = function(name) {
     $scope.selectedTheme = Themes.themes[name];
-  }
+    $scope.selectedThemeName = name;
+  };
+
+  $scope.deleteTheme = function(name) {
+    delete Themes.themes[name];
+    $scope.selectedTheme = null;
+    $scope.selectedThemeName = null;
+  };
 
   $scope.newTheme = function(name) {
     if (Themes.newTheme(name)) {
