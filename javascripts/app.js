@@ -112,7 +112,7 @@ var ThemesCtrl = function($scope, Themes) {
 
 var NavigationCtrl = function($scope, $location) {
   $scope.active = function(path) {
-    return ($location.path().substring(1) || "robots") === path;
+    return ($location.path().substring(1).split("/")[0] || "robots") === path;
   }
 }
 
