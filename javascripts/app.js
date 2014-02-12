@@ -84,7 +84,7 @@ robeaux.service("Themes", function() {
     }
 
     service.themes[name] = {css: "", custom: true};
-    return true;
+    return service.themes[name];
   };
 
   return service;
@@ -106,9 +106,7 @@ var ThemesCtrl = function($scope, Themes) {
   };
 
   $scope.newTheme = function(name) {
-    if (Themes.newTheme(name)) {
-      $scope.newThemeName = '';
-    }
+    if (Themes.newTheme(name)) { $scope.newThemeName = ''; }
   }
 }
 
