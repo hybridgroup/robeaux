@@ -40,9 +40,9 @@ websockets data for your buttons, switches, LEDs, sensors, and more.
 
 ## Themes
 
-You can change the theme! Pick from one of the presets, or write your own
-(coming soon). It'll be persisted in `localStorage` and ready to go for the next
-time you want to use Robeaux.
+You can change the theme! Pick from one of the presets, or write your own. It'll
+be persisted in `localStorage` and ready to go for the next time you want to use
+Robeaux.
 
 ![Theme](http://i.imgur.com/XwXxrmP.png)
 
