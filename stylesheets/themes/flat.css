@@ -121,3 +121,44 @@
   border: none;
   border-radius: 5px
 }
+
+.themes .new-theme input {
+  border: 1px solid #27AE60;
+}
+
+.themes .new-theme ::-webkit-input-placeholder {
+  color: #1ACA5E;
+}
+
+.themes .new-theme :-moz-placeholder {
+  color: #1ACA5E;
+}
+
+.themes .new-theme ::-moz-placeholder {
+  color: #1ACA5E;
+}
+
+.themes .new-theme :-ms-input-placeholder {
+  color: #1ACA5E;
+}
+
+.themes .sidebar .theme-list {
+  border-bottom: 3px solid #bbb;
+}
+
+.themes .sidebar .theme-list .theme {
+  border: 1px solid #2980B9;
+  color: #2980B9;
+  border-radius: 3px;
+}
+
+.themes .sidebar .theme-list .theme:hover {
+  background: #2980B9;
+  color: white;
+}
+
+.themes .editor textarea {
+  background: white;
+  border: 1px solid black;
+  border-radius: 3px;
+}

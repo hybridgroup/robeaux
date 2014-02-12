@@ -77,3 +77,30 @@ h1 {
   color: #bbb;
 }
 
+.themes .new-theme input {
+  background: none;
+  border: 1px solid #bbb;
+  color: #efefef;
+}
+
+.themes .new-theme input:focus {
+  outline: none;
+  border-color: #efefef;
+}
+
+.themes .sidebar .theme-list {
+  border-bottom: 3px solid #bbb;
+}
+
+.themes .sidebar .theme-list .theme {
+  border: 1px solid #efefef;
+  color: #efefef;
+  border-radius: 3px;
+}
+
+.themes .editor textarea {
+  background: none;
+  border: 1px solid #efefef;
+  border-radius: 3px;
+  color: #efefef;
+}
