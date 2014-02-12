@@ -7,6 +7,8 @@ Robeaux is powered by [AngularJS](http://angularjs.org/), and provides
 a front-end to the API interface offered by [Artoo](http://artoo.io),
 [Cylon.js](http://cylonjs.com) and [Gobot](http://gobot.io). It looks like this:
 
+![Robeaux Interface](http://i.imgur.com/Uxb21j0.png)
+
 ## How It Works
 
 Thanks to using a structured interface based on the RESTful and websockets APIs
