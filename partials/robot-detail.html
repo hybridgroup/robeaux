@@ -57,7 +57,7 @@
       </div>
     </div>
 
-    <div class="row-fluid device-command">
+    <div ng-controller="ParamsCtrl" class="row-fluid device-command">
       <div class="col-md-4 command-select">
         <span>Command:</span>
         <select ng-model="command" ng-options="cmd for cmd in deviceDetail.commands" required class="form-control"></select>

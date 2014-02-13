@@ -127,19 +127,6 @@ var RobotIndexCtrl = function($scope, $http, $location, $route) {
 };
 
 var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
-  $scope.params = [
-    { name: '', value: '', type: 'string' }
-  ];
-
-  $scope.paramTypes = ["string", "boolean", "number"]
-
-  $scope.addParam = function() {
-    $scope.params.push({name: '', value: '', type: 'string'});
-  }
-
-  $scope.removeParam = function(index) {
-    $scope.params.splice(index, 1)
-  }
 
   $scope.isConnected = function(connection) {
     if (connection && connection.connected) { return "connected"; }
@@ -155,6 +142,22 @@ var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
       $scope.deviceDetail = data;
     });
   };
+};
+
+var ParamsCtrl = function($scope, $http) {
+  $scope.params = [
+    { name: '', value: '', type: 'string' }
+  ];
+
+  $scope.paramTypes = ["string", "boolean", "number"]
+
+  $scope.addParam = function() {
+    $scope.params.push({name: '', value: '', type: 'string'});
+  }
+
+  $scope.removeParam = function(index) {
+    $scope.params.splice(index, 1)
+  }
 
   $scope.executeDisabled = function() {
     return $scope.command === void 0
@@ -168,7 +171,7 @@ var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
         url ='/robots/' + robot + "/devices/" + device + "/commands/" + command;
 
     $http.post(url, params).success(function(data) {
-      $(".console code").append(data.result + "\n");
+      $(".console code").append(angular.toJson(data.result) + "\n");
     });
   };
 
@@ -196,11 +199,7 @@ var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
     }
 
     // check if empty (no params)
-    if (isEmptyParams(params)) {
-      return null;
-    } else {
-      return params;
-    }
+    return isEmptyParams(params) ? null : params;
   }
 
   var isEmptyParams = function(params) {
@@ -216,4 +215,4 @@ var RobotDetailCtrl = function($scope, $http, $routeParams, $location) {
 
     return empty;
   }
-};
+}
