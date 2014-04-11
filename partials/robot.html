@@ -1,0 +1,41 @@
+<div class="robot-detail">
+  <div class="robot">
+    <span class="icon">robot</span>
+    <span class="name">{{robot.name}}</span>
+
+    <div class="details">
+      <span><strong>Connections:</strong> {{robot.connections.length}}</span>
+      <span><strong>Devices:</strong> {{robot.devices.length}}</span>
+    </div>
+  </div>
+
+  <div ng-show="device" ng-include="'/partials/device.html'">
+  </div>
+
+  <section>
+    <div class="robot-devices">
+      <div class="device"
+          ng-class="{selected: selected(device)}"
+          ng-repeat="device in robot.devices"
+          ng-click="select(device)">
+        <span class="icon">device</span>
+        <span class="name">{{device.name}}</span>
+
+        <div class="details">
+          <span>{{device.connection.name}}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="robot-connections">
+      <div class="connection" ng-repeat="connection in robot.connections">
+        <span class="icon">connection</span>
+        <span class="name">{{connection.name}}</span>
+
+        <div class="details">
+          <span ng-if="connection.port">{{connection.port}}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

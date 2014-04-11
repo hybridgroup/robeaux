@@ -2,50 +2,41 @@
 <html lang="en" ng-app="robeaux">
   <head>
     <meta charset="utf-8">
+
     <title>Robeaux</title>
-    <link rel="stylesheet" href="/stylesheets/bootstrap.css">
-    <link rel="stylesheet" href="/stylesheets/font-awesome.css">
-    <link rel="stylesheet" href="/stylesheets/style.css">
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto+Slab:700|Inconsolata:400,700|Roboto:400,700">
+    <link rel="stylesheet" href="/css/normalize.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <span class="ng-hide" ng-controller="ThemesCtrl">
-      <link ng-if="!themes.current().custom" rel="stylesheet" ng-href="{{themes.current().url}}">
-      <style ng-if="themes.current().custom" ng-bind-template="{{themes.current().css}}"></style>
+      <style ng-bind-template="{{themes.active.css}}"></style>
     </span>
   </head>
+
   <body>
-    <nav class="navbar navbar-default" role="navigation">
-      <div class="theme-selector" ng-controller="ThemesCtrl">
-        <select class="nav navbar-nav" ng-selected="themes.setActiveTheme()" ng-model="themes.activeTheme" ng-options="name for name in themes.list()">
-        </select>
-      </div>
+    <nav ng-controller="NavCtrl">
+      <span class="logo">Robeaux</span>
 
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#">Robeaux</a>
-        </div>
-
-        <div class="collapse navbar-collapse">
-          <ul class="nav navbar-nav" ng-controller="NavigationCtrl">
-            <li ng-class="{active: active('robots')}"><a href="#/robots">Robots</a></li>
-            <li ng-class="{active: active('themes')}"><a href="#/themes">Themes</a></li>
-          </ul>
-        </div>
-
-      </div>
+      <span class="links">
+        <a href="#/robots" ng-class="{active: active('robots')}">robots</a>
+        <a href="#/themes" ng-class="{active: active('themes')}">themes</a>
+      </span>
     </nav>
 
-    <div ng-view></div>
+    <div ng-view class="container"></div>
 
-    <script src="/javascripts/vendor/jquery.min.js"></script>
-    <script src="/javascripts/vendor/angular.min.js"></script>
-    <script src="/javascripts/vendor/angular-route.min.js"></script>
-    <script src="/javascripts/vendor/bootstrap.min.js"></script>
-    <script src="/javascripts/app.js"></script>
+    <script src="/js/vendor/angular.min.js"></script>
+    <script src="/js/vendor/angular-route.min.js"></script>
+
+    <script src="/js/app.js"></script>
+    <script src="/js/router.js"></script>
+    <script src="/js/services/themes.js"></script>
+    <script src="/js/controllers/nav_ctrl.js"></script>
+    <script src="/js/controllers/index_ctrl.js"></script>
+    <script src="/js/controllers/themes_ctrl.js"></script>
+    <script src="/js/controllers/robot_ctrl.js"></script>
+    <script src="/js/controllers/device_commands_ctrl.js"></script>
+    <script src="/js/controllers/device_events_ctrl.js"></script>
   </body>
 </html>
