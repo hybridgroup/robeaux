@@ -2,7 +2,11 @@ var ThemesCtrl = function ThemesCtrl($scope, Themes) {
   $scope.themes = Themes;
 
   // save when a theme is selected
-  $scope.$watch('themes.active', Themes.save);
+  $scope.$watch('themes.active', function() {
+    // watch for corner case where 'themes.active' update was causing themes to
+    // be saved as undefined
+    if (Themes.list) { Themes.save(); }
+  });
 
   // selecting a theme for editing
   $scope.edit = function(theme) {
