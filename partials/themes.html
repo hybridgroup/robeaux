@@ -4,7 +4,7 @@
 
     <div class="list">
       <div class="theme"
-           ng-repeat="theme in themes.list"
+           ng-repeat="theme in themes.list | filter:{custom: true}"
            ng-click="edit(theme)"
            ng-class="{selected: (editing === theme)}">
         {{theme.name}}

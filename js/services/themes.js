@@ -3,7 +3,11 @@ robeaux.factory('Themes', function() {
 
   // default themes
   var defaults = [
-    { name: 'default', custom: true, css: '/* write some custom css here */' }
+    { name: 'default', custom: false, css: '' },
+    { name: 'artoo',   custom: false, url: '/css/themes/artoo.css'},
+    { name: 'cylon',   custom: false, url: '/css/themes/cylon.css'},
+    { name: 'gobot',   custom: false, url: '/css/themes/gobot.css'},
+    { name: 'custom',  custom: true,  css: ''}
   ];
 
   service.list = [];

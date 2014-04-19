@@ -454,7 +454,7 @@ body > nav a.active {
   height: 250px;
   margin-top: 10px;
   width: 50%;
-  white-space: nowrap;
+  white-space: pre;
 }
 
 .themes .footer {

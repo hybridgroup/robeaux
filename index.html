@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="/css/style.css">
 
     <span class="ng-hide" ng-controller="ThemesCtrl">
-      <style ng-bind-template="{{themes.active.css}}"></style>
+      <link ng-if="themes.active.url" rel="stylesheet" ng-href="{{themes.active.url}}">
+      <style ng-if="themes.active.css" ng-bind-template="{{themes.active.css}}"></style>
     </span>
   </head>
 
