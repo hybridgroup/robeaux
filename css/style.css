@@ -145,6 +145,57 @@ body > nav a.active {
   clear: both;
 }
 
+.robot-detail .robot.with-commands {
+  height: auto !important;
+  min-height: 250px;
+  position: relative;
+  float: right;
+}
+
+.robot-detail .with-commands .input , .robot-detail .with-commands .results {
+  position: relative;
+  padding-top: 20px;
+  width: 50%;
+  float: left;
+  line-height: 1;
+  height: 100%;
+}
+
+.robot-detail .with-commands .input input {
+  width: 30%;
+}
+
+.robot-detail .with-commands .results table {
+  text-align: center;
+}
+
+.robot-detail .robot.with-commands .commands h2 {
+  position: absolute;
+  top: 0;
+  width: 97%;
+  text-align: center;
+  margin: 0;
+}
+
+.robot-detail .with-commands .input {
+  text-align: center;
+}
+
+.robot-detail .with-commands .input .params {
+  margin-bottom: 20px;
+}
+
+.robot-detail .with-commands .input .param {
+  margin-bottom: 10px;
+}
+
+.robot-detail .with-commands .input > select,
+.robot-detail .with-commands .input > button {
+  width: 60%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
 .robot-devices, .robot-connections {
   width: 49%;
 }
@@ -312,16 +363,16 @@ body > nav a.active {
   color: white;
 }
 
-.device-commands table {
+.device-commands table, .robot.with-commands table {
   width: 90%;
   margin: 0 auto;
 }
 
-.device-commands table thead {
+.device-commands table thead, .robot.with-commands table thead {
   border-bottom: 1px solid #999;
 }
 
-.device-commands table tr {
+.device-commands table tr, .robot.with-commands table tr {
   font-size: 14px;
   line-height: 1.25;
   font-family: Inconsolata, monospace;

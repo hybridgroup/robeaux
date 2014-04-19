@@ -1,11 +1,44 @@
 <div class="robot-detail">
-  <div class="robot">
+  <div class="robot" ng-class="{'with-commands': (robot.commands.length > 0)}">
     <span class="icon">robot</span>
     <span class="name">{{robot.name}}</span>
 
     <div class="details">
       <span><strong>Connections:</strong> {{robot.connections.length}}</span>
       <span><strong>Devices:</strong> {{robot.devices.length}}</span>
+    </div>
+
+    <div class="commands" ng-if="(robot.commands.length > 0)" ng-controller="RobotCommandsCtrl">
+      <h2>Commands</h2>
+      <div class="input">
+        <select ng-model="command" ng-options="cmd for cmd in robot.commands">
+        </select>
+
+        <div class="params">
+          <div class="param" ng-repeat="param in robot.params">
+            <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
+            <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
+            <select ng-options="type for type in types" ng-model="param.type"></select>
+            <span class="close" ng-click="removeParam($index)">X</span>
+          </div>
+        </div>
+
+        <button ng-click="submit()" ng-disabled="isDisabled()">run</button>
+      </div>
+
+      <div class="results">
+        <table>
+          <thead>
+            <th>Results</th>
+          </thead>
+
+          <tbody>
+            <tr class="result" ng-repeat="entry in robot.results">
+              <td>{{entry.result}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
 

@@ -1,6 +1,9 @@
 var RobotCtrl = function RobotCtrl($scope, $http, $routeParams) {
   $http.get("/robots/" + $routeParams.robot).success(function(data) {
     $scope.robot = data;
+
+    $scope.robot.params = [ { name: '', value: '', type: 'string' } ];
+    $scope.robot.results = [];
   });
 
   $scope.select = function(device) {
