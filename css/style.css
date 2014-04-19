@@ -224,6 +224,7 @@ body > nav a.active {
 }
 
 .device-detail header h2 {
+  background: white;
   width: 50%;
   float: left;
   text-align: center;
