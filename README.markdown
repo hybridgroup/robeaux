@@ -7,36 +7,36 @@ Robeaux is powered by [AngularJS](http://angularjs.org/), and provides
 a front-end to the API interface offered by [Artoo](http://artoo.io),
 [Cylon.js](http://cylonjs.com) and [Gobot](http://gobot.io). It looks like this:
 
-![Robeaux Interface](http://i.imgur.com/Uxb21j0.png)
+![Robeaux Interface](http://i.imgur.com/T50PhUe.png)
 
 ## How It Works
 
-Thanks to using a structured interface based on the RESTful and websockets APIs
-of Artoo, Cylon.js and Gobot, Robeaux can query or set values on one or more
-robots, and all of the devices connected to each robot. As long as they are
-connected to a compatible API server.
+Thanks to using a structured interface based on the RESTful APIs of Artoo,
+Cylon.js and Gobot, Robeaux can query or set values on one or more robots, and
+all of the devices connected to each robot. As long as they are connected to
+a compatible API server.
 
 ### Robots
 
 You can see each robot that your are connected to, and then drill in to view or
 edit it.
 
-![Robots View](http://i.imgur.com/Uxb21j0.png)
+![Robots View](http://i.imgur.com/T50PhUe.png)
 
 ### Connections
 
 How are you connected? Serial port? WiFi? View the details for each of your
 robots.
 
-![Connections View](http://i.imgur.com/Kof6g50.png)
+![Connections View](http://i.imgur.com/OKwG3P7.png)
 
 ### Devices
 
 Each robot has one or more devices connected. You can view the device status and
 send commands all via the web interface. You can even stream the real-time
-websockets data for your buttons, switches, LEDs, sensors, and more.
+event data for your buttons, switches, LEDs, sensors, and more.
 
-![Devices View](http://i.imgur.com/AMJZCe9.png)
+![Devices View](http://i.imgur.com/tTkyx3q.png)
 
 ## Themes
 
@@ -44,23 +44,7 @@ You can change the theme! Pick from one of the presets, or write your own. It'll
 be persisted in `localStorage` and ready to go for the next time you want to use
 Robeaux.
 
-We have three default themes:
-
-**Default Theme**:
-
-![Default Theme](http://i.imgur.com/AMJZCe9.png)
-
-**Dark Theme**:
-
-![Dark Theme](http://i.imgur.com/SNSLROf.png)
-
-**Flat Theme**:
-
-![Flat Theme](http://i.imgur.com/AVzMd7j.png)
-
-You can also use the theme editor to write your own custom themes:
-
-![Custom Theme Editor](http://i.imgur.com/pxxmhfD.png)
+![Custom Theme Editor](http://i.imgur.com/5yefYn9.png)
 
 ## Pushing new versions
 
