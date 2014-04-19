@@ -48,22 +48,15 @@ Robeaux.
 
 ## Pushing new versions
 
-Before you push a new release, make sure to create a tag:
+Before you push a new release, make sure you've bumped the version in
+`package.json` and `robeaux.gemspec`, and commited + pushed those changes.
 
-    git tag -m "[VERSION]" [VERSION]
+Then, just run `make release`. It'll take care of:
 
-And push it to GitHub
-
-    git push --tags
-
-### RubyGems:
-
-    gem build robeaux.gemspec
-    gem push robeaux-[VERSION].gem
-
-### NPM
-
-    npm publish ./
+- cutting a git tag
+- pushing tags to GitHub
+- building/pushing a new RubyGem
+- publishing a new NPM release
 
 ## LICENSE
 
