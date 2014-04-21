@@ -58,6 +58,16 @@ Then, just run `make release`. It'll take care of:
 - building/pushing a new RubyGem
 - publishing a new NPM release
 
+## Releases
+
+- 0.1.0 - Full rewrite. Supports Server-Sent-Events.
+
+- 0.0.4 - Feature improvements
+
+- 0.0.3 - Feature improvements
+
+- 0.0.2 - Initial release.
+
 ## LICENSE
 
 Copyright (c) 2014 The Hybrid Group
