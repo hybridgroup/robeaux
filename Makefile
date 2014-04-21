@@ -10,5 +10,5 @@ release:
 	@git tag -m "$(VERSION)" v$(VERSION)
 	@git push --tags
 	@gem build robeaux.gemspec
-	@gem push robeaux-$(VERSION).gemspec
+	@gem push robeaux-$(VERSION).gem
 	@npm publish ./
