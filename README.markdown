@@ -60,6 +60,8 @@ Then, just run `make release`. It'll take care of:
 
 ## Releases
 
+- 0.1.1 - Remove dependency on Google WebFonts
+
 - 0.1.0 - Full rewrite. Supports Server-Sent-Events.
 
 - 0.0.4 - Feature improvements
