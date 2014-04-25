@@ -7,7 +7,6 @@ var RobotCommandsCtrl = function RobotCommandsCtrl($scope, $http) {
   };
 
   $scope.addParam = function(last) {
-    console.log("HEY");
     if (!last) { return; }
     $scope.robot.params.push({ name: '', value: '', type: 'string' });
   };
