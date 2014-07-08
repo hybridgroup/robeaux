@@ -24,7 +24,9 @@ module.exports = function(config) {
       'js/**/*.js',
       'test/main.js',
 
-      {pattern: 'test/support/robots.json', watched: true, served: true, included: false}
+      {pattern: 'test/support/robots.json', watched: true, served: true, included: false},
+      {pattern: 'test/support/myRobot.json', watched: true, served: true, included: false},
+      {pattern: 'test/support/robotArray.json', watched: true, served: true, included: false}
     ],
 
 
