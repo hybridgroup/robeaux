@@ -22,7 +22,7 @@ describe('IndexCtrl', function() {
 
     it('IndexCtrl should get array of robots', function() {
         var controller = testController();
-        jasmine.getJSONFixtures().fixturesPath='base/test';
+        jasmine.getJSONFixtures().fixturesPath='base/test/support';
         var data = loadJSONFixtures('robots.json');
         $httpBackend.expect('GET', '/robots').respond(data);
         $httpBackend.flush();

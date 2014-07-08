@@ -5,7 +5,7 @@ module.exports = function(config) {
   config.set({
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '../',
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
@@ -15,16 +15,16 @@ module.exports = function(config) {
     files: [
       'js/vendor/angular.min.js',
       'js/vendor/angular-route.min.js',
-      'js/vendor/angular-mocks.js',
+      'test/vendor/angular-mocks.js',
+      'test/vendor/jquery.js',
+      'test/vendor/jasmine-jquery.js',
       'js/app.js',
-      'js/jquery.js',
-      'js/jasmine-jquery.js',
       'js/router.js',
       'js/*.js',
       'js/**/*.js',
       'test/main.js',
 
-      {pattern: 'test/robots.json', watched: true, served: true, included: false}
+      {pattern: 'test/support/robots.json', watched: true, served: true, included: false}
     ],
 
 

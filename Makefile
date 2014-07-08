@@ -1,6 +1,6 @@
 VERSION := $(shell node -e "console.log(require('./package.json').version)")
 
-.PHONY: default release
+.PHONY: default release test
 
 # to prevent a release attempt every time someone runs 'make'
 default:
@@ -12,3 +12,6 @@ release:
 	@gem build robeaux.gemspec
 	@gem push robeaux-$(VERSION).gem
 	@npm publish ./
+
+test:
+	karma start ./test/karma.conf.js --no-auto-watch --single-run 
