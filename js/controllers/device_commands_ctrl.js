@@ -22,7 +22,7 @@ var DeviceCommandsCtrl = function DeviceCommandsCtrl($scope, $http) {
         command = $scope.command,
         params = parseParams($scope.device.params);
 
-    var url ='/robots/' + robot + "/devices/" + device + "/commands/" + command;
+    var url ='/api/robots/' + robot + "/devices/" + device + "/commands/" + command;
 
     $http.post(url, params).success(function(data) {
       if (data.result) {
