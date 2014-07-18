@@ -14,4 +14,4 @@ release:
 	@npm publish ./
 
 test:
-	karma start ./test/karma.conf.js --no-auto-watch --single-run 
+	@./node_modules/karma/bin/karma start ./test/karma.conf.js --no-auto-watch --single-run 
