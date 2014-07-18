@@ -1,0 +1,27 @@
+{"name":"myRobot",
+"connections":
+	[{"name":"arduino",
+	"port":"/dev/ttyACM0",
+	"adaptor":"Adaptor",
+	"connection_id":7042}],
+"devices":[{
+	"name":"led",
+	"driver":"Led",
+	"pin":13,
+	"connection":
+		{"name":"arduino",
+		"port":"/dev/ttyACM0",
+		"adaptor":"Adaptor",
+		"connection_id":7042},
+	"commands":
+	["isOn","turnOn","turnOff","toggle","brightness"]},
+	{"name":"button",
+	"driver":"Button",
+	"pin":2,
+	"connection":{
+		"name":"arduino",
+		"port":"/dev/ttyACM0",
+		"adaptor":"Adaptor",
+		"connection_id":7042},
+	"commands":["isPressed"]}],
+"commands":[]}

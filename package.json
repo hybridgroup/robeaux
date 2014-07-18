@@ -4,13 +4,15 @@
   "description": "An AngularJS interface for the Cylon.js API",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/cylon/issues",
-
   "author": "The Hybrid Group <cylonjs@hybridgroup.com>",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/hybridgroup/robeaux"
   },
-
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "devDependencies": {
+    "karma": "~0.12.16",
+    "karma-phantomjs-launcher": "~0.1",
+    "karma-jasmine": "~0.1.5"
+  }
 }
