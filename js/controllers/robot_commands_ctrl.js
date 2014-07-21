@@ -21,7 +21,7 @@ var RobotCommandsCtrl = function RobotCommandsCtrl($scope, $http) {
         command = $scope.command,
         params = parseParams($scope.robot.params);
 
-    var url ='/robots/' + robot + "/commands/" + command;
+    var url ='/api/robots/' + robot + "/commands/" + command;
 
     $http.post(url, params).success(function(data) {
       if (data.result) {

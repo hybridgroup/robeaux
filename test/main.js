@@ -23,10 +23,10 @@ describe('IndexCtrl', function() {
     it('IndexCtrl should get array of robots', function() {
         var controller = testController();
         jasmine.getJSONFixtures().fixturesPath='base/test/support';
-        var data = loadJSONFixtures('robots.json');
-        $httpBackend.expect('GET', '/robots').respond(data);
+        var data = loadJSONFixtures('robots.json')['robots.json'];
+        $httpBackend.expect('GET', '/api/robots').respond(data);
         $httpBackend.flush();
-        expect($scope.robots).toEqual(data);
+        expect($scope.robots).toEqual(data.robots);
     });
 });
 
@@ -51,7 +51,7 @@ describe('RobotCtrl', function() {
         var controller = testController();
 
         jasmine.getJSONFixtures().fixturesPath='base/test/support';
-        $httpBackend.expect('GET', '/robots/' + $routeParams.robot).respond(loadJSONFixtures('myRobot.json'));
+        $httpBackend.expect('GET', '/api/robots/' + $routeParams.robot).respond(loadJSONFixtures('myRobot.json')['myRobot.json']);
         $httpBackend.flush();
 
     }));
@@ -62,10 +62,10 @@ describe('RobotCtrl', function() {
     });
 
     it('RobotCtrl should get robot data', function() {
-        var data = loadJSONFixtures('myRobot.json');
-        data.params = [ { name: '', value: '', type: 'string' } ];
-        data.results = [];
-        expect($scope.robot).toEqual(data);
+        var data = loadJSONFixtures('myRobot.json')['myRobot.json'];
+        data.robot.params = [ { name: '', value: '', type: 'string' } ];
+        data.robot.results = [];
+        expect($scope.robot).toEqual(data.robot);
     });
 
     it('RobotCtrl should select device', function (){
@@ -138,8 +138,8 @@ describe('RobotCommandsCtrl', function() {
         var controller = testController();
 
         jasmine.getJSONFixtures().fixturesPath='base/test/support';
-        var data = loadJSONFixtures('myRobot.json');
-        $scope.robot = data;
+        var data = loadJSONFixtures('myRobot.json')['myRobot.json'];
+        $scope.robot = data.robot;
     }));
 
     afterEach(function() {
@@ -172,7 +172,7 @@ describe('RobotCommandsCtrl', function() {
         var data= {'result': "myRobot says relax"};
 
         $scope.submit();
-        $httpBackend.expectPOST('/robots/myRobot/commands/relax', params).respond(data);
+        $httpBackend.expectPOST('/api/robots/myRobot/commands/relax', params).respond(data);
         $httpBackend.flush();
         expect($scope.robot.results).toEqual([{'result': "myRobot says relax"}])
     });
@@ -197,8 +197,12 @@ describe('DeviceCommandsCtrl', function() {
         var controller = testController();
 
         jasmine.getJSONFixtures().fixturesPath='base/test/support';
-        var data = loadJSONFixtures('myDevice.json');
-        $scope.device = data;
+
+        var data = loadJSONFixtures('myDevice.json')['myDevice.json'];
+
+        $scope.device = data[0];
+        $scope.device.results = [];
+        $scope.device.params = [{ name: '', value: '', type: 'string' }];
     }));
 
     afterEach(function() {
@@ -218,7 +222,10 @@ describe('DeviceCommandsCtrl', function() {
     });
 
     it('DeviceCommandsCtrl command should be an empty string', function (){
-        expect($scope.device.params.length).toBe(2)
+        $scope.device.params = [
+          { name: '', value: '', type: 'string' },
+          { name: '', value: '', type: 'string' }
+        ];
         $scope.removeParam($scope.device);
         expect($scope.device.params.length).toBe(1)
     });
@@ -232,7 +239,7 @@ describe('DeviceCommandsCtrl', function() {
         var data= {'result': "brightness is 255"};
 
         $scope.submit();
-        $httpBackend.expectPOST('/robots/myRobot/devices/led/commands/brightness', params).respond(data);
+        $httpBackend.expectPOST('/api/robots/myRobot/devices/led/commands/brightness', params).respond(data);
         $httpBackend.flush();
         expect($scope.device.results[0]).toEqual({'result': "brightness is 255"})
     });

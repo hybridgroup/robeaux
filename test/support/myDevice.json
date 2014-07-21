@@ -1,1 +1,15 @@
-[{"name":"led","driver":"Led","pin":3,"connection":{"name":"arduino","port":"/dev/ttyACM0","adaptor":"Adaptor","connection_id":5738},"commands":["isOn","turnOn","turnOff","toggle","brightness"]},{"name":"button","driver":"Button","pin":2,"connection":{"name":"arduino","port":"/dev/ttyACM0","adaptor":"Adaptor","connection_id":5738},"commands":["isPressed"]}]
+[
+  {
+    "commands": [ "isOn", "turnOn", "turnOff", "toggle", "brightness" ],
+    "connection": "arduino",
+    "driver": "Led",
+    "name": "led",
+    "pin": 3
+  }, {
+    "commands": [ "isPressed" ],
+    "connection": "arduino",
+    "driver": "Button",
+    "name": "button",
+    "pin": 2
+  }
+]

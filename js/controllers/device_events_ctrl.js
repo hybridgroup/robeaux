@@ -9,7 +9,7 @@ var DeviceEventsCtrl = function DeviceEventsCtrl($scope, $filter) {
         device = $scope.device.name,
         event = $scope.eventName;
 
-    var uri = "/robots/" + robot + "/devices/" + device + "/events/" + event;
+    var uri = "/api/robots/" + robot + "/devices/" + device + "/events/" + event;
     var $device = $scope.device;
     var source = new EventSource(uri);
 
