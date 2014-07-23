@@ -16,6 +16,11 @@ robeaux.config(function($routeProvider) {
       templateUrl: '/partials/themes.html',
     })
 
+    .when('/widgets', {
+      controller: 'WidgetsCtrl',
+      templateUrl: '/partials/widgets.html',
+    })
+
     .otherwise({
       redirectTo: '/robots'
     });

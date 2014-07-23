@@ -1,0 +1,36 @@
+<div class="widgets">
+  <div class="sidebar">
+    <h2>Widgets</h2>
+
+    <div class="list">
+      <div class="widget"
+           ng-repeat="widget in widgets.list"
+           ng-click="edit(widget)"
+           ng-class="{selected: (editing === widget)}">
+        {{widget.name}}
+        <span class="close" ng-click="widgets.remove(widget.name)">X</span>
+      </div>
+    </div>
+
+    <div class="new-widget">
+      <input type="text" ng-model="name" placeholder="new widget name">
+      <button ng-click="add(name)">add new widget</button>
+    </div>
+  </div>
+
+
+  <div class="editor">
+    <h2>Editor</h2>
+
+    <textarea ng-disabled="!editing" ng-model="editing.template" ng-blur="widgets.save()" placeholder="write your template here">
+    </textarea>
+
+    <textarea ng-disabled="!editing" ng-model="editing.script" ng-blur="widgets.save()" placeholder="write your javascript here">
+    </textarea>
+  </div>
+
+  <div class="footer">
+    <button class="save" ng-click="widgets.save()">save</button>
+    <button class="reset" ng-click="widgets.reset()">reset</button>
+  </div>
+</div>
