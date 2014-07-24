@@ -22,11 +22,24 @@
   <div class="editor">
     <h2>Editor</h2>
 
-    <textarea ng-disabled="!editing" ng-model="editing.template" ng-blur="widgets.save()" placeholder="write your template here">
-    </textarea>
+    <div class="field">
+      <label>
+        <strong>Template:</strong>
+        <small>The code you put here will be used as a template for an Angular directive.</small>
+      </label>
 
-    <textarea ng-disabled="!editing" ng-model="editing.script" ng-blur="widgets.save()" placeholder="write your javascript here">
-    </textarea>
+      <textarea id="template" ng-disabled="!editing" ng-model="editing.template" ng-blur="widgets.save()" placeholder="write your template here">
+      </textarea>
+    </div>
+
+    <div class="field">
+      <label>
+        <strong>Script:</strong>
+        <small>The code you put here will be used as a <code>link</code> function for an Angular directive.</small>
+      </label>
+      <textarea ng-disabled="!editing" ng-model="editing.script" ng-blur="widgets.save()" placeholder="write your javascript here">
+      </textarea>
+    </div>
   </div>
 
   <div class="footer">

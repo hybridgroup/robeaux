@@ -448,6 +448,10 @@ body > nav a.active {
   float: right;
 }
 
+.themes .editor h2, .widgets .editor h2 {
+  margin-bottom: 15px;
+}
+
 .themes .editor textarea, .widgets .editor textarea {
   border: 1px solid #999;
   font-family: Inconslata, monospace;
@@ -469,11 +473,17 @@ body > nav a.active {
   float: right;
 }
 
-.widgets .editor textarea {
+.widgets .editor .field {
   width: 49%;
   height: 320px;
+  margin: 0;
+  display: inline-block;
 }
 
-.widgets .editor textarea:last-of-type {
+.widgets .editor textarea {
+  width: 100%;
+}
+
+.widgets .editor .field:last-of-type {
   float: right;
 }
