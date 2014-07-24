@@ -14,6 +14,18 @@ robeaux.factory('Widgets', function() {
     }
   };
 
+  service.find = function(name) {
+    var match;
+
+    for (var i = 0; i < this.list.length; i++) {
+      if (this.list[i].name === name) {
+        match = this.list[i];
+      }
+    }
+
+    return match;
+  };
+
   service.save = function() {
     localStorage.setItem('widgets', angular.toJson(this.list));
   };
