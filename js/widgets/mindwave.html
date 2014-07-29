@@ -1,5 +1,5 @@
 <div class="column {{ name }}"
-     ng-style="{ 'height': value + '%' }"
+     ng-style="{ 'height': value + '%', 'left': (22 * $index) + 'px' }"
      ng-repeat="(name, value) in eeg">
 </div>
 
@@ -9,9 +9,43 @@
   }
 
   widget[name="mindwave"] .column {
-    display: inline-block;
+    display: inline-bLock;
     background: red;
-    width: 11%;
+    width: 20px;
     margin: 2px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  widget[name='mindwave'] .Delta {
+    background: #52A6FF;
+  }
+
+  widget[name='mindwave'] .Theta {
+    background: #BF3629;
+  }
+
+  widget[name='mindwave'] .LoAlpha {
+    background: #61BF40;
+  }
+
+  widget[name='mindwave'] .HiAlpha {
+    background: #417F2B;
+  }
+
+  widget[name='mindwave'] .LoBeta {
+    background: #895ABF;
+  }
+
+  widget[name='mindwave'] .HiBeta {
+    background: #5C3C7F;
+  }
+
+  widget[name='mindwave'] .LoGamma {
+    background: #536FBF;
+  }
+
+  widget[name='mindwave'] .MidGamma {
+    background: #374A7F;
   }
 </style>
