@@ -8,7 +8,7 @@
            ng-click="edit(widget)"
            ng-class="{selected: (editing === widget)}">
         {{widget.name}}
-        <span class="close" ng-click="widgets.remove(widget.name)">X</span>
+        <span class="close" ng-if="widget.custom" ng-click="widgets.remove(widget.name)">X</span>
       </div>
     </div>
 

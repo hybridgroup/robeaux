@@ -2,6 +2,12 @@ robeaux.factory('Widgets', function() {
   var service = {};
 
   var defaults = [
+    {
+      name: 'mindwave',
+      custom: false,
+      template_url: '/js/widgets/mindwave.html',
+      script_url: '/js/widgets/mindwave.js',
+    }
   ];
 
   service.list = [];
@@ -34,7 +40,8 @@ robeaux.factory('Widgets', function() {
     var widget = {
       name: name,
       template: "",
-      script: ""
+      script: "",
+      custom: true
     };
 
     this.list.push(widget);
@@ -51,6 +58,11 @@ robeaux.factory('Widgets', function() {
 
     this.save();
   };
+
+  service.reset = function() {
+    localStorage.removeItem('widgets');
+    this.load();
+  }
 
   service.load();
 
