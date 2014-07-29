@@ -102,7 +102,7 @@ body > nav a.active {
   color: white;
 }
 
-.robot, .robot-devices .device, .robot-connections .connection {
+.robot, .robot-devices .device, .robot-connections .connection, .robot-detail .widgets {
   background: white;
   height: 70px;
   line-height: 70px;
@@ -486,4 +486,16 @@ body > nav a.active {
 
 .widgets .editor .field:last-of-type {
   float: right;
+}
+
+.robot-detail .widgets {
+  line-height: 1;
+  min-height: 200px;
+}
+
+widget {
+  display: block;
+  width: 25%;
+  margin: 0;
+  height: 100%;
 }

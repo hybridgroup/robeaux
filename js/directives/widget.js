@@ -28,8 +28,8 @@ robeaux.directive("widget", function(Widgets, $http) {
     }
   };
 
-  directive.link = function(scope, element, attrs) {
-    var widget = Widgets.find(attrs.name);
+  directive.link = function($scope, $element, $attrs) {
+    var widget = Widgets.find($attrs.name);
     if (!widget) {
       return;
     }
