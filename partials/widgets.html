@@ -22,6 +22,25 @@
   <div class="editor">
     <h2>Editor</h2>
 
+    <div class="attrs">
+      <label>
+        <strong>Attributes:</strong>
+        <small>Attributes to be defined when instantiating the widget. They will be available in the script under <code>$attrs</code>.</small>
+      </label>
+
+      <div class="attrs-list">
+        <span ng-repeat="attr in editing.attrs" ng-click="removeAttr(attr)">
+          {{ attr }}
+          {{ $last ? '' : ', ' }}
+        </span>
+      </div>
+
+      <div class="new-attr">
+        <input type="text" ng-disabled="!editing" ng-model="newAttr">
+        <button ng-disabled="!editing" ng-click="addAttr()">Add Attribute</button>
+      </div>
+    </div>
+
     <div class="field">
       <label>
         <strong>Template:</strong>
