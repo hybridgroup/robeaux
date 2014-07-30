@@ -1,0 +1,32 @@
+<div class="attitude" ng-style="styles()">
+  <div class="sky"></div>
+  <div class="earth"></div>
+</div>
+
+<style>
+  widget[name="attitude"] {
+    overflow: hidden;
+  }
+
+  widget[name="attitude"] .attitude {
+    width: 200%;
+    height: 200%;
+    margin-left: -50%;
+    margin-top: -50%;
+  }
+
+  widget[name="attitude"] .attitude div {
+    width: 100%;
+    height: 50%;
+    padding: 0;
+    margin: 0;
+  }
+
+  widget[name="attitude"] .attitude .sky {
+    background: #02A2F9;
+  }
+
+  widget[name="attitude"] .attitude .earth {
+    background: #A07857;
+  }
+</style>

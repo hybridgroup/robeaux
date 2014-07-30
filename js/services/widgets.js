@@ -7,6 +7,12 @@ robeaux.factory('Widgets', function() {
       custom: false,
       template_url: '/js/widgets/mindwave.html',
       script_url: '/js/widgets/mindwave.js',
+    },
+    {
+      name: 'attitude',
+      custom: false,
+      template_url: '/js/widgets/attitude.html',
+      script_url: '/js/widgets/attitude.js',
     }
   ];
 
