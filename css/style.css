@@ -494,7 +494,8 @@ body > nav a.active {
 }
 
 widget {
-  display: block;
+  display: inline-block;
+  float: left;
   width: 25%;
   margin: 0;
   height: 100%;
