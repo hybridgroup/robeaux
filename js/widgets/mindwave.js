@@ -1,8 +1,3 @@
-$attrs.robotName = $attrs.robotName || "TestBot";
-
-// HTTP URI new data is requested from
-var uri = "/api/robots/" + $attrs.robotName + "/commands/eeg";
-
 var scaleEEG = function(original) {
   var eeg = {};
 
@@ -15,13 +10,14 @@ var scaleEEG = function(original) {
   return eeg;
 };
 
-var fetchData = function() {
-  var req = $http.get(uri);
+var url = "/api/robots/" + $attrs.robot + "/devices/" + $attrs.device + "/events/" + $attrs.event;
 
-  req.success(function(data) {
-    var eeg = data.result;
+var es = new EventSource(url);
+
+es.addEventListener('message', function(message) {
+  var eeg = JSON.parse(message.data);
+
+  $scope.$apply(function() {
     $scope.eeg = scaleEEG(eeg);
   });
-};
-
-setInterval(fetchData, 500);
+}, false);

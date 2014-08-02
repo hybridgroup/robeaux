@@ -1,8 +1,3 @@
-$attrs.robotName = $attrs.robotName || "TestBot";
-
-// HTTP URI new data is requested from
-var uri = "/api/robots/" + $attrs.robotName + "/commands/attitude";
-
 $scope.styles = function() {
   var styles = {};
 
@@ -21,12 +16,12 @@ $scope.styles = function() {
   return styles;
 };
 
-var fetchData = function() {
-  var req = $http.get(uri);
+var url = "/api/robots/" + $attrs.robot + "/devices/" + $attrs.device + "/events/" + $attrs.event;
 
-  req.success(function(data) {
-    $scope.attitude = data.result;
+var es = new EventSource(url);
+
+es.addEventListener('message', function(message) {
+  $scope.$apply(function() {
+    $scope.attitude = JSON.parse(message.data);
   });
-};
-
-setInterval(fetchData, 500);
+}, false);
