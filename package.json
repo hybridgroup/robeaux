@@ -1,9 +1,9 @@
 {
   "name": "robeaux",
-  "version": "0.1.1",
-  "description": "An AngularJS interface for the Cylon.js API",
+  "version": "0.2.0",
+  "description": "An AngularJS interface for the CPPP-IO API spec",
   "homepage": "http://cylonjs.com",
-  "bugs": "https://github.com/hybridgroup/cylon/issues",
+  "bugs": "https://github.com/hybridgroup/robeaux/issues",
   "author": "The Hybrid Group <cylonjs@hybridgroup.com>",
   "repository": {
     "type": "git",
