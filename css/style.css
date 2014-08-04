@@ -240,6 +240,7 @@ body > nav a.active {
   margin-bottom: 20px;
   padding: 10px;
   text-align: center;
+  overflow: hidden;
 }
 
 .device-commands {
