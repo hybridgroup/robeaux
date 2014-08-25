@@ -1,4 +1,4 @@
-var WidgetsCtrl = function WidgetsCtrl($scope, Widgets) {
+var WidgetEditorCtrl = function WidgetEditorCtrl($scope, Widgets) {
   $scope.widgets = Widgets;
 
   $scope.add = function(name) {

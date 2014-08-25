@@ -42,16 +42,7 @@
     </div>
   </div>
 
-  <div ng-controller="WidgetsCtrl">
-    <div class="robot-devices">
-      <div class="device ng-scope">
-        <span class="icon" ng-click="{{widget.name}} = !{{widget.name}}" ng-repeat="widget in widgets.list">{{widget.name}}</span>
-      </div>
-    </div>
-
-    <div class="widgets">
-      <widget ng-show="{{widget.name}}" name="{{widget.name}}" ng-repeat="widget in widgets.list"></widget>
-    </div>
+  <div class="widgets" ng-controller="WidgetsCtrl">
   </div>
 
   <div ng-show="device" ng-include="'/partials/device.html'">

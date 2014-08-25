@@ -17,8 +17,8 @@ robeaux.config(function($routeProvider) {
     })
 
     .when('/widgets', {
-      controller: 'WidgetsCtrl',
-      templateUrl: '/partials/widgets.html',
+      controller: 'WidgetEditorCtrl',
+      templateUrl: '/partials/widget_editor.html',
     })
 
     .otherwise({
