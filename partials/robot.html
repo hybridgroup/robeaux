@@ -43,6 +43,13 @@
   </div>
 
   <div class="widgets" ng-controller="WidgetsCtrl">
+    <div class="new-widget" ng-if="newWidget">
+      <h2>New Widget</h2>
+    </div>
+
+    <div class="active-widgets">
+      <widget ng-repeat="widget in activeWidgets" name="widget.name" params="widget.params">
+    </div>
   </div>
 
   <div ng-show="device" ng-include="'/partials/device.html'">
