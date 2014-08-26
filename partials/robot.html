@@ -45,10 +45,28 @@
   <div class="widgets" ng-controller="WidgetsCtrl">
     <div class="new-widget" ng-if="newWidget">
       <h2>New Widget</h2>
+
+      <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list">
+      </select>
+
+      <div class="attrs">
+        <div ng-repeat="attr in newWidget.base.attrs">
+          <span>{{attr}}</span>
+          <input type="text" ng-model="newWidget.attrs[attr]">
+        </div>
+      </div>
+
+      <button ng-click="newActiveWidget(newWidget)">
+        Create
+      </button>
     </div>
 
+    <button ng-click="newWidget = { base: '', attrs: {} }">
+      New Widget Instance
+    </button>
+
     <div class="active-widgets">
-      <widget ng-repeat="widget in activeWidgets" name="widget.name" params="widget.params">
+      <div ng-repeat="widget in activeWidgets" widget data-name="{{widget.name}}" data-attrs="{{widget.attrs}}"></div>
     </div>
   </div>
 

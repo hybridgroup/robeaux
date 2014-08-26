@@ -14,7 +14,8 @@ robeaux.directive("widget", function(Widgets, $http) {
   directive.restrict = "E";
 
   directive.template = function(elem, attrs) {
-    var widget = Widgets.find(attrs.name);
+    var widget = Widgets.find(attrs["data-name"]);
+
     if (!widget) {
       return;
     }
@@ -29,7 +30,8 @@ robeaux.directive("widget", function(Widgets, $http) {
   };
 
   directive.link = function($scope, $element, $attrs) {
-    var widget = Widgets.find($attrs.name);
+    var widget = Widgets.find($attrs["data-name"]);
+
     if (!widget) {
       return;
     }
