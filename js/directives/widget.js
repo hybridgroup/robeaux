@@ -1,4 +1,4 @@
-robeaux.directive("widget", function(Widgets, $http) {
+robeaux.directive("widget", function(Widgets, $http, $compile) {
   var directive = {};
 
   var fetchTemplate = function(url) {
@@ -13,36 +13,35 @@ robeaux.directive("widget", function(Widgets, $http) {
 
   directive.restrict = "E";
 
-  directive.template = function(elem, attrs) {
-    var widget = Widgets.find(attrs["data-name"]);
+  directive.scope = {};
+
+  directive.link = function($scope, $element, $attrs) {
+    var widget = Widgets.find($attrs.name),
+        tpl;
+
+    $scope.attrs = angular.fromJson($attrs.attrs);
 
     if (!widget) {
       return;
     }
 
     if (widget.template) {
-      return widget.template;
+      tpl = $compile("<span>" + widget.template + "</span>")($scope);
     }
 
     if (widget.template_url) {
-      return fetchTemplate(widget.template_url);
+      tpl = $compile("<span>" + fetchTemplate(widget.template_url) + "</span>")($scope);
     }
-  };
 
-  directive.link = function($scope, $element, $attrs) {
-    var widget = Widgets.find($attrs["data-name"]);
-
-    if (!widget) {
-      return;
-    }
+    $element.append(tpl);
 
     if (widget.script) {
-      return eval(widget.script)
+      eval(widget.script)
     }
 
     if (widget.script_url) {
       $http.get(widget.script_url).success(function(data) {
-        return eval(data);
+        eval(data);
       });
     }
   };
