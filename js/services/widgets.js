@@ -26,6 +26,12 @@ robeaux.factory('Widgets', function() {
     } else {
       this.list = defaults;
     }
+
+    if (localStorage['activeWidgets']) {
+      this.activeWidgets = angular.fromJson(localStorage['activeWidgets']);
+    } else {
+      this.activeWidgets = {};
+    }
   };
 
   service.find = function(name) {
@@ -42,6 +48,7 @@ robeaux.factory('Widgets', function() {
 
   service.save = function() {
     localStorage.setItem('widgets', angular.toJson(this.list));
+    localStorage.setItem('activeWidgets', angular.toJson(this.activeWidgets));
   };
 
   service.add = function(name) {

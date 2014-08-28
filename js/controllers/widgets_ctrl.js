@@ -1,6 +1,6 @@
 var WidgetsCtrl = function WidgetsCtrl($scope, Widgets) {
   $scope.widgets = Widgets;
-  $scope.activeWidgets = Widgets.activeWidgets || [];
+  $scope.activeWidgets = Widgets.activeWidgets[$scope.robot.name] || [];
   $scope.newWidget = false;
 
   $scope.newActiveWidget = function(widget) {
