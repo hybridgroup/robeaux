@@ -344,14 +344,13 @@ body > nav a.active {
 
 .close {
   border-radius: 25px;
-  border: 1px solid #444;
   color: #444;
   float: right;
   font-size: 14px;
   line-height: 14px;
   height: 20px;
   text-align: center;
-  margin-top: 4px;
+  margin-top: 7px;
   padding: 1px 5px;
 }
 
@@ -491,12 +490,64 @@ body > nav a.active {
 .robot-detail .widgets {
   line-height: 1;
   min-height: 200px;
+  height: auto;
+  padding: 0;
 }
 
 widget {
   display: inline-block;
   float: left;
-  width: 25%;
   margin: 0;
+  width: 240px;
+  height: 200px;
+}
+
+.widgets .newWidget {
+  width: 240px;
+  height: 200px;
+  font-size: 50px;
+  border: none;
+}
+
+.new-widget-instance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+  background: hsla(0, 0%, 25%, 0.5);
+  width: 960px;
   height: 100%;
+  padding: 10px 100px;
+}
+
+.new-widget-instance .panel {
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 10px;
+}
+
+.new-widget-instance .panel h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-widget-instance .panel h3 {
+  margin: 0;
+}
+
+.new-widget-instance .panel section {
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.new-widget-instance .panel input {
+  width: auto;
+}
+
+.new-widget-instance .panel button {
+  clear: both;
+  width: 100%;
 }

@@ -19,7 +19,7 @@
             <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
             <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
             <select ng-options="type for type in types" ng-model="param.type"></select>
-            <span class="close" ng-click="removeParam($index)">X</span>
+            <span class="close" ng-click="removeParam($index)">&#x2716;</span>
           </div>
         </div>
 
@@ -43,30 +43,36 @@
   </div>
 
   <div class="widgets" ng-controller="WidgetsCtrl">
-    <div class="new-widget" ng-if="newWidget">
-      <h2>New Widget</h2>
+    <div class="new-widget-instance" ng-if="newWidget">
+      <div class="panel">
+        <h2>New Widget Instance</h2>
 
-      <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list">
-      </select>
+        <section class="type">
+          <h3>Widget Type:</h3>
+          <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list"></select>
+        </section>
 
-      <div class="attrs">
-        <div ng-repeat="attr in newWidget.base.attrs">
-          <span>{{attr}}</span>
-          <input type="text" ng-model="newWidget.attrs[attr]">
-        </div>
+        <section class="attrs" ng-if="newWidget.base.attrs.length">
+          <h3>Params:</h3>
+
+          <div ng-repeat="attr in newWidget.base.attrs">
+            <label>{{attr}}:</label>
+            <input type="text" ng-model="newWidget.attrs[attr]">
+          </div>
+        </section>
+
+        <button ng-click="newActiveWidget(newWidget)">
+          Create
+        </button>
       </div>
-
-      <button ng-click="newActiveWidget(newWidget)">
-        Create
-      </button>
     </div>
 
-    <button ng-click="newWidget = { base: '', attrs: {} }">
-      New Widget Instance
-    </button>
-
     <div class="active-widgets">
-      <widget ng-repeat="widget in activeWidgets" data-name="{{widget.name}}" data-attrs="{{widget.attrs}}"></widget>
+      <widget ng-repeat="widget in activeWidgets" data-name="{{widget.name}}" data-attrs="{{widget.attrs}}">
+        <span class="close" ng-click="removeWidget($index)"> &#x2716; </span>
+      </widget>
+
+      <button class="newWidget" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
     </div>
   </div>
 
