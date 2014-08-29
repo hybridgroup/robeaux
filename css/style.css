@@ -461,6 +461,10 @@ body > nav a.active {
   white-space: pre;
 }
 
+.widgets .editor .attrs {
+  margin-bottom: 20px;
+}
+
 .themes .footer, .widgets .footer {
   clear: both;
   position: absolute;
