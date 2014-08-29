@@ -1,0 +1,51 @@
+<div class="column {{ name }}"
+     ng-style="{ 'height': value + '%', 'left': (22 * $index) + 'px' }"
+     ng-repeat="(name, value) in eeg">
+</div>
+
+<style>
+  widget[data-name="mindwave"] {
+    position: relative;
+  }
+
+  widget[data-name="mindwave"] .column {
+    display: inline-bLock;
+    background: red;
+    width: 20px;
+    margin: 2px;
+    position: absolute;
+    bottom: 10px;
+  }
+
+  widget[data-name='mindwave'] .Delta {
+    background: #52A6FF;
+  }
+
+  widget[data-name='mindwave'] .Theta {
+    background: #BF3629;
+  }
+
+  widget[data-name='mindwave'] .LoAlpha {
+    background: #61BF40;
+  }
+
+  widget[data-name='mindwave'] .HiAlpha {
+    background: #417F2B;
+  }
+
+  widget[data-name='mindwave'] .LoBeta {
+    background: #895ABF;
+  }
+
+  widget[data-name='mindwave'] .HiBeta {
+    background: #5C3C7F;
+  }
+
+  widget[data-name='mindwave'] .LoGamma {
+    background: #536FBF;
+  }
+
+  widget[data-name='mindwave'] .MidGamma {
+    background: #374A7F;
+  }
+</style>

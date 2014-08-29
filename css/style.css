@@ -102,7 +102,7 @@ body > nav a.active {
   color: white;
 }
 
-.robot, .robot-devices .device, .robot-connections .connection {
+.robot, .robot-devices .device, .robot-connections .connection, .robot-detail .widgets {
   background: white;
   height: 70px;
   line-height: 70px;
@@ -152,7 +152,7 @@ body > nav a.active {
   float: right;
 }
 
-.robot-detail .with-commands .input , .robot-detail .with-commands .results {
+.robot-detail .with-commands .input, .robot-detail .with-commands .results {
   position: relative;
   padding-top: 20px;
   width: 50%;
@@ -345,14 +345,13 @@ body > nav a.active {
 
 .close {
   border-radius: 25px;
-  border: 1px solid #444;
   color: #444;
   float: right;
   font-size: 14px;
   line-height: 14px;
   height: 20px;
   text-align: center;
-  margin-top: 4px;
+  margin-top: 7px;
   padding: 1px 5px;
 }
 
@@ -380,7 +379,7 @@ body > nav a.active {
   font-family: Inconsolata, monospace;
 }
 
-.themes {
+.themes, .widgets {
   width: 100%;
   height: 400px;
   background: white;
@@ -388,67 +387,72 @@ body > nav a.active {
   position: relative;
 }
 
-.themes h2 {
+.themes h2, .widgets h2 {
   margin: 0;
 }
 
-.themes .sidebar {
-  width: 15%;
+.themes .sidebar, .widgets .sidebar {
+  width: 25%;
   float: left;
 }
 
-.themes .sidebar {
+.themes .sidebar, .widgets .sidebar {
   text-align: center;
 }
 
-.themes .sidebar button, .themes .sidebar input {
+.themes .sidebar button, .themes .sidebar input,
+.widgets .sidebar button, .widgets .sidebar input {
   margin: 0;
   width: 90%;
   margin-top: 10px;
 }
 
-.themes .sidebar .list {
+.themes .sidebar .list, .widgets .sidebar .list {
   padding: 5px 7px;
   margin: 10px 0;
 }
 
-.themes .sidebar .list .theme {
+.themes .sidebar .list .theme, .widgets .sidebar .list .widget {
   height: 30px;
   line-height: 30px;
   padding: 0 10px;
   text-align: left;
 }
 
-.themes .sidebar .list .theme .close {
+.themes .sidebar .list .theme .close, .widgets .sidebar .list .widget .close {
   margin-top: 5px;
 }
 
-.themes .sidebar .list .theme:not(:last-child) {
+.themes .sidebar .list .theme:not(:last-child), .widgets .sidebar .list .widget:not(:last-child) {
   border-bottom: 1px solid #999;
 }
 
-.themes .sidebar .list .theme.selected {
+.themes .sidebar .list .theme.selected, .widgets .sidebar .list .widget.selected {
   background: #159e00;
   color: white;
 }
 
-.themes .sidebar .list .theme.selected .close {
+.themes .sidebar .list .theme.selected .close, .widgets .sidebar .list .widget.selected .close {
   border-color: #efefef;
   color: #efefef;
 }
 
-.themes .sidebar .list .theme.selected .close:active {
+.themes .sidebar .list .theme.selected .close:active, .widgets .sidebar .list .widget.selected .close:active {
   background: white;
   border-color: white;
   color: black;
 }
 
-.themes .editor {
-  width: 80%;
+.themes .editor, .widgets .editor {
+  width: 70%;
   float: right;
 }
 
-.themes .editor textarea {
+.themes .editor h2, .widgets .editor h2 {
+  margin-bottom: 15px;
+}
+
+.themes .editor textarea, .widgets .editor textarea {
   border: 1px solid #999;
   font-family: Inconslata, monospace;
   font-size: 14px;
@@ -458,13 +462,97 @@ body > nav a.active {
   white-space: pre;
 }
 
-.themes .footer {
+.widgets .editor .attrs {
+  margin-bottom: 20px;
+}
+
+.themes .footer, .widgets .footer {
   clear: both;
   position: absolute;
   width: 97%;
   bottom: 10px;
 }
 
-.themes .footer .selector {
+.themes .footer .selector, .widgets .footer .selector {
   float: right;
+}
+
+.widgets .editor .field {
+  width: 49%;
+  height: 320px;
+  margin: 0;
+  display: inline-block;
+}
+
+.widgets .editor textarea {
+  width: 100%;
+}
+
+.widgets .editor .field:last-of-type {
+  float: right;
+}
+
+.robot-detail .widgets {
+  line-height: 1;
+  min-height: 200px;
+  height: auto;
+  padding: 0;
+}
+
+widget {
+  display: inline-block;
+  float: left;
+  margin: 0;
+  width: 240px;
+  height: 200px;
+}
+
+.widgets .newWidget {
+  width: 240px;
+  height: 200px;
+  font-size: 50px;
+  border: none;
+}
+
+.new-widget-instance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  float: left;
+  background: hsla(0, 0%, 25%, 0.5);
+  width: 960px;
+  height: 100%;
+  padding: 10px 100px;
+}
+
+.new-widget-instance .panel {
+  width: 100%;
+  height: 100%;
+  background: white;
+  padding: 10px;
+}
+
+.new-widget-instance .panel h2 {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-widget-instance .panel h3 {
+  margin: 0;
+}
+
+.new-widget-instance .panel section {
+  width: 49%;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.new-widget-instance .panel input {
+  width: auto;
+}
+
+.new-widget-instance .panel button {
+  clear: both;
+  width: 100%;
 }
