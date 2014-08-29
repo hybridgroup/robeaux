@@ -32,16 +32,12 @@ var WidgetEditorCtrl = function WidgetEditorCtrl($scope, Widgets) {
     Widgets.save();
   };
 
-  $scope.removeAttr = function(attr) {
+  $scope.removeAttr = function(index) {
     if (!$scope.editing) {
       return;
     }
 
-    var index = $scope.editing.attrs.indexOf(attr);
-
-    if (index > -1) {
-      $scope.editing.attrs.splice(index, 1);
-    }
+    $scope.editing.attrs.splice(index, 1);
 
     Widgets.save();
   };
