@@ -37,51 +37,57 @@ describe('Controller ThemesCtrl:', function() {
         expect($scope.themes.list).toEqual(data.themes);
     });
 
-    it('add: should not add theme with empty name', function() {
-        expect($scope.themes.list.length).toEqual(5);
-        $scope.add('');
-        expect($scope.themes.list.length).toEqual(5);
-        $scope.add();
-        expect($scope.themes.list.length).toEqual(5);
+    describe('add:', function() {
+        it('should not add theme with empty name', function() {
+            expect($scope.themes.list.length).toEqual(5);
+            $scope.add('');
+            expect($scope.themes.list.length).toEqual(5);
+            $scope.add();
+            expect($scope.themes.list.length).toEqual(5);
+        });
+
+        it('should not add theme if name already exist', function() {
+            expect($scope.themes.list.length).toEqual(5);
+            $scope.add('artoo');
+            expect($scope.themes.list.length).toEqual(5);
+        });
+
+        it('should add theme', function() {
+            expect($scope.themes.list.length).toEqual(5);
+            $scope.add('first theme');
+            expect($scope.themes.list.length).toEqual(6);
+        });
+
+        it('should add theme and put it on edit mode', function() {
+            expect($scope.editing).toEqual(null);
+            $scope.add('second theme');
+            expect($scope.editing.name).toEqual('second theme');
+        });
     });
 
-    it('add: should not add theme if name already exist', function() {
-        expect($scope.themes.list.length).toEqual(5);
-        $scope.add('artoo');
-        expect($scope.themes.list.length).toEqual(5);
+    describe('edit:', function() {
+        it('should not set theme on edit mode if is not a custom theme', function() {
+            expect($scope.editing).toEqual(null);
+            $scope.edit(data.themes[0].name)
+            expect($scope.editing).toEqual(null);
+        });
+
+        it('should not set theme on edit mode if theme is already being edited', function() {
+            expect($scope.editing).toEqual(null);
+            $scope.add('third theme')
+            expect($scope.editing.name).toEqual('third theme');
+
+            $scope.edit('third theme');
+            expect($scope.editing).toEqual(null);
+        });
     });
 
-    it('add: should add theme', function() {
-        expect($scope.themes.list.length).toEqual(5);
-        $scope.add('first theme');
-        expect($scope.themes.list.length).toEqual(6);
-    });
-
-    it('add: should add theme and put it on edit mode', function() {
-        expect($scope.editing).toEqual(null);
-        $scope.add('second theme');
-        expect($scope.editing.name).toEqual('second theme');
-    });
-
-    it('edit: should not set theme on edit mode if is not a custom theme', function() {
-        expect($scope.editing).toEqual(null);
-        $scope.edit(data.themes[0].name)
-        expect($scope.editing).toEqual(null);
-    });
-
-    it('edit: should not set theme on edit mode if theme is already being edited', function() {
-        expect($scope.editing).toEqual(null);
-        $scope.add('third theme')
-        expect($scope.editing.name).toEqual('third theme');
-
-        $scope.edit('third theme');
-        expect($scope.editing).toEqual(null);
-    });
-
-    it('remove: should remove theme', function() {
-        expect($scope.themes.list.length).toEqual(5);
-        $scope.remove('artoo');
-        expect($scope.themes.list.length).toEqual(4);
+    describe('remove:', function() {
+        it('should remove theme', function() {
+            expect($scope.themes.list.length).toEqual(5);
+            $scope.remove('artoo');
+            expect($scope.themes.list.length).toEqual(4);
+        });
     });
     
 

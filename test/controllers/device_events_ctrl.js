@@ -35,41 +35,44 @@ describe('Controller DeviceEventsCtrl:', function() {
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    it('listen: should add a listener for an event and clear eventName', function (){
-        expect($scope.device.listeners).toBe(null);
-        $scope.eventName = "listen_event";
-        $scope.listen();
-        expect($scope.device.listeners['listen_event']).not.toBe(null);
-        expect($scope.eventName).toBe("");
+    describe('listen:', function() {
+        it('should add a listener for an event and clear eventName', function (){
+            expect($scope.device.listeners).toBe(null);
+            $scope.eventName = "listen_event";
+            $scope.listen();
+            expect($scope.device.listeners['listen_event']).not.toBe(null);
+            expect($scope.eventName).toBe("");
+        });
+
+        it('should listen to multiple events', function (){
+            expect($scope.device.listeners).toBe(null);
+            
+            $scope.eventName = "first_event";
+            $scope.listen();
+            $scope.eventName = "second_event";
+            $scope.listen();
+            $scope.eventName = "third_event";
+            $scope.listen();
+
+            expect($scope.device.listeners['first_event']).not.toBe(null);
+            expect($scope.device.listeners['second_event']).not.toBe(null);
+            expect($scope.device.listeners['third_event']).not.toBe(null);
+        });
     });
 
-    it('listen: should listen to multiple events', function (){
-        expect($scope.device.listeners).toBe(null);
-        
-        $scope.eventName = "first_event";
-        $scope.listen();
-        $scope.eventName = "second_event";
-        $scope.listen();
-        $scope.eventName = "third_event";
-        $scope.listen();
+    describe('remove:', function() {
+        it('should remove listener', function (){
+            expect($scope.device.listeners).toBe(null);
+            
+            $scope.eventName = "listen_event";
+            $scope.listen();
+            expect($scope.device.listeners['listen_event']).not.toBe(null);
 
-        expect($scope.device.listeners['first_event']).not.toBe(null);
-        expect($scope.device.listeners['second_event']).not.toBe(null);
-        expect($scope.device.listeners['third_event']).not.toBe(null);
-    });
+            $scope.remove("listen_event")
 
-
-    it('remove: should remove listener', function (){
-        expect($scope.device.listeners).toBe(null);
-        
-        $scope.eventName = "listen_event";
-        $scope.listen();
-        expect($scope.device.listeners['listen_event']).not.toBe(null);
-
-        $scope.remove("listen_event")
-
-        expect($scope.device.listeners['listen_event']).toBe(undefined);
-        
+            expect($scope.device.listeners['listen_event']).toBe(undefined);
+            
+        });
     });
 
 

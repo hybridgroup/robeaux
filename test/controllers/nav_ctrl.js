@@ -27,10 +27,12 @@ describe('Controller NavCtrl:', function() {
         $httpBackend.verifyNoOutstandingRequest();
     });
 
-    it('active: should return if current path is the same as the location path', function() {
-        $location.path('robots');
-        
-        expect($scope.active('robots')).toEqual(true);
-        expect($scope.active('robots/myRobot')).toEqual(false);
+    describe('active:', function() {
+        it('should return if current path is the same as the location path', function() {
+            $location.path('robots');
+            
+            expect($scope.active('robots')).toEqual(true);
+            expect($scope.active('robots/myRobot')).toEqual(false);
+        });
     });
 });

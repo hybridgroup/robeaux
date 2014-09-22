@@ -39,18 +39,22 @@ describe('Controller RobotCtrl:', function() {
         expect($scope.robot).toEqual(data.robot);
     });
 
-    it('select: should select a device', function (){
-        var robotArray= [{"name": "robo1"},{"name":"robo2"}];
-        $scope.robot = robotArray;
-        $scope.select($scope.robot[1]);
-        expect($scope.robot[1]).toEqual($scope.device);
-        expect($scope.robot[0]).toNotEqual($scope.device);
+    describe('select:', function() {
+        it('should select a device', function (){
+            var robotArray= [{"name": "robo1"},{"name":"robo2"}];
+            $scope.robot = robotArray;
+            $scope.select($scope.robot[1]);
+            expect($scope.robot[1]).toEqual($scope.device);
+            expect($scope.robot[0]).toNotEqual($scope.device);
+        });
     });
 
-    it('selected: should return if device is still selected', function (){
-        var robotArray= [{"name": "robo1"},{"name":"robo2"}];
-        $scope.robot = robotArray;
-        $scope.select($scope.robot);
-        expect($scope.selected($scope.robot)).toBeTruthy();
+    describe('selected:', function() {
+        it('should return if device is still selected', function (){
+            var robotArray= [{"name": "robo1"},{"name":"robo2"}];
+            $scope.robot = robotArray;
+            $scope.select($scope.robot);
+            expect($scope.selected($scope.robot)).toBeTruthy();
+        });
     });
 });

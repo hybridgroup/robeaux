@@ -36,9 +36,11 @@ describe('Controller IndexCtrl:', function() {
         expect($scope.robots).toEqual(data.robots);
     });
 
-    it('details: should redirect to robot show page', function() {
-        expect($location.path()).toEqual('');
-        $scope.details(data.robots[0].name);
-        expect($location.path()).toEqual('/robots/' + data.robots[0].name);
+    describe('details:', function() {
+        it('should redirect to robot show page', function() {
+            expect($location.path()).toEqual('');
+            $scope.details(data.robots[0].name);
+            expect($location.path()).toEqual('/robots/' + data.robots[0].name);
+        });
     });
 });

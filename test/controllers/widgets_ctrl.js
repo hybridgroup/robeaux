@@ -39,31 +39,34 @@ describe('Controller WidgetsCtrl:', function() {
         expect($scope.widgets.list).toEqual(data.widgets);
     });
 
-    it('newActiveWidget: should not activate widget if base is not provided', function() {
-        expect($scope.activeWidgets.length).toEqual(0);
-        var new_widget = {base: ''}
-        $scope.newActiveWidget(new_widget);
-        expect($scope.activeWidgets.length).toEqual(0);
+    describe('newActiveWidget:', function() {
+        it('should not activate widget if base is not provided', function() {
+            expect($scope.activeWidgets.length).toEqual(0);
+            var new_widget = {base: ''}
+            $scope.newActiveWidget(new_widget);
+            expect($scope.activeWidgets.length).toEqual(0);
+        });
+
+        it('should activate widget if base is provided', function() {
+            expect($scope.activeWidgets.length).toEqual(0);
+            
+            var new_widget = {base: $scope.widgets.list[0]}
+            $scope.newActiveWidget(new_widget);
+            expect($scope.activeWidgets.length).toEqual(1);
+        });
     });
 
-    it('newActiveWidget: should activate widget if base is provided', function() {
-        expect($scope.activeWidgets.length).toEqual(0);
-        
-        var new_widget = {base: $scope.widgets.list[0]}
-        $scope.newActiveWidget(new_widget);
-        expect($scope.activeWidgets.length).toEqual(1);
+    describe('removeWidget:', function() {
+        it('should remove widget form active list', function() {
+            expect($scope.activeWidgets.length).toEqual(0);
+            
+            var new_widget = {base: $scope.widgets.list[0]}
+            $scope.newActiveWidget(new_widget);
+            expect($scope.activeWidgets.length).toEqual(1);
+
+            $scope.removeWidget(0);
+            expect($scope.activeWidgets.length).toEqual(0);
+        });
     });
-
-    it('removeWidget: should remove widget form active list', function() {
-        expect($scope.activeWidgets.length).toEqual(0);
-        
-        var new_widget = {base: $scope.widgets.list[0]}
-        $scope.newActiveWidget(new_widget);
-        expect($scope.activeWidgets.length).toEqual(1);
-
-        $scope.removeWidget(0);
-        expect($scope.activeWidgets.length).toEqual(0);
-    });
-
     
 });
