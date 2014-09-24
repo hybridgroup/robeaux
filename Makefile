@@ -8,6 +8,9 @@ test:
 test-controllers:
 	@./node_modules/karma/bin/karma start ./test/karma_test_controllers.conf.js --no-auto-watch --single-run 
 
+test-services:
+	@./node_modules/karma/bin/karma start ./test/karma_test_services.conf.js --no-auto-watch --single-run 
+
 test-functions:
 	@./node_modules/karma/bin/karma start ./test/karma_test_functions.conf.js --no-auto-watch --single-run 
 
