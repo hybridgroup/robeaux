@@ -944,7 +944,7 @@ var i,
   identifier = characterEncoding.replace( "w", "w#" ),
 
   // Acceptable operators http://www.w3.org/TR/selectors/#attribute-selectors
-  attributes = "\\[" + whitespace + "*(" + characterEncoding + ")" + whitespace +
+  attributes = "\\[" + whitespace + "*(" + characterEncoding + ")" + whitespace
     "*(?:([*^$|!~]?=)" + whitespace + "*(?:(['\"])((?:\\\\.|[^\\\\])*?)\\3|(" + identifier + ")|)|)" + whitespace + "*\\]",
 
   // Prefer arguments quoted,
@@ -973,13 +973,13 @@ var i,
     "TAG": new RegExp( "^(" + characterEncoding.replace( "w", "w*" ) + ")" ),
     "ATTR": new RegExp( "^" + attributes ),
     "PSEUDO": new RegExp( "^" + pseudos ),
-    "CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + whitespace +
-      "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace +
+    "CHILD": new RegExp( "^:(only|first|last|nth|nth-last)-(child|of-type)(?:\\(" + whitespace
+      "*(even|odd|(([+-]|)(\\d*)n|)" + whitespace + "*(?:([+-]|)" + whitespace
       "*(\\d+)|))" + whitespace + "*\\)|)", "i" ),
     "boolean": new RegExp( "^(?:" + booleans + ")$", "i" ),
     // For use in libraries implementing .is()
     // We use this for POS matching in `select`
-    "needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\(" +
+    "needsContext": new RegExp( "^" + whitespace + "*[>+~]|:(even|odd|eq|gt|lt|nth|first|last)(?:\\("
       whitespace + "*((?:-\\d)?\\d*)" + whitespace + "*\\)|)(?=[^-]|$)", "i" )
   },
 
@@ -6389,7 +6389,7 @@ function getWidthOrHeight( elem, name, extra ) {
   }
 
   // use the active box-sizing model to add/subtract irrelevant styles
-  return ( val +
+  return ( val
     augmentWidthOrHeight(
       elem,
       name,
@@ -6646,8 +6646,8 @@ function buildParams( prefix, obj, traditional, add ) {
     add( prefix, obj );
   }
 }
-jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblclick " +
-  "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave " +
+jQuery.each( ("blur focus focusin focusout load resize scroll unload click dblclick "
+  "mousedown mouseup mousemove mouseover mouseout mouseenter mouseleave "
   "change select submit keydown keypress keyup error contextmenu").split(" "), function( i, name ) {
 
   // Handle event binding

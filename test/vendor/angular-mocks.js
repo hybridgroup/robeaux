@@ -411,7 +411,7 @@ angular.mock.$LogProvider = function() {
       angular.forEach(['error', 'warn', 'info', 'log', 'debug'], function(logLevel) {
         angular.forEach($log[logLevel].logs, function(log) {
           angular.forEach(log, function (logItem) {
-            errors.push('MOCK $log (' + logLevel + '): ' + String(logItem) + '\n' +
+            errors.push('MOCK $log (' + logLevel + '): ' + String(logItem) + '\n'
                         (logItem.stack || ''));
           });
         });
@@ -730,12 +730,12 @@ angular.mock.TzDate = function (offset, timestamp) {
   // provide this method only on browsers that already have it
   if (self.toISOString) {
     self.toISOString = function() {
-      return padNumber(self.origDate.getUTCFullYear(), 4) + '-' +
-            padNumber(self.origDate.getUTCMonth() + 1, 2) + '-' +
-            padNumber(self.origDate.getUTCDate(), 2) + 'T' +
-            padNumber(self.origDate.getUTCHours(), 2) + ':' +
-            padNumber(self.origDate.getUTCMinutes(), 2) + ':' +
-            padNumber(self.origDate.getUTCSeconds(), 2) + '.' +
+      return padNumber(self.origDate.getUTCFullYear(), 4) + '-'
+            padNumber(self.origDate.getUTCMonth() + 1, 2) + '-'
+            padNumber(self.origDate.getUTCDate(), 2) + 'T'
+            padNumber(self.origDate.getUTCHours(), 2) + ':'
+            padNumber(self.origDate.getUTCMinutes(), 2) + ':'
+            padNumber(self.origDate.getUTCSeconds(), 2) + '.'
             padNumber(self.origDate.getUTCMilliseconds(), 3) + 'Z';
     };
   }
@@ -1144,12 +1144,12 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
 
     if (expectation && expectation.match(method, url)) {
       if (!expectation.matchData(data))
-        throw new Error('Expected ' + expectation + ' with different data\n' +
+        throw new Error('Expected ' + expectation + ' with different data\n'
             'EXPECTED: ' + prettyPrint(expectation.data) + '\nGOT:      ' + data);
 
       if (!expectation.matchHeaders(headers))
-        throw new Error('Expected ' + expectation + ' with different headers\n' +
-                        'EXPECTED: ' + prettyPrint(expectation.headers) + '\nGOT:      ' +
+        throw new Error('Expected ' + expectation + ' with different headers\n'
+                        'EXPECTED: ' + prettyPrint(expectation.headers) + '\nGOT:      '
                         prettyPrint(headers));
 
       expectations.shift();
@@ -1175,7 +1175,7 @@ function createHttpBackendMock($rootScope, $delegate, $browser) {
     }
     throw wasExpected ?
         new Error('No response defined !') :
-        new Error('Unexpected request: ' + method + ' ' + url + '\n' +
+        new Error('Unexpected request: ' + method + ' ' + url + '\n'
                   (expectation ? 'Expected ' + expectation : 'No more request expected'));
   }
 
@@ -1651,7 +1651,7 @@ angular.mock.$TimeoutDecorator = function($delegate, $browser) {
    */
   $delegate.verifyNoPendingTasks = function() {
     if ($browser.deferredFns.length) {
-      throw new Error('Deferred tasks to flush (' + $browser.deferredFns.length + '): ' +
+      throw new Error('Deferred tasks to flush (' + $browser.deferredFns.length + '): '
           formatPendingTasksAsString($browser.deferredFns));
     }
   };
