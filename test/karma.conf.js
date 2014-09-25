@@ -2,7 +2,7 @@
 // Generated on Tue Jul 01 2014 13:33:46 GMT-0700 (PDT)
 
 module.exports = function(config) {
-  config.set({
+  return {
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '../',
@@ -21,12 +21,8 @@ module.exports = function(config) {
       'js/app.js',
       'js/router.js',
       'js/*.js',
-      'js/**/*.js',
-      'test/main.js',
+      'js/**/!(attitude|mindwave).js'
 
-      {pattern: 'test/support/robots.json', watched: true, served: true, included: false},
-      {pattern: 'test/support/myRobot.json', watched: true, served: true, included: false},
-      {pattern: 'test/support/myDevice.json', watched: true, served: true, included: false}
     ],
 
 
@@ -76,5 +72,5 @@ module.exports = function(config) {
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: true
  
-  });
+  }
 };
