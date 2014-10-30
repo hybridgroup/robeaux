@@ -11,8 +11,11 @@
   },
   "license": "Apache 2.0",
   "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^0.12.0",
+    "grunt-contrib-watch": "^0.6.1",
     "karma": "~0.12.16",
-    "karma-phantomjs-launcher": "~0.1",
-    "karma-jasmine": "~0.1.5"
+    "karma-jasmine": "~0.1.5",
+    "karma-phantomjs-launcher": "~0.1"
   }
 }
