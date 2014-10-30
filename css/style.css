@@ -52,7 +52,7 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body > .container, body > nav {
+.container {
   width: 960px;
   margin: 0 auto;
   padding: 0;
