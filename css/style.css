@@ -499,7 +499,7 @@ body > nav a.active {
   padding: 0;
 }
 
-widget {
+.widget {
   display: inline-block;
   float: left;
   margin: 0;
