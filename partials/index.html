@@ -1,11 +1,11 @@
-<div class="robots">
+<div class="robots row">
   <div class="robot" ng-repeat="robot in robots" ng-click="details(robot.name)">
-    <span class="icon">robot</span>
+    <span class="btn btn-robot btn-big">robot</span>
     <span class="name">{{robot.name}}</span>
 
     <div class="details">
-      <span><strong>Connections:</strong> {{robot.connections.length}}</span>
-      <span><strong>Devices:</strong> {{robot.devices.length}}</span>
+      <span><strong>Connections</strong> {{robot.connections.length}}</span>
+      <span><strong>Devices</strong> {{robot.devices.length}}</span>
     </div>
   </div>
 </div>
