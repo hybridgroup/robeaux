@@ -1,9 +1,9 @@
 /* Grid Settings */
-@column-width: 60;
-@gutter-width: 20;
-@columns: 12;
-@gridsystem-width: (@column-width*@columns) + (@gutter-width*@columns) * 1px;
-
+@column-width     : 60;
+@gutter-width     : 20;
+@columns          : 12;
+@gridsystem-width : (@column-width*@columns) + (@gutter-width*@columns) * 1px;
+@total-width      : @gridsystem-width;
 
 /* Color Palette */
 @color01: #EFEEF4;
@@ -16,7 +16,10 @@
 /* Body Variables */ 
 @body-background-color: @color01;
 @body-text-color      : @color02;
-@body-font-family     : '';
+@body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-font-size       : 15px;
+@line-height-base     : 1.428571429; // 20/14
+@line-height-computed : floor((@body-font-size * @line-height-base)); // ~20px
 
 /* Nav Variables */
 @nav-background-color      : @color03;
@@ -28,6 +31,10 @@
 /* Buttons */
 @btn-robot-color: #fff;
 @btn-robot-background: @color04;
+
+/* Forms */
+@input-border-color: #ccc;
+@input-border-color-focus: @color04;
 
 /* Connection Digits */
 @connection-digits-color: @color04;
