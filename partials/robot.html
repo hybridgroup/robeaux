@@ -81,7 +81,7 @@
           <span class="close" ng-click="removeWidget($index)"> &#x2716; </span>
         </widget>
 
-        <button class="newWidget" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
+        <button class="btn btn-robot" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
       </div>
     </div>
   </div>
@@ -89,6 +89,7 @@
 
   <div ng-show="device" ng-include="'/partials/device.html'"></div>
 
+  <!-- begin connections -->
   <section class="row">
     <div class="connections">
       <div class="robot-devices">
@@ -117,4 +118,5 @@
       </div>
     </div>
   </section>
+  <!-- end connections -->
 </div>
