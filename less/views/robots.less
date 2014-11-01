@@ -4,7 +4,7 @@ body {
   color: @body-text-color;
 }
 
-.container {
+.container, .robot, .widgets, .device-detail, .connections {
   width: @gridsystem-width;
   padding:0;
   .container();
@@ -13,7 +13,7 @@ body {
 .row {
   background: #fff;
   padding: 15px 0;
-  margin-top: 20px;
+  margin-top: 10px;
   .clearfix();
 }
 
@@ -63,4 +63,12 @@ body {
   table {
     width: 100%;
   }
+}
+
+.robot-devices {
+  .column(6);
+}
+
+.robot-connection {
+  .column(6);
 }

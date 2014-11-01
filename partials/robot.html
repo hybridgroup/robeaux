@@ -87,31 +87,32 @@
   </div>
   <!-- end widgets -->
 
-  <div ng-show="device" ng-include="'/partials/device.html'">
-  </div>
+  <div ng-show="device" ng-include="'/partials/device.html'"></div>
 
-  <section>
-    <div class="robot-devices">
-      <div class="device"
-          ng-class="{selected: selected(device)}"
-          ng-repeat="device in robot.devices"
-          ng-click="select(device)">
-        <span class="btn">device</span>
-        <span class="name">{{device.name}}</span>
+  <section class="row">
+    <div class="connections">
+      <div class="robot-devices">
+        <div class="device"
+            ng-class="{selected: selected(device)}"
+            ng-repeat="device in robot.devices"
+            ng-click="select(device)">
+          <span class="btn btn-device">device</span>
+          <span class="name">{{device.name}}</span>
 
-        <div class="details">
-          <span>{{device.connection}}</span>
+          <div class="details">
+            <span>{{device.connection}}</span>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="robot-connections">
-      <div class="connection" ng-repeat="connection in robot.connections">
-        <span class="btn">connection</span>
-        <span class="name">{{connection.name}}</span>
+      <div class="robot-connections">
+        <div class="connection" ng-repeat="connection in robot.connections">
+          <span class="btn btn-connect">connection</span>
+          <span class="name">{{connection.name}}</span>
 
-        <div class="details">
-          <span ng-if="connection.port">{{connection.port}}</span>
+          <div class="details">
+            <span ng-if="connection.port">{{connection.port}}</span>
+          </div>
         </div>
       </div>
     </div>
