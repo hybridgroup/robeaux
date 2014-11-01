@@ -1,6 +1,7 @@
 .btn {
   .button-size(10px; 15px; 15px; 20px; 5px);
   display: inline-block;
+  border: 0;
 }
 
 .btn-big {
@@ -9,5 +10,10 @@
 
 .btn-robot {
   .button-variant(@btn-robot-color; @btn-robot-background; @btn-robot-color);
+  text-transform: uppercase;
+}
+
+.btn-run {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
   text-transform: uppercase;
 }
