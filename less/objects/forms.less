@@ -1,10 +1,11 @@
-input[type="text"], select {
+input[type="text"], select, textarea {
   display: inline-block;
   line-height: @line-height-base;
   font-size: @body-font-size;
   color: @body-text-color;
   .form-control();
   .form-control-focus(@input-border-color-focus);
+  box-sizing: border-box;
 }
 
 button {
