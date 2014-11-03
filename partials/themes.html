@@ -1,39 +1,41 @@
-<div class="themes">
-  <div class="sidebar">
-    <h2>Themes</h2>
+<div class="row">
+  <div class="themes">
+    <div class="sidebar">
+      <h2>Themes</h2>
 
-    <div class="list">
-      <div class="theme"
-           ng-repeat="theme in themes.list | filter:{custom: true}"
-           ng-click="edit(theme)"
-           ng-class="{selected: (editing === theme)}">
-        {{theme.name}}
-        <span class="close" ng-if="theme.custom" ng-click="remove(theme.name)">X</span>
+      <div class="list">
+        <div class="theme"
+             ng-repeat="theme in themes.list | filter:{custom: true}"
+             ng-click="edit(theme)"
+             ng-class="{selected: (editing === theme)}">
+          {{theme.name}}
+          <span class="close" ng-if="theme.custom" ng-click="remove(theme.name)">X</span>
+        </div>
+      </div>
+
+      <div class="new-theme">
+        <input type="text" ng-model="name" placeholder="new theme name">
+        <button ng-click="add(name)">add new theme</button>
       </div>
     </div>
 
-    <div class="new-theme">
-      <input type="text" ng-model="name" placeholder="new theme name">
-      <button ng-click="add(name)">add new theme</button>
+    <div class="editor">
+      <h2>Editor</h2>
+
+      <textarea ng-disabled="!editing" ng-model="editing.css" ng-blur="themes.save()" placeholder="write your css here">
+      </textarea>
     </div>
-  </div>
 
-  <div class="editor">
-    <h2>Editor</h2>
+    <div class="footer">
+      <button class="save" ng-click="themes.save()">save</button>
+      <button class="reset" ng-click="themes.reset()">reset</button>
 
-    <textarea ng-disabled="!editing" ng-model="editing.css" ng-blur="themes.save()" placeholder="write your css here">
-    </textarea>
-  </div>
-
-  <div class="footer">
-    <button class="save" ng-click="themes.save()">save</button>
-    <button class="reset" ng-click="themes.reset()">reset</button>
-
-    <div class="selector">
-      <span>use theme: </span>
-      <select ng-model="themes.active"
-              ng-options="theme.name for theme in themes.list">
-      </select>
+      <div class="selector">
+        <span>use theme: </span>
+        <select ng-model="themes.active"
+                ng-options="theme.name for theme in themes.list">
+        </select>
+      </div>
     </div>
   </div>
 </div>
