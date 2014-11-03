@@ -1,26 +1,32 @@
 .themes {
-	.sidebar {
-		.column(4);
-		input {
-			width: 100%;
-		}
+  .sidebar {
+    .column(4);
+  }
 
-		button {
-			width: 100%;
-		}
-	}
+  .new-theme {
+    .row(4);
 
-	.editor {
-		.column(8);
+    input {
+      .column(3,4);
+      padding: 8px 12px;
+    }
 
-		textarea {
-			width: 100%;
-			height: 250px;
-		}
-	}
+    button {
+      .column(1,4);
+    }
+  }
 
-	.footer {
-		.clearfix();
-		.column(12);
-	}
+  .editor {
+    .column(8);
+
+    textarea {
+      width: 100%;
+      height: 250px;
+    }
+  }
+
+  .footer {
+    .clearfix();
+    .column(12);
+  }
 }
