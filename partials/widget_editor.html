@@ -1,66 +1,68 @@
-<div class="widgets">
-  <div class="sidebar">
-    <h2>Widgets</h2>
+<div class="row">
+  <div class="widgets">
+    <div class="sidebar">
+      <h2>Widgets</h2>
 
-    <div class="list">
-      <div class="widget"
-           ng-repeat="widget in widgets.list"
-           ng-click="edit(widget)"
-           ng-class="{selected: (editing === widget)}">
-        {{widget.name}}
-        <span class="close" ng-if="widget.custom" ng-click="widgets.remove(widget.name)">X</span>
+      <div class="list">
+        <div class="widget"
+             ng-repeat="widget in widgets.list"
+             ng-click="edit(widget)"
+             ng-class="{selected: (editing === widget)}">
+          {{widget.name}}
+          <span class="close" ng-if="widget.custom" ng-click="widgets.remove(widget.name)">&#x2716;</span>
+        </div>
+      </div>
+
+      <div class="new-widget">
+        <input type="text" ng-model="name" placeholder="new widget name">
+        <button ng-click="add(name)">add new widget</button>
       </div>
     </div>
 
-    <div class="new-widget">
-      <input type="text" ng-model="name" placeholder="new widget name">
-      <button ng-click="add(name)">add new widget</button>
-    </div>
-  </div>
 
+    <div class="editor">
+      <div class="attrs">
+        <label>
+          <strong>Attrs:</strong>
+          <small>Attributes to be defined when instantiating the widget. They will be available in the script as <code>attrs</code>.</small>
+        </label>
 
-  <div class="editor">
-    <div class="attrs">
-      <label>
-        <strong>Attrs:</strong>
-        <small>Attributes to be defined when instantiating the widget. They will be available in the script as <code>attrs</code>.</small>
-      </label>
+        <div class="attrs-list">
+          <span ng-repeat="attr in editing.attrs" ng-click="removeAttr($index)">
+            {{ attr }}
+            {{ $last ? '' : ', ' }}
+          </span>
+        </div>
 
-      <div class="attrs-list">
-        <span ng-repeat="attr in editing.attrs" ng-click="removeAttr($index)">
-          {{ attr }}
-          {{ $last ? '' : ', ' }}
-        </span>
+        <div class="new-attr">
+          <input type="text" ng-disabled="!editing" ng-model="newAttr">
+          <button ng-disabled="!editing" ng-click="addAttr()">Add Attribute</button>
+        </div>
       </div>
 
-      <div class="new-attr">
-        <input type="text" ng-disabled="!editing" ng-model="newAttr">
-        <button ng-disabled="!editing" ng-click="addAttr()">Add Attribute</button>
+      <div class="field">
+        <label>
+          <strong>Template:</strong>
+          <small>The code you put here will be used as a template for an Angular directive.</small>
+        </label>
+
+        <textarea id="template" ng-disabled="!editing" ng-model="editing.template" ng-blur="widgets.save()" placeholder="write your template here">
+        </textarea>
+      </div>
+
+      <div class="field">
+        <label>
+          <strong>Script:</strong>
+          <small>The code you put here will be used as a <code>link</code> function for an Angular directive.</small>
+        </label>
+        <textarea ng-disabled="!editing" ng-model="editing.script" ng-blur="widgets.save()" placeholder="write your javascript here">
+        </textarea>
       </div>
     </div>
 
-    <div class="field">
-      <label>
-        <strong>Template:</strong>
-        <small>The code you put here will be used as a template for an Angular directive.</small>
-      </label>
-
-      <textarea id="template" ng-disabled="!editing" ng-model="editing.template" ng-blur="widgets.save()" placeholder="write your template here">
-      </textarea>
+    <div class="footer">
+      <button class="save" ng-click="widgets.save()">save</button>
+      <button class="reset" ng-click="widgets.reset()">reset</button>
     </div>
-
-    <div class="field">
-      <label>
-        <strong>Script:</strong>
-        <small>The code you put here will be used as a <code>link</code> function for an Angular directive.</small>
-      </label>
-      <textarea ng-disabled="!editing" ng-model="editing.script" ng-blur="widgets.save()" placeholder="write your javascript here">
-      </textarea>
-    </div>
-  </div>
-
-  <div class="footer">
-    <button class="save" ng-click="widgets.save()">save</button>
-    <button class="reset" ng-click="widgets.reset()">reset</button>
   </div>
 </div>
