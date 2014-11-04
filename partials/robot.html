@@ -3,12 +3,14 @@
   <!-- begin robot section -->
   <div class="row">
     <div class="robot" ng-class="{'with-commands': (robot.commands.length > 0)}">
-      <span class="btn btn-robot btn-big">robot</span>
-      <span class="name">{{robot.name}}</span>
+      <div class="robot-details">
+        <span class="btn btn-robot btn-big">robot</span>
+        <span class="name">{{robot.name}}</span>
 
-      <div class="details">
-        <span><strong>Connections:</strong> {{robot.connections.length}}</span>
-        <span><strong>Devices:</strong> {{robot.devices.length}}</span>
+        <div class="details">
+          <span><strong>Connections:</strong> {{robot.connections.length}}</span>
+          <span><strong>Devices:</strong> {{robot.devices.length}}</span>
+        </div>
       </div>
 
       <div class="commands" ng-if="(robot.commands.length > 0)" ng-controller="RobotCommandsCtrl">
