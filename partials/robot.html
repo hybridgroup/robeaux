@@ -83,11 +83,13 @@
       </div>
 
       <div class="active-widgets">
+        <div class="add-widget">
+          <button class="btn btn-robot btn-big" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
+        </div>
+
         <widget ng-repeat="widget in activeWidgets" data-name="{{widget.name}}" data-attrs="{{widget.attrs}}">
           <span class="close" ng-click="removeWidget($index)"> &#x2716; </span>
         </widget>
-
-        <button class="btn btn-robot" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
       </div>
     </div>
   </div>
