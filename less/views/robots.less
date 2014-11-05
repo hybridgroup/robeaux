@@ -17,17 +17,10 @@ body {
   .clearfix();
 }
 
+
 .robot {
   .robot-details {
     .column(12);
-  }
-
-  .robot-devices {
-    .column(6);
-  }
-
-  .robot-connection {
-    .column(6);
   }
 
   h2 {
@@ -68,22 +61,36 @@ body {
     }
   }
 
-  .widgets {
-    .new-widget-instance {
-      width: 100%;
-      height: 100%;
-    }
-
-    .panel {
-      display: inline-block;
-    }
-  }
-
   button {
     width: 100%;
   }
 
   table {
     width: 100%;
+  }
+}
+
+.robot-detail {
+  .widgets {
+    .new-widget-instance {
+      width: 100%;
+      height: 100%;
+    }
+
+    .active-widgets {
+      .column(12);
+    }
+
+    .panel {
+      display: none;
+    }
+  }
+
+  .robot-devices {
+    .column(6);
+  }
+
+  .robot-connection {
+    .column(6);
   }
 }
