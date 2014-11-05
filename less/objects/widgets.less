@@ -29,4 +29,17 @@
     z-index: 99;
     overflow: hidden;
   }
+
+  .panel {
+    background: @modal-bg-color;
+    padding: 6px;
+    .rounded(4px);
+    position: relative;
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 6px;
+    }
+  }
 }
