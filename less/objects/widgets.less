@@ -35,11 +35,43 @@
     padding: 6px;
     .rounded(4px);
     position: relative;
+    .drop-shadow(0, 0, 5px, 0.3);
+    overflow: hidden;
+
+    .panel-header, .panel-body, .panel-footer {
+      .clearfix();
+    }
+
+    .panel-header {
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #eaeaea;
+      padding-top: 6px;
+      margin-top: 12px;
+      text-align: right;
+    }
 
     .close {
       position: absolute;
-      top: 0;
-      right: 6px;
+      top: 4px;
+      right: 10px;
+      color: #ccc;
+      &:hover {
+        cursor: pointer;
+        color: #f00;
+      }
+    }
+
+    h2 {
+      margin: 0 0 15px 0;
+      text-align: center;
+    }
+
+    .attr-element {
+      .clearfix();
+      margin-bottom: 10px;
     }
   }
 }

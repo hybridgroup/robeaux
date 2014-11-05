@@ -54,27 +54,31 @@
     <div class="widgets" ng-controller="WidgetsCtrl">
       <div class="new-widget-instance" ng-show="newWidget">
         <div class="panel">
-          <span class="close" ng-click="newWidget = null"> &#x2716; </span>
+          <div class="panel-header">
+            <span class="close" ng-click="newWidget = null"> &#x2716; </span>
+            <h2>New Widget Instance</h2>
+          </div>
 
-          <h2>New Widget Instance</h2>
-
-          <section class="type">
-            <h3>Widget Type:</h3>
-            <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list"></select>
-          </section>
-
-          <section class="attrs" ng-if="newWidget.base.attrs.length">
-            <h3>Params:</h3>
-
-            <div ng-repeat="attr in newWidget.base.attrs">
-              <label>{{attr}}:</label>
-              <input type="text" ng-model="newWidget.attrs[attr]">
+          <div class="panel-body">
+            <div class="type">
+              <h3>Widget Type:</h3>
+              <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list"></select>
             </div>
-          </section>
 
-          <button ng-click="newActiveWidget(newWidget)">
-            Create
-          </button>
+            <div class="attrs" ng-if="newWidget.base.attrs.length">
+              <h3>Params:</h3>
+
+              <div class="attr-element" ng-repeat="attr in newWidget.base.attrs">
+                <label>{{attr}}:</label>
+                <input type="text" ng-model="newWidget.attrs[attr]">
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <button class="btn btn-device" ng-click="newActiveWidget(newWidget)">Create</button>
+            <button class="btn btn-run" ng-click="newWidget = null">Close</button>
+          </div>
         </div>
       </div>
 
