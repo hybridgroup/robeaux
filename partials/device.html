@@ -1,10 +1,12 @@
-<section class="row">
-  <div class="device-detail">
-    <header>
+<section class="device-detail">
+  <div class="row">
+    <div class="device-header">
       <h2>Commands</h2>
       <h2>Events</h2>
-    </header>
+    </div>
+  </div>
 
+  <div class="row">
     <div class="device-commands" ng-controller="DeviceCommandsCtrl">
       <select ng-model="command" ng-options="cmd for cmd in device.commands">
       </select>
