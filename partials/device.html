@@ -17,17 +17,18 @@
             <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
             <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
             <select ng-options="type for type in types" ng-model="param.type"></select>
-            <span class="close" ng-click="removeParam($index)">X</span>
+            <span class="close" ng-click="removeParam($index)">&#x2716;</span>
           </div>
         </div>
 
-        <button ng-click="submit()" ng-disabled="isDisabled()">run</button>
+        <button class="btn btn-run" ng-click="submit()" ng-disabled="isDisabled()">run</button>
 
         <table class="results">
           <thead>
-            <th>Results</th>
+            <tr>
+              <th>Results</th>
+            </tr>
           </thead>
-
           <tbody>
             <tr class="result" ng-repeat="entry in device.results">
               <td>{{entry.result}}</td>

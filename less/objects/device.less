@@ -3,10 +3,17 @@
     text-align: center;
   }
 
-  .device-commands {
-    &> select {
-      .container-block();
-      margin-bottom: 15px;
+  table {
+    margin-top: 15px;
+
+    th {
+      border-bottom: 1px solid #ccc;
+      line-height: 34px;
+    }
+
+    td {
+      font-family: @code-font-family;
+      padding: 3px;
     }
   }
 }
