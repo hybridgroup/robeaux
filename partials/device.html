@@ -43,18 +43,20 @@
           <button ng-click="listen()">listen</button>
         </div>
 
-        <table class="listeners">
-          <thead>
-            <th colspan="2">Listeners</th>
-          </thead>
+        <div class="listeners-div">
+          <table class="listeners">
+            <thead>
+              <th colspan="2">Listeners</th>
+            </thead>
 
-          <tbody>
-            <tr class="listener" ng-repeat="(name, listeners) in device.listeners">
-              <td>{{name}}</td>
-              <td class="remove" ng-click="remove(name)">remove</td>
-            </tr>
-          </tbody>
-        </table>
+            <tbody>
+              <tr class="listener" ng-repeat="(name, listeners) in device.listeners">
+                <td>{{name}}</td>
+                <td class="remove" ng-click="remove(name)">remove</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
 
         <table class="events">
           <thead>
