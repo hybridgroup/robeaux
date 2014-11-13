@@ -30,22 +30,22 @@
 /* Buttons */
 @btn-robot-color        : #fff;
 @btn-robot-background   : @color01;
-@btn-run-color          : #fff;
-@btn-run-background     : #C36148;
+@btn-run-color          : #C36148;
+@btn-run-background     : #000;
 @btn-device-color       : #000;
 @btn-device-background  : #fff;
-@btn-connect-color      : #fff;
-@btn-connect-background : #DEC763;
+@btn-connect-color      : #DEC763;
+@btn-connect-background : #000;
 
 /* Forms */
-@input-border-color: #ccc;
-@input-border-color-focus: @color04;
+@input-border-color: #999;
+@input-border-color-focus: #fff;
 
 /* Connection Digits */
 @connection-digits-color: #fff;
 
 /* Widgets */
-@modal-bg-color: #fff;
+@modal-bg-color: #4D4D4D;
 
 @import '../vendor/elements';
 @import '../support/mixins';
@@ -91,4 +91,40 @@ nav {
 
 .btn-device, .btn-save {
   .button-variant(@btn-device-color; @btn-device-background; @btn-device-color);
+}
+
+.btn-connect {
+  .button-variant(@btn-connect-color; @btn-connect-background; @btn-connect-color);
+  text-transform: uppercase;
+}
+
+.btn-run, .btn-reset {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
+  text-transform: uppercase;
+}
+
+input[type="text"], select, textarea {
+  color: @body-text-color;
+  background: #666;
+  .form-control-focus(@input-border-color-focus);
+}
+
+.widgets {
+  .panel {
+    background: @modal-bg-color;
+
+    .panel-header {
+      border-bottom: 1px solid #666;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #666;
+    }
+  }
+}
+
+.list {
+  .theme, .widget {
+    border-bottom: 1px dotted #666;
+  }
 }
