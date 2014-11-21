@@ -57,6 +57,20 @@ body {
 
 nav {
   background: @nav-background-color;
+
+  .links a {
+    background: none;
+    padding: 8px 13px;
+    &.active {
+      background: none;
+      color: #fff;
+      border: 2px solid @color04;
+    }
+
+    &:hover {
+      color: @color04 !important;
+    }
+  }
 }
 
 .row {
