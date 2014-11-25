@@ -73,33 +73,24 @@ nav {
   }
 }
 
-.robots {
-  .row {
-    .robot-details {
-      border-top: 1px solid @color04;
-      padding-top: 25px;
-      padding-bottom: 25px;
-    }
-    &:last-child .robot-details {
-       border-bottom: 1px solid @color04;
-    }
+.row {
+  border-top: 1px solid @color04;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 960px;
+  .container-block();
+
+  &:last-child {
+     border-bottom: 1px solid @color04;
   }
 }
 
+.row-device {
+  border-top: none;
+  border-bottom: none !important;
+}
+
 .robot {
-  .robot-details {
-    border-top: 1px solid @color04;
-    border-bottom: 1px solid @color04;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    margin-bottom: 15px;
-  }
-
-  .commands {
-    border-bottom: 1px solid @color04;
-    padding-bottom: 25px;
-  }
-
   .details { 
     span {
       color: @connection-digits-color;
