@@ -7,7 +7,7 @@
 @color06: #fff;
 
 /* Body Variables */ 
-@body-background-color: @color01;
+@body-background-color: @color03;
 @body-text-color      : @color03;
 @body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @body-font-size       : 15px;
@@ -15,7 +15,7 @@
 @line-height-computed : floor((@body-font-size * @line-height-base)); // ~20px
 
 /* Row */
-@row-background-color : @color01;
+@row-background-color : @color03;
 
 /* Code Font */
 @code-font-family     : Inconsolata, monospace;
@@ -74,6 +74,7 @@ nav {
 }
 
 .row {
+  background-color: @row-background-color;
   border-top: 1px solid @color04;
   padding-top: 25px;
   padding-bottom: 25px;
@@ -100,10 +101,6 @@ nav {
       color: @color04;
     }
   }
-}
-
-.row {
-  background-color: @row-background-color;
 }
 
 .bullet-connections {
@@ -135,12 +132,6 @@ nav {
 
 .btn-run, .btn-reset {
   .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
-}
-
-input[type="text"], select, textarea {
-  color: @body-text-color;
-  background: @color01;
-  .form-control-focus(@input-border-color-focus);
 }
 
 .widgets {
