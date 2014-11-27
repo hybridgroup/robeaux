@@ -11,6 +11,7 @@ module.exports = function(grunt) {
           // target.css file: source.less file
           "css/main.css": "less/app.less",
           "css/themes/blackboard.css": "less/themes/blackboard.less",
+          "css/themes/whiteboard.css": "less/themes/whiteboard.less",
           "css/themes/dark.css": "less/themes/dark.less"
         }
       }
