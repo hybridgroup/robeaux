@@ -8,7 +8,7 @@
 
 /* Body Variables */ 
 @body-background-color: @color03;
-@body-text-color      : @color03;
+@body-text-color      : #666;
 @body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @body-font-size       : 15px;
 @line-height-base     : 1.428571429; // 20/14
@@ -21,9 +21,9 @@
 @code-font-family     : Inconsolata, monospace;
 
 /* Nav Variables */
-@nav-background-color      : @color02;
+@nav-background-color      : @color04;
 @nav-link-color            : #fff;
-@nav-link-color-hover      : @color04;
+@nav-link-color-hover      : @color02;
 @nav-link-background       : @color03;
 @nav-link-background-hover : @color04;
 
@@ -42,7 +42,7 @@
 @input-border-color-focus: #fff;
 
 /* Connection Digits */
-@connection-digits-color: #fff;
+@connection-digits-color: #333;
 
 /* Widgets */
 @modal-bg-color: #4D4D4D;
@@ -68,21 +68,21 @@ nav {
     }
 
     &:hover {
-      color: @color04 !important;
+      color: @nav-link-color-hover !important;
     }
   }
 }
 
 .row {
   background-color: @row-background-color;
-  border-top: 1px solid @color04;
+  border-top: 1px solid @color02;
   padding-top: 25px;
   padding-bottom: 25px;
   width: 960px;
   .container-block();
 
   &:last-child {
-     border-bottom: 1px solid @color04;
+     border-bottom: 1px solid @color02;
   }
 }
 
@@ -98,7 +98,7 @@ nav {
     }
 
     strong {
-      color: @color04;
+      color: @body-text-color;
     }
   }
 }
@@ -139,11 +139,11 @@ nav {
     background: @modal-bg-color;
 
     .panel-header {
-      border-bottom: 1px solid #666;
+      border-bottom: 1px solid #999;
     }
 
     .panel-footer {
-      border-top: 1px solid #666;
+      border-top: 1px solid #999;
     }
   }
 }
