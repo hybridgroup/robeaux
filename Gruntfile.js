@@ -12,6 +12,7 @@ module.exports = function(grunt) {
           "css/main.css": "less/app.less",
           "css/themes/blackboard.css": "less/themes/blackboard.less",
           "css/themes/whiteboard.css": "less/themes/whiteboard.less",
+          "css/themes/gray.css": "less/themes/gray.less",
           "css/themes/dark.css": "less/themes/dark.less"
         }
       }
