@@ -1,0 +1,152 @@
+/* Color Palette */
+@color01: #343434;
+@color02: #2C2C2C;
+@color03: #fff;
+@color04: #1cbcd8;
+@color05: #fff;
+@color06: #fff;
+
+/* Body Variables */ 
+@body-background-color: @color03;
+@body-text-color      : #666;
+@body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-font-size       : 15px;
+@line-height-base     : 1.428571429; // 20/14
+@line-height-computed : floor((@body-font-size * @line-height-base)); // ~20px
+
+/* Row */
+@row-background-color : @color03;
+
+/* Code Font */
+@code-font-family     : Inconsolata, monospace;
+
+/* Nav Variables */
+@nav-background-color      : #1cbcd8;
+@nav-link-color            : #fff;
+@nav-link-color-hover      : @color02;
+@nav-link-background       : #353535;
+@nav-link-background-hover : @color04;
+
+/* Buttons */
+@btn-robot-color        : @color01;
+@btn-robot-background   : #28d8f7;
+@btn-run-color          : @color01;
+@btn-run-background     : #CA5252;
+@btn-device-color       : @color01;
+@btn-device-background  : #15e2ad;
+@btn-connect-color      : @color01;
+@btn-connect-background : #fbed8f;
+
+/* Forms */
+@input-border-color: #999;
+@input-border-color-focus: #fff;
+
+/* Connection Digits */
+@connection-digits-color: #333;
+
+/* Widgets */
+@modal-bg-color: #fff;
+
+@import '../vendor/elements';
+@import '../support/mixins';
+
+body {
+  background-color: @body-background-color;
+  color: @body-text-color;
+}
+
+nav {
+  background: @nav-background-color;
+
+  .links a {
+    background: none;
+    padding: 8px 13px;
+    &.active {
+      background: @nav-link-background;
+      color: #fff;
+      border: 2px solid @color04;
+      &:hover {
+        color: #fff !important;
+      }
+    }
+
+    &:hover {
+      color: @nav-link-color-hover !important;
+    }
+  }
+}
+
+.row {
+  background-color: @row-background-color;
+  border-top: 1px solid #E1E1E1;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  width: 960px;
+  .container-block();
+
+  &:last-child {
+     border-bottom: 1px solid #E1E1E1;
+  }
+}
+
+.row-device {
+  border-top: none;
+  border-bottom: none !important;
+}
+
+.robot {
+  .details { 
+    span {
+      color: @connection-digits-color;
+    }
+
+    strong {
+      color: @body-text-color;
+    }
+  }
+}
+
+.bullet-connections {
+  padding-left: 32px;
+  background: transparent url(../../images/bullet-connections-2.png) no-repeat left center;
+}
+
+.bullet-devices {
+  padding-left: 32px;
+  background: transparent url(../../images/bullet-devices-2.png) no-repeat left center;
+}
+
+.robot-devices {
+  background: transparent url(../../images/devices-image-2.png) no-repeat 21px center;
+  padding-left: 84px;
+}
+
+.btn-robot {
+  .button-variant(@btn-robot-color; @btn-robot-background; @btn-robot-color);
+}
+
+.btn-device, .btn-save {
+  .button-variant(@btn-device-color; @btn-device-background; @btn-device-color);
+}
+
+.btn-connect {
+  .button-variant(@btn-connect-color; @btn-connect-background; @btn-connect-color);
+}
+
+.btn-run, .btn-reset {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
+}
+
+.widgets {
+  .panel {
+    background: @modal-bg-color;
+
+    .panel-header {
+      border-bottom: 1px solid #E1E1E1;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #E1E1E1;
+    }
+  }
+}

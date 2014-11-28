@@ -10,6 +10,7 @@ robeaux.factory('Themes', function() {
     { name: 'blackboard', custom: false, url: '/css/themes/blackboard.css'},
     { name: 'whiteboard', custom: false, url: '/css/themes/whiteboard.css'},
     { name: 'dark',       custom: false, url: '/css/themes/dark.css'},
+    { name: 'gray',       custom: false, url: '/css/themes/gray.css'},
     { name: 'custom',     custom: true,  css: ''}
   ];
 
