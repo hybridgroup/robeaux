@@ -1,5 +1,5 @@
 /* Color Palette */
-@color01: #343434;
+@color01: #eeeef4;
 @color02: #2C2C2C;
 @color03: #fff;
 @color04: #1cbcd8;
@@ -7,7 +7,7 @@
 @color06: #fff;
 
 /* Body Variables */ 
-@body-background-color: @color03;
+@body-background-color: @color01;
 @body-text-color      : #666;
 @body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @body-font-size       : 15px;
@@ -66,20 +66,16 @@ nav {
 
 .row {
   background-color: @row-background-color;
-  border-top: 1px solid #E1E1E1;
+  border-bottom: 3px solid #e1e1e5;
   padding-top: 25px;
   padding-bottom: 25px;
-  width: 960px;
+  margin-bottom: 26px;
+  width: 980px;
   .container-block();
-
-  &:last-child {
-     border-bottom: 1px solid #E1E1E1;
-  }
 }
 
 .row-device {
   border-top: none;
-  border-bottom: none !important;
 }
 
 .robot {
@@ -92,21 +88,6 @@ nav {
       color: @body-text-color;
     }
   }
-}
-
-.bullet-connections {
-  padding-left: 32px;
-  background: transparent url(../../images/bullet-connections-2.png) no-repeat left center;
-}
-
-.bullet-devices {
-  padding-left: 32px;
-  background: transparent url(../../images/bullet-devices-2.png) no-repeat left center;
-}
-
-.robot-devices {
-  background: transparent url(../../images/devices-image-2.png) no-repeat 21px center;
-  padding-left: 84px;
 }
 
 .btn-robot {
