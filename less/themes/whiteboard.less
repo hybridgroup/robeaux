@@ -24,7 +24,7 @@
 @nav-background-color      : #1cbcd8;
 @nav-link-color            : #fff;
 @nav-link-color-hover      : @color02;
-@nav-link-background       : @color03;
+@nav-link-background       : #353535;
 @nav-link-background-hover : @color04;
 
 /* Buttons */
@@ -62,9 +62,12 @@ nav {
     background: none;
     padding: 8px 13px;
     &.active {
-      background: none;
+      background: @nav-link-background;
       color: #fff;
       border: 2px solid @color04;
+      &:hover {
+        color: #fff !important;
+      }
     }
 
     &:hover {
