@@ -101,11 +101,8 @@
   <section class="row">
     <div class="connections">
       <div class="robot-devices">
-        <div class="device"
-            ng-class="{selected: selected(device)}"
-            ng-repeat="device in robot.devices"
-            ng-click="select(device)">
-          <span class="btn btn-device">device</span>
+        <div class="device" ng-class="{selected: selected(device)}" ng-repeat="device in robot.devices">
+          <button ng-click="select(device)" class="btn btn-device">device</button>
           <span class="name">{{device.name}}</span>
 
           <div class="details">
