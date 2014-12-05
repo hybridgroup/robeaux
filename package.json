@@ -1,6 +1,6 @@
 {
   "name": "robeaux",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "An AngularJS interface for the CPPP-IO API spec",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/robeaux/issues",
