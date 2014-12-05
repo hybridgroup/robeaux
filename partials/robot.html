@@ -1,110 +1,127 @@
 <div class="robot-detail">
-  <div class="robot" ng-class="{'with-commands': (robot.commands.length > 0)}">
-    <span class="icon">robot</span>
-    <span class="name">{{robot.name}}</span>
 
-    <div class="details">
-      <span><strong>Connections:</strong> {{robot.connections.length}}</span>
-      <span><strong>Devices:</strong> {{robot.devices.length}}</span>
-    </div>
-
-    <div class="commands" ng-if="(robot.commands.length > 0)" ng-controller="RobotCommandsCtrl">
-      <h2>Commands</h2>
-      <div class="input">
-        <select ng-model="command" ng-options="cmd for cmd in robot.commands">
-        </select>
-
-        <div class="params">
-          <div class="param" ng-repeat="param in robot.params">
-            <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
-            <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
-            <select ng-options="type for type in types" ng-model="param.type"></select>
-            <span class="close" ng-click="removeParam($index)">&#x2716;</span>
-          </div>
-        </div>
-
-        <button ng-click="submit()" ng-disabled="isDisabled()">run</button>
-      </div>
-
-      <div class="results">
-        <table>
-          <thead>
-            <th>Results</th>
-          </thead>
-
-          <tbody>
-            <tr class="result" ng-repeat="entry in robot.results">
-              <td>{{entry.result}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-
-  <div class="widgets" ng-controller="WidgetsCtrl">
-    <div class="new-widget-instance" ng-show="newWidget">
-      <div class="panel">
-        <span class="close" ng-click="newWidget = null"> &#x2716; </span>
-
-        <h2>New Widget Instance</h2>
-
-        <section class="type">
-          <h3>Widget Type:</h3>
-          <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list"></select>
-        </section>
-
-        <section class="attrs" ng-if="newWidget.base.attrs.length">
-          <h3>Params:</h3>
-
-          <div ng-repeat="attr in newWidget.base.attrs">
-            <label>{{attr}}:</label>
-            <input type="text" ng-model="newWidget.attrs[attr]">
-          </div>
-        </section>
-
-        <button ng-click="newActiveWidget(newWidget)">
-          Create
-        </button>
-      </div>
-    </div>
-
-    <div class="active-widgets">
-      <widget ng-repeat="widget in activeWidgets" data-name="{{widget.name}}" data-attrs="{{widget.attrs}}">
-        <span class="close" ng-click="removeWidget($index)"> &#x2716; </span>
-      </widget>
-
-      <button class="newWidget" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
-    </div>
-  </div>
-
-  <div ng-show="device" ng-include="'/partials/device.html'">
-  </div>
-
-  <section>
-    <div class="robot-devices">
-      <div class="device"
-          ng-class="{selected: selected(device)}"
-          ng-repeat="device in robot.devices"
-          ng-click="select(device)">
-        <span class="icon">device</span>
-        <span class="name">{{device.name}}</span>
+  <!-- begin robot section -->
+  <div class="row">
+    <div class="robot" ng-class="{'with-commands': (robot.commands.length > 0)}">
+      <div class="robot-details">
+        <span class="btn btn-robot btn-big">robot</span>
+        <span class="name">{{robot.name}}</span>
 
         <div class="details">
-          <span>{{device.connection}}</span>
+          <span class="bullet-connections"><strong>Connections</strong> {{robot.connections.length}}</span>
+          <span class="bullet-devices"><strong>Devices</strong> {{robot.devices.length}}</span>
+        </div>
+      </div>
+
+      <div class="commands" ng-if="(robot.commands.length > 0)" ng-controller="RobotCommandsCtrl">
+        <h2>Commands</h2>
+        <div class="input">
+          <select ng-model="command" ng-options="cmd for cmd in robot.commands">
+          </select>
+
+          <div class="params">
+            <div class="param" ng-repeat="param in robot.params">
+              <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
+              <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
+              <select ng-options="type for type in types" ng-model="param.type"></select>
+              <span class="close" ng-click="removeParam($index)">&#x2716;</span>
+            </div>
+          </div>
+
+          <button class="btn btn-run" ng-click="submit()" ng-disabled="isDisabled()">run</button>
+        </div>
+
+        <div class="results">
+          <table>
+            <thead>
+              <th>Results</th>
+            </thead>
+
+            <tbody>
+              <tr class="result" ng-repeat="entry in robot.results">
+                <td>{{entry.result}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
+  <!-- end robot section -->
 
-    <div class="robot-connections">
-      <div class="connection" ng-repeat="connection in robot.connections">
-        <span class="icon">connection</span>
-        <span class="name">{{connection.name}}</span>
+  <!-- begin widgets -->
+  <div class="row">
+    <div class="widgets" ng-controller="WidgetsCtrl">
+      <div class="new-widget-instance" ng-show="newWidget">
+        <div class="panel">
+          <div class="panel-header">
+            <span class="close" ng-click="newWidget = null"> &#x2716; </span>
+            <h2>New Widget Instance</h2>
+          </div>
 
-        <div class="details">
-          <span ng-if="connection.port">{{connection.port}}</span>
+          <div class="panel-body">
+            <div class="type">
+              <h3>Widget Type:</h3>
+              <select ng-model="newWidget.base" ng-options="w.name for w in widgets.list"></select>
+            </div>
+
+            <div class="attrs" ng-if="newWidget.base.attrs.length">
+              <h3>Params:</h3>
+
+              <div class="attr-element" ng-repeat="attr in newWidget.base.attrs">
+                <label>{{attr}}</label>
+                <input type="text" ng-model="newWidget.attrs[attr]">
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-footer">
+            <button class="btn btn-device" ng-click="newActiveWidget(newWidget)">Create</button>
+            <button class="btn btn-run" ng-click="newWidget = null">Close</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="active-widgets">
+        <div class="add-widget">
+          <button class="btn btn-robot btn-big" ng-click="newWidget = { base: '', attrs: {} }"> &#x2b; </button>
+        </div>
+
+        <widget ng-repeat="widget in activeWidgets" data-name="{{widget.name}}" data-attrs="{{widget.attrs}}">
+          <span class="close" ng-click="removeWidget($index)"> &#x2716; </span>
+        </widget>
+      </div>
+    </div>
+  </div>
+  <!-- end widgets -->
+
+  <div ng-show="device" ng-include="'/partials/device.html'"></div>
+
+  <!-- begin connections -->
+  <section class="row">
+    <div class="connections">
+      <div class="robot-devices">
+        <div class="device" ng-class="{selected: selected(device)}" ng-repeat="device in robot.devices">
+          <button ng-click="select(device)" class="btn btn-device">device</button>
+          <span class="name">{{device.name}}</span>
+
+          <div class="details">
+            <span>{{device.connection}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="robot-connections">
+        <div class="connection" ng-repeat="connection in robot.connections">
+          <span class="btn btn-connect">connection</span>
+          <span class="name">{{connection.name}}</span>
+
+          <div class="details">
+            <span ng-if="connection.port">{{connection.port}}</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
+  <!-- end connections -->
 </div>

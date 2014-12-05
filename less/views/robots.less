@@ -1,0 +1,132 @@
+body {
+  background: @body-background-color;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: @body-text-color;
+}
+
+.container-wrap {
+  margin-bottom: 30px;
+}
+
+.container, .robot, .widgets, .connections, .themes {
+  width: @gridsystem-width;
+  padding:0;
+  .container();
+}
+
+.row {
+  background: #fff;
+  padding: 15px 0;
+  margin-top: 10px;
+  .clearfix();
+}
+
+.robot-details {
+  .column(12);
+}
+
+.robot {
+
+  h2 {
+    .column(12);
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+  .input, .results {
+    .column(6);
+  }
+}
+
+.robot-detail {
+  .widgets {
+    .new-widget-instance {
+      height: 100vh;
+      width: 100%;
+    }
+
+    .active-widgets {
+
+      .add-widget {
+        .column(3);
+      }
+
+      button {
+        font-size: 2em;
+      }
+
+      widget {
+        .column(9);
+      }
+    }
+
+    .panel {
+      margin: 10% auto;
+      width: 600px;
+
+      .type {
+        .column(5);
+      }
+
+      .attrs {
+        .column(7);
+
+        label {
+          .column(4);
+        }
+
+        input {
+          .column(8);
+        }
+      }
+    }
+  }
+
+  .robot-devices {
+    .column(6);
+  }
+
+  .robot-connection {
+    .column(6);
+  }
+}
+
+.commands, .device-commands {
+  .param {
+    .row(6);
+    height: 40px;
+
+    input[type='text'] {
+      .column(2,6);
+    }
+
+    select {
+      .column(1.5,6);
+    }
+
+    .close {
+      .column(0.5,6);
+      line-height: 34px;
+      &:hover {
+        color: #f00;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .input>select, &>select {
+    width: 100%;
+    .container-block();
+    margin-bottom: 15px;
+  }
+
+  button {
+    width: 70%;
+    margin-top: 15px;
+    .container-block();
+  }
+
+  table {
+    width: 100%;
+  }
+}

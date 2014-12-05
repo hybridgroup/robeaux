@@ -1,0 +1,121 @@
+/* Color Palette */
+@color01: #eeeef4;
+@color02: #2C2C2C;
+@color03: #fff;
+@color04: #1cbcd8;
+@color05: #ff6900;
+@color06: #3e6372;
+
+/* Body Variables */ 
+@body-background-color: @color01;
+@body-text-color      : @color06;
+@body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-font-size       : 15px;
+@line-height-base     : 1.428571429; // 20/14
+@line-height-computed : floor((@body-font-size * @line-height-base)); // ~20px
+
+/* Row */
+@row-background-color : @color03;
+
+/* Code Font */
+@code-font-family     : Inconsolata, monospace;
+
+/* Nav Variables */
+@nav-background-color      : #2d4753;
+@nav-link-color            : #fff;
+@nav-link-color-hover      : @color02;
+@nav-link-background       : #1cbcd8;
+@nav-link-background-hover : #1cbcd8;
+
+/* Buttons */
+@btn-robot-color        : @color03;
+@btn-robot-background   : @color05;
+@btn-run-color          : @color03;
+@btn-run-background     : #CA5252;
+@btn-device-color       : @color03;
+@btn-device-background  : #40cfaa;
+@btn-connect-color      : @color03;
+@btn-connect-background : #dccb5b;
+
+/* Forms */
+@input-border-color: #999;
+@input-border-color-focus: #fff;
+
+/* Connection Digits */
+@connection-digits-color: #ff6900;
+
+/* Widgets */
+@modal-bg-color: #fff;
+
+@import '../vendor/elements';
+@import '../support/mixins';
+
+body {
+  background-color: @body-background-color;
+  color: @body-text-color;
+}
+
+nav {
+  background: @nav-background-color;
+
+  .links a {
+    background: none;
+    padding: 8px 13px;
+  }
+}
+
+.row {
+  background-color: @row-background-color;
+  border-bottom: 3px solid #e1e1e5;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-bottom: 26px;
+  width: 980px;
+  .container-block();
+}
+
+.row-device {
+  border-top: none;
+}
+
+.robot {
+  .details { 
+    span {
+      color: @connection-digits-color;
+    }
+
+    strong {
+      color: @body-text-color;
+    }
+  }
+}
+
+.btn-robot {
+  .button-variant(@btn-robot-color; @btn-robot-background; @btn-robot-color);
+}
+
+.btn-device, .btn-save {
+  .button-variant(@btn-device-color; @btn-device-background; @btn-device-color);
+}
+
+.btn-connect {
+  .button-variant(@btn-connect-color; @btn-connect-background; @btn-connect-color);
+}
+
+.btn-run, .btn-reset {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
+}
+
+.widgets {
+  .panel {
+    background: @modal-bg-color;
+
+    .panel-header {
+      border-bottom: 1px solid #E1E1E1;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #E1E1E1;
+    }
+  }
+}

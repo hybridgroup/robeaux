@@ -1,0 +1,148 @@
+/* Color Palette */
+@color01: #000;
+@color02: #444;
+@color03: #000;
+@color04: #1CBBD8;
+@color05: #fff;
+@color06: #fff;
+
+/* Body Variables */ 
+@body-background-color: @color01;
+@body-text-color      : @color01;
+@body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@body-font-size       : 15px;
+@line-height-base     : 1.428571429; // 20/14
+@line-height-computed : floor((@body-font-size * @line-height-base)); // ~20px
+
+/* Row */
+@row-background-color : #4D4D4D;
+
+/* Code Font */
+@code-font-family     : Inconsolata, monospace;
+
+/* Nav Variables */
+@nav-background-color      : @color03;
+@nav-link-color            : #fff;
+@nav-link-color-hover      : @color04;
+@nav-link-background       : @color03;
+@nav-link-background-hover : @color04;
+
+/* Buttons */
+@btn-robot-color        : #fff;
+@btn-robot-background   : @color01;
+@btn-run-color          : #C36148;
+@btn-run-background     : #000;
+@btn-device-color       : #000;
+@btn-device-background  : #fff;
+@btn-connect-color      : #DEC763;
+@btn-connect-background : #000;
+
+/* Forms */
+@input-border-color: #999;
+@input-border-color-focus: #fff;
+
+/* Connection Digits */
+@connection-digits-color: #fff;
+
+/* Widgets */
+@modal-bg-color: #4D4D4D;
+
+@import '../vendor/elements';
+@import '../support/mixins';
+
+body {
+  background-color: @body-background-color;
+  color: @body-text-color;
+}
+
+.row {
+  background-color: @row-background-color;
+}
+
+nav {
+  .links a {
+    background: none;
+    &.active {
+      background: none;
+      color: #1CBBD8;
+    }
+
+    &:hover {
+      color: #1CBBD8 !important;
+    }
+  }
+}
+
+.robot {
+  .details { 
+    span {
+      color: @connection-digits-color;
+    }
+
+    strong {
+      color: @body-text-color;
+    }
+  }
+}
+
+.btn-robot {
+  .button-variant(@btn-robot-color; @btn-robot-background; @btn-robot-color);
+}
+
+.btn-device, .btn-save {
+  .button-variant(@btn-device-color; @btn-device-background; @btn-device-color);
+}
+
+.btn-connect {
+  .button-variant(@btn-connect-color; @btn-connect-background; @btn-connect-color);
+  text-transform: uppercase;
+}
+
+.btn-run, .btn-reset {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
+  text-transform: uppercase;
+}
+
+input[type="text"], select, textarea {
+  color: @body-text-color;
+  background: #666;
+  .form-control-focus(@input-border-color-focus);
+}
+
+.widgets {
+  .panel {
+    background: @modal-bg-color;
+
+    .panel-header {
+      border-bottom: 1px solid #666;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #666;
+    }
+  }
+}
+
+.list {
+  .theme, .widget {
+    border-bottom: 1px dotted #666;
+  }
+}
+
+th {
+  border-bottom: 1px solid #666 !important;
+}
+
+.connections {
+  .robot-devices {
+    .details {
+      color: #000;
+    }
+  }
+
+  .robot-connections {
+    .name {
+      color: #000;
+    }
+  }
+}

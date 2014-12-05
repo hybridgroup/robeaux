@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="/css/fonts.css">
     <link rel="stylesheet" href="/css/normalize.css">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/main.css">
 
     <span class="ng-hide" ng-controller="ThemesCtrl">
       <link ng-if="themes.active.url" rel="stylesheet" ng-href="{{themes.active.url}}">
@@ -17,16 +17,18 @@
 
   <body>
     <nav ng-controller="NavCtrl">
-      <span class="logo">Robeaux</span>
+      <div class="container">
+        <a href="/" class="logo"><img src="/images/logo-robeaux.png" alt=""></a>
 
-      <span class="links">
-        <a href="#/robots" ng-class="{active: active('robots')}">robots</a>
-        <a href="#/themes" ng-class="{active: active('themes')}">themes</a>
-        <a href="#/widgets" ng-class="{active: active('widgets')}">widgets</a>
-      </span>
+        <span class="links">
+          <a href="#/robots" ng-class="{active: active('robots')}">Robots</a>
+          <a href="#/themes" ng-class="{active: active('themes')}">Themes</a>
+          <a href="#/widgets" ng-class="{active: active('widgets')}">Widgets</a>
+        </span>
+      </div>
     </nav>
 
-    <div ng-view class="container"></div>
+    <div ng-view class="container-wrap"></div>
 
     <script src="/js/vendor/angular.min.js"></script>
     <script src="/js/vendor/angular-route.min.js"></script>

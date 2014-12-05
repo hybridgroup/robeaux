@@ -1,0 +1,43 @@
+.robot {
+  .container();
+
+  .details { 
+    float: right;
+    line-height: 43px;
+    span {
+      color: @connection-digits-color;
+      margin-left: 50px;
+    }
+
+    strong {
+      color: @body-text-color;
+      margin-right: 20px;
+    }
+  }
+
+  .name {
+    margin-left: 20px;
+  }
+
+  .commands {
+    .clearfix();
+
+    button {
+      display: block;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+
+    table {
+      th {
+        border-bottom: 1px solid #ccc;
+        line-height: 34px;
+      }
+
+      td {
+        font-family: @code-font-family;
+        padding: 3px;
+      }
+    }
+  }
+}

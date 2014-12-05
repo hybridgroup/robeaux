@@ -1,0 +1,32 @@
+.btn {
+  .button-size(10px; 15px; 15px; 20px; 5px);
+  display: inline-block;
+  border: 0;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.btn-big {
+  .button-size(15px; 30px; 15px; 15px; 5px);
+}
+
+.btn-robot {
+  .button-variant(@btn-robot-color; @btn-robot-background; @btn-robot-color);
+  text-transform: uppercase;
+}
+
+.btn-run, .btn-reset {
+  .button-variant(@btn-run-color; @btn-run-background; @btn-run-color);
+  text-transform: uppercase;
+}
+
+.btn-device, .btn-save {
+  .button-variant(@btn-device-color; @btn-device-background; @btn-device-color);
+  text-transform: uppercase;
+}
+
+.btn-connect {
+  .button-variant(@btn-connect-color; @btn-connect-background; @btn-connect-color);
+  text-transform: uppercase;
+}

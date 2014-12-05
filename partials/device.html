@@ -1,67 +1,76 @@
-<div class="device-detail">
-  <header>
-    <h2>Commands</h2>
-    <h2>Events</h2>
-  </header>
+<section class="device-detail">
+  <div class="row">
+    <div class="device-header">
+      <h2>Commands</h2>
+      <h2>Events</h2>
+    </div>
+  </div>
 
-  <div class="device-commands" ng-controller="DeviceCommandsCtrl">
-    <select ng-model="command" ng-options="cmd for cmd in device.commands">
-    </select>
+  <div class="row row-device">
+    <div class="container">
+      <div class="device-commands" ng-controller="DeviceCommandsCtrl">
+        <select ng-model="command" ng-options="cmd for cmd in device.commands">
+        </select>
 
-    <div class="params">
-      <div class="param" ng-repeat="param in device.params">
-        <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
-        <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
-        <select ng-options="type for type in types" ng-model="param.type"></select>
-        <span class="close" ng-click="removeParam($index)">X</span>
+        <div class="params">
+          <div class="param" ng-repeat="param in device.params">
+            <input placeholder='name' type="text" ng-model="param.name" ng-focus="addParam($last)">
+            <input placeholder='value' type="text" ng-model="param.value" ng-focus="addParam($last)">
+            <select ng-options="type for type in types" ng-model="param.type"></select>
+            <span class="close" ng-click="removeParam($index)">&#x2716;</span>
+          </div>
+        </div>
+
+        <button class="btn btn-run" ng-click="submit()" ng-disabled="isDisabled()">run</button>
+
+        <table class="results">
+          <thead>
+            <tr>
+              <th>Results</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="result" ng-repeat="entry in device.results">
+              <td>{{entry.result}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="device-events" ng-controller="DeviceEventsCtrl">
+        <div class="input">
+          <input type="text" ng-model="eventName" placeholder="event name">
+          <button class="btn btn-robot" ng-click="listen()">listen</button>
+        </div>
+
+        <div class="listeners-div">
+          <table class="listeners">
+            <thead>
+              <th colspan="2">Listeners</th>
+            </thead>
+
+            <tbody>
+              <tr class="listener" ng-repeat="(name, listeners) in device.listeners">
+                <td>{{name}}</td>
+                <td class="remove" ng-click="remove(name)">remove</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <table class="events">
+          <thead>
+            <th colspan="2">Events</th>
+          </thead>
+
+          <tbody>
+            <tr class="event" ng-repeat="event in device.events">
+              <td>{{event.name}}</td>
+              <td>{{event.data}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
-
-    <button ng-click="submit()" ng-disabled="isDisabled()">run</button>
-
-    <table class="results">
-      <thead>
-        <th>Results</th>
-      </thead>
-
-      <tbody>
-        <tr class="result" ng-repeat="entry in device.results">
-          <td>{{entry.result}}</td>
-        </tr>
-      </tbody>
-    </table>
   </div>
-
-  <div class="device-events" ng-controller="DeviceEventsCtrl">
-    <div class="input">
-      <input type=text" ng-model="eventName" placeholder="event name">
-      <button ng-click="listen()">listen</button>
-    </div>
-
-    <table class="listeners">
-      <thead>
-        <th colspan="2">Listeners</th>
-      </thead>
-
-      <tbody>
-        <tr class="listener" ng-repeat="(name, listeners) in device.listeners">
-          <td>{{name}}</td>
-          <td class="remove" ng-click="remove(name)">remove</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table class="events">
-      <thead>
-        <th colspan="2">Events</th>
-      </thead>
-
-      <tbody>
-        <tr class="event" ng-repeat="event in device.events">
-          <td>{{event.name}}</td>
-          <td>{{event.data}}</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
+</section>

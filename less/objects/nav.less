@@ -1,0 +1,33 @@
+
+nav {
+  background: @nav-background-color;
+  height: 70px;
+  margin-bottom: 20px;
+
+  .logo {
+    display: inline-block;
+    margin: 15px 15px 0 15px;
+  }
+
+  .links {
+    float: right;
+    margin-top: 15px;
+    a {
+      color: @nav-link-color;
+      text-decoration: none;
+      display: inline-block;
+      .button-size(10px; 15px; 15px; 20px; 2px);
+      &:hover {
+        color: @nav-link-color-hover;
+        text-decoration: none;
+      }
+    }
+
+    .active {
+      background: @nav-link-background-hover;
+      &:hover {
+        color: @nav-link-color;
+      }
+    }
+  }
+}

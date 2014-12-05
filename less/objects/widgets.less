@@ -1,0 +1,85 @@
+.widgets {
+  .new-widget, .new-attr {
+    input {
+      padding: 8px 12px;
+    }
+  }
+
+  .new-attr {
+    padding-top: 15px;
+  }
+
+  .attrs {
+    padding-bottom: 20px;
+  }
+
+  .footer {
+    text-align: right;
+
+    .btn-reset {
+      margin-right: 10px;
+    }
+  }
+
+  .new-widget-instance {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 99;
+    overflow: hidden;
+  }
+
+  .panel {
+    background: @modal-bg-color;
+    padding: 6px;
+    .rounded(4px);
+    position: relative;
+    .drop-shadow(0, 0, 5px, 0.3);
+    overflow: hidden;
+
+    .panel-header, .panel-body, .panel-footer {
+      .clearfix();
+    }
+
+    .panel-header {
+      border-bottom: 1px solid #eaeaea;
+    }
+
+    .panel-footer {
+      border-top: 1px solid #eaeaea;
+      padding-top: 6px;
+      margin-top: 12px;
+      text-align: right;
+    }
+
+    .close {
+      position: absolute;
+      top: 4px;
+      right: 10px;
+      color: #ccc;
+      &:hover {
+        cursor: pointer;
+        color: #f00;
+      }
+    }
+
+    h2 {
+      margin: 0 0 15px 0;
+      text-align: center;
+    }
+
+    h3, label {
+      font-size: 14px;
+    }
+
+    select {
+      display: block;
+    }
+
+    .attr-element {
+      .clearfix();
+      margin-bottom: 10px;
+    }
+  }
+}

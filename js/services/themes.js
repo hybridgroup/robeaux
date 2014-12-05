@@ -3,11 +3,15 @@ robeaux.factory('Themes', function() {
 
   // default themes
   var defaults = [
-    { name: 'default', custom: false, css: '' },
-    { name: 'artoo',   custom: false, url: '/css/themes/artoo.css'},
-    { name: 'cylon',   custom: false, url: '/css/themes/cylon.css'},
-    { name: 'gobot',   custom: false, url: '/css/themes/gobot.css'},
-    { name: 'custom',  custom: true,  css: ''}
+    { name: 'default',    custom: false, css: '' },
+    { name: 'artoo',      custom: false, url: '/css/themes/artoo.css'},
+    { name: 'cylon',      custom: false, url: '/css/themes/cylon.css'},
+    { name: 'gobot',      custom: false, url: '/css/themes/gobot.css'},
+    { name: 'blackboard', custom: false, url: '/css/themes/blackboard.css'},
+    { name: 'whiteboard', custom: false, url: '/css/themes/whiteboard.css'},
+    { name: 'dark',       custom: false, url: '/css/themes/dark.css'},
+    { name: 'gray',       custom: false, url: '/css/themes/gray.css'},
+    { name: 'custom',     custom: true,  css: ''}
   ];
 
   service.list = [];

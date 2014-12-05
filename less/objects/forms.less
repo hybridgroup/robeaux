@@ -1,0 +1,29 @@
+input[type="text"], select, textarea {
+  display: inline-block;
+  line-height: @line-height-base;
+  font-size: @body-font-size;
+  color: @body-text-color;
+  .form-control();
+  .form-control-focus(@input-border-color-focus);
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  outline: none;
+}
+
+button:focus::-moz-focus-inner,
+input[type="reset"]:focus::-moz-focus-inner,
+input[type="button"]:focus::-moz-focus-inner,
+input[type="submit"]:focus::-moz-focus-inner,
+input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
+  outline: none;
+}

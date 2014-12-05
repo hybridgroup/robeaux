@@ -52,7 +52,7 @@ body {
   font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body > .container, body > nav {
+.container,.container-wrap {
   width: 960px;
   margin: 0 auto;
   padding: 0;
@@ -114,7 +114,7 @@ body > nav a.active {
   padding: 0 15px;
 }
 
-.icon {
+.icon, .btn {
   background: black;
   color: white;
   height: 40px;
@@ -499,7 +499,7 @@ body > nav a.active {
   padding: 0;
 }
 
-widget {
+.widget {
   display: inline-block;
   float: left;
   margin: 0;
