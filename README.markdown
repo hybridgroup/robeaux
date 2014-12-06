@@ -7,7 +7,7 @@ Robeaux is powered by [AngularJS](http://angularjs.org/), and provides
 a front-end to the API interface offered by [Artoo](http://artoo.io),
 [Cylon.js](http://cylonjs.com) and [Gobot](http://gobot.io). It looks like this:
 
-![Robeaux Interface](http://i.imgur.com/T50PhUe.png)
+![Robeaux Interface](http://i.imgur.com/gOpjt0g.jpg)
 
 ## How It Works
 
@@ -21,14 +21,14 @@ a compatible API server.
 You can see each robot that your are connected to, and then drill in to view or
 edit it.
 
-![Robots View](http://i.imgur.com/T50PhUe.png)
+![Robots View](http://i.imgur.com/gOpjt0g.jpg)
 
 ### Connections
 
 How are you connected? Serial port? WiFi? View the details for each of your
 robots.
 
-![Connections View](http://i.imgur.com/OKwG3P7.png)
+![Connections View](http://i.imgur.com/9VorGhR.jp)
 
 ### Devices
 
@@ -36,7 +36,7 @@ Each robot has one or more devices connected. You can view the device status and
 send commands all via the web interface. You can even stream the real-time
 event data for your buttons, switches, LEDs, sensors, and more.
 
-![Devices View](http://i.imgur.com/tTkyx3q.png)
+![Devices View](http://i.imgur.com/XizZqng.jpg)
 
 ## Themes
 
@@ -44,7 +44,7 @@ You can change the theme! Pick from one of the presets, or write your own. It'll
 be persisted in `localStorage` and ready to go for the next time you want to use
 Robeaux.
 
-![Custom Theme Editor](http://i.imgur.com/5yefYn9.png)
+![Custom Theme Editor](http://i.imgur.com/KMMaQrv.jpg)
 
 ## Pushing new versions
 
