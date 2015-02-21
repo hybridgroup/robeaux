@@ -28,7 +28,7 @@ edit it.
 How are you connected? Serial port? WiFi? View the details for each of your
 robots.
 
-![Connections View](http://i.imgur.com/9VorGhR.jp)
+![Connections View](http://i.imgur.com/9VorGhR.jpg)
 
 ### Devices
 
