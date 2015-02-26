@@ -1,5 +1,5 @@
 import React from "react";
-import request from "superagent";
+import {post} from "superagent";
 
 function coerceParams(params) {
   return params.map(function(param) {
@@ -62,7 +62,7 @@ export default React.createClass({
         url = `${this.props.endpoint}/commands/${encodeURIComponent(command)}`,
         params = coerceParams(this.state.params);
 
-    request.post(url)
+    post(url)
       .set("Content-Type", "application/json")
       .send(params)
       .end((res) => {
@@ -81,8 +81,8 @@ export default React.createClass({
       });
   },
 
-  render: function() {
-    let paramInputs = this.state.params.map((param, idx) => {
+  params: function() {
+    return this.state.params.map((param, idx) => {
       let length = this.state.params.length;
 
       let remove = this.removeParam(idx);
@@ -95,8 +95,13 @@ export default React.createClass({
 
       return (
         <div key={idx} className="input">
-          <input onChange={update.key} type="text" value={param.key} />
-          <input onChange={update.value} type="text" value={param.value} />
+          <input placeholder="key"
+                 onChange={update.key}
+                 value={param.key} />
+
+          <input placeholder="value"
+                 onChange={update.value}
+                 value={param.value} />
 
           <select onChange={update.type} value={param.type}>
             {generateOptions(["string", "boolean", "number"])}
@@ -106,14 +111,21 @@ export default React.createClass({
         </div>
       );
     });
+  },
 
-    let results = this.state.results.map((res, idx) => {
+  results: function() {
+    return this.state.results.map((res, idx) => {
       return (
         <div key={idx}>
           <code>{res}</code>
         </div>
       );
     });
+  },
+
+  render: function() {
+    let params = this.params(),
+        results = this.results();
 
     return (
       <div className="command-tool">
@@ -125,14 +137,16 @@ export default React.createClass({
           </select>
 
           <div className="params">
-            {paramInputs}
+            {params}
             <button onClick={this.addParam}>Add</button>
           </div>
 
           <button onClick={this.runCommand}> Run </button>
         </div>
 
-        <div className="results"> { results } </div>
+        <div className="results">
+          {results}
+        </div>
       </div>
     );
   }
