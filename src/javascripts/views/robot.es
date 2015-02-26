@@ -11,47 +11,54 @@ import CommandTool    from "../components/command-tool.es";
 export default React.createClass({
   mixins: [State],
 
-  findRobot: function(name) {
-    var data = this.props.data;
+  findRobot: function() {
+    let name = this.getParams().robot,
+        data = this.props.data;
 
-    return data.robots.filter(function(robot) {
-      return (robot.name === name);
-    })[0];
+    name = decodeURIComponent(name);
+
+    return data.robots.filter((robot) => (robot.name === name))[0];
+  },
+
+  commandTool: function(bot) {
+    let name = encodeURIComponent(bot.name),
+        endpoint = "/api/robots/" + name;
+
+    if (bot.commands.length) {
+      return <CommandTool commands={bot.commands} endpoint={endpoint} />;
+    }
+  },
+
+  devices: function(bot) {
+    let params = { robot: encodeURIComponent(bot.name) };
+
+    return bot.devices.map((device) => {
+      params.device = encodeURIComponent(device.name);
+      return <DeviceInfo key={device.name} device={device} params={params} />;
+    });
+  },
+
+  connections: function(bot) {
+    return bot.connections.map((conn) => {
+      return <ConnectionInfo key={conn.name} conn={conn}/>;
+    });
   },
 
   render: function() {
-    let name = this.getParams().robot,
-        bot = this.findRobot(name),
-        commandTool;
+    let bot = this.findRobot();
 
     if (!bot) { return <NotFound />; }
-
-    var params = { robot: encodeURIComponent(bot.name) };
-
-    if (bot.commands.length) {
-      commandTool = (
-        <CommandTool commands={bot.commands} endpoint={`/api/robots/${name}`} />
-      );
-    } else {
-      commandTool = "";
-    }
 
     return (
       <div className="robot">
         <RobotInfo bot={bot} />
 
-        {commandTool}
+        {this.commandTool(bot)}
 
         <RouteHandler bot={bot} />
 
-        {bot.devices.map(function(device) {
-          params.device = encodeURIComponent(device.name);
-          return <DeviceInfo key={device.name} device={device} params={params} />;
-        })}
-
-        {bot.connections.map(function(conn) {
-          return <ConnectionInfo key={conn.name} conn={conn}/>;
-        })}
+        {this.devices(bot)}
+        {this.connections(bot)}
       </div>
     );
   }
