@@ -17,7 +17,7 @@ help:
 	@echo "  make minified - cleans targets, then builds minified versions of css + js"
 
 lint:
-	@jsxhint -e ".es" ./src/javsacripts/**/*.es
+	@jsxhint -e ".es" ./src/javascripts/**/*
 
 js:
 	@echo "Compiling JavaScript with Browserify"
