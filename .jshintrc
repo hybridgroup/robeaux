@@ -9,8 +9,11 @@
     "TestUtils": true,
     "source": true,
     "beforeEach": true,
+    "afterEach": true,
     "describe": true,
+    "context": true,
     "it": true,
+    "spy": true,
     "expect": true
   },
   "boss": true,

@@ -10,14 +10,28 @@ function render(props = {}) {
   );
 }
 
+function searchComponentForTag(component) {
+  return function(tag) {
+    return TestUtils.findRenderedDOMComponentWithTag(component, tag);
+  };
+}
+
 describe("EventTool", () => {
-  let component;
+  let component, search, MockEventSource;
 
   beforeEach(() => {
+    global.EventSource = MockEventSource = spy();
+
     component = render({
       commands: [ "commandA", "commandB", "commandC" ],
       endpoint: "/api/endpoint"
     });
+
+    search = searchComponentForTag(component);
+  });
+
+  afterEach(() => {
+    delete global.EventSource;
   });
 
   it("is a React component", () => {
@@ -33,10 +47,62 @@ describe("EventTool", () => {
   });
 
   it("renders an input + button for listening to events", () => {
-    console.log(TestUtils);
-
     // these will explode if they don't match, so works as a test
-    TestUtils.findRenderedDOMComponentWithTag(component, "input"),
-    TestUtils.findRenderedDOMComponentWithTag(component, "button");
+    search("input");
+    search("button");
+  });
+
+  it("updates state.name when the input is edited", () => {
+    let input = search("input");
+
+    TestUtils.Simulate.change(input, { target: { value: "new-event"} } );
+    expect(component.state.name).to.be.eql("new-event");
+  });
+
+  describe("when the button is clicked", () => {
+    context("if there is input", () => {
+      beforeEach(() => {
+        let button = search("button");
+        component.state.name = "new-event";
+        TestUtils.Simulate.click(button);
+      });
+
+      it("sets up an EventSource to listen when the button is clicked", () => {
+        let url = "/api/endpoint/events/new-event",
+            es = component.state.listeners["new-event"];
+
+        expect(MockEventSource).to.be.calledWith(url);
+        expect(es.onmessage).to.be.a("function");
+      });
+
+      it("resets state.name to empty string when the button is clicked", () => {
+        expect(component.state.name).to.be.eql("");
+      });
+
+      it("appends to state.events when it receives a message", () => {
+        let es = component.state.listeners["new-event"];
+        es.onmessage.call(null, { data: "new message"});
+        expect(component.state.events).to.be.eql([
+          { name: "new-event", data: "new message" }
+        ]);
+      });
+    });
+
+    context("if there is not input", () => {
+      beforeEach(() => {
+        let button = search("button");
+        component.state.name = "";
+        TestUtils.Simulate.click(button);
+      });
+
+      it("does not set up an EventSource", () => {
+        expect(MockEventSource).to.not.be.called;
+        expect(component.state.listeners).to.be.eql({});
+      });
+
+      it("does not modify state.name", () => {
+        expect(component.state.name).to.be.eql("");
+      });
+    });
   });
 });
