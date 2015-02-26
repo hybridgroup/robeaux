@@ -5,7 +5,6 @@ export default React.createClass({
     return (
       <div>
         <h1> Not Found. </h1>
-        <p> Nobody here but us chickens! </p>
       </div>
     );
   }
