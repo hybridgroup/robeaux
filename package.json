@@ -1,7 +1,7 @@
 {
   "name": "robeaux",
   "version": "0.3.0",
-  "description": "An AngularJS interface for the CPPP-IO API spec",
+  "description": "A React-based front-end for CPPP-IO APIs",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/robeaux/issues",
   "author": "The Hybrid Group <cylonjs@hybridgroup.com>",
@@ -14,6 +14,11 @@
   "license": "Apache 2.0",
 
   "devDependencies": {
+    "browserify": "9.0.3",
+    "uglify-js": "2.4.16",
+    "watchify": "2.4.0",
+    "jsxhint": "0.12.1",
+
     "superagent": "0.21.0",
     "react": "0.12.2",
     "react-router": "0.12.2",
