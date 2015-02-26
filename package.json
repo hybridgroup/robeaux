@@ -15,15 +15,22 @@
 
   "devDependencies": {
     "browserify": "9.0.3",
-    "uglify-js": "2.4.16",
-    "watchify": "2.4.0",
-    "jsxhint": "0.12.1",
+    "uglify-js":  "2.4.16",
+    "watchify":   "2.4.0",
+    "jsxhint":    "0.12.1",
 
-    "superagent": "0.21.0",
-    "react": "0.12.2",
+    "superagent":   "0.21.0",
+    "react":        "0.12.2",
     "react-router": "0.12.2",
 
     "babelify": "5.0.3",
-    "envify": "3.2.0"
+    "envify":   "3.2.0",
+
+    "sinon-chai": "2.7.0",
+    "chai":       "2.1.0",
+    "mocha":      "2.1.0",
+    "sinon":      "1.12.2",
+    "jsdom":      "3.1.2",
+    "babel":      "4.5.5"
   }
 }

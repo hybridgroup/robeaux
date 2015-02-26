@@ -1,4 +1,5 @@
 BIN := ./node_modules/.bin/
+TEST_FILES := spec/helper.js $(shell find spec/components -type f)
 
 ifneq (,$(shell sassc --version 2>/dev/null))
 	SASS_COMPILER := sassc
@@ -21,6 +22,7 @@ help:
 	@echo "  make watch-css - watches/builds CSS with Sass"
 	@echo "  make all       - cleans targets, then builds css + js"
 	@echo "  make minified  - cleans targets, then builds minified versions of css + js"
+	@echo "  make test      - runs tests with Mocha"
 
 clean:
 	@echo "Removing generated JS/CSS"
@@ -57,4 +59,7 @@ minified: clean
 	@echo "Compiling compressed CSS"
 	@$(SASS_COMPILER) -t compressed $(SASS_ARGS)
 
-.PHONY: help lint css js watch-js watch-css clean all minified
+test:
+	@$(BIN)mocha --colors -R dot $(TEST_FILES)
+
+.PHONY: help lint css js watch-js watch-css clean all minified test
