@@ -32,11 +32,28 @@ export default React.createClass({
     return this.setState({ command: event.target.value });
   },
 
+  addParam: function() {
+    let params = this.state.params;
+    params.push({ key: "", value: "", type: "string" });
+    this.setState({ params: params });
+  },
+
   updateParam: function(idx, prop) {
     return (e) => {
       let params = this.state.params;
       params[idx][prop] = e.target.value;
       this.setState({ params: params });
+    };
+  },
+
+  removeParam: function(idx) {
+    return () => {
+      let params = this.state.params;
+
+      if (params.length > 1) {
+        params.splice(idx, 1);
+        this.setState({ params: params });
+      }
     };
   },
 
@@ -66,6 +83,10 @@ export default React.createClass({
 
   render: function() {
     let paramInputs = this.state.params.map((param, idx) => {
+      let length = this.state.params.length;
+
+      let remove = this.removeParam(idx);
+
       let update = {
         key:   this.updateParam(idx, "key"),
         value: this.updateParam(idx, "value"),
@@ -80,6 +101,8 @@ export default React.createClass({
           <select onChange={update.type} value={param.type}>
             {generateOptions(["string", "boolean", "number"])}
           </select>
+
+          <button disabled={length === 1} onClick={remove}>&#x2716;</button>
         </div>
       );
     });
@@ -101,7 +124,10 @@ export default React.createClass({
             {generateOptions(this.props.commands)}
           </select>
 
-          <div className="params"> {paramInputs} </div>
+          <div className="params">
+            {paramInputs}
+            <button onClick={this.addParam}>Add</button>
+          </div>
 
           <button onClick={this.runCommand}> Run </button>
         </div>
