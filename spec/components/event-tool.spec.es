@@ -1,3 +1,5 @@
+// jshint expr:true
+
 "use strict";
 
 const EventTool = source("components/event-tool.es");
@@ -6,7 +8,7 @@ function render(props = {}) {
   return TestUtils.renderIntoDocument(
     <EventTool {...props} />
   );
-};
+}
 
 describe("EventTool", () => {
   let component;
@@ -18,8 +20,8 @@ describe("EventTool", () => {
     });
   });
 
-  it("is a React Class", () => {
-    expect(EventTool).to.be.a("function");
+  it("is a React component", () => {
+    expect(TestUtils.isElement(<EventTool />)).to.be.eql(true);
   });
 
   it("has a default state", () => {
@@ -27,12 +29,14 @@ describe("EventTool", () => {
       name: "",
       listeners: {},
       events: []
-    })
-  })
+    });
+  });
 
   it("renders an input + button for listening to events", () => {
-    // these will explode if they don't match
-    TestUtils.findRenderedDOMComponentWithTag(component, 'input'),
-    TestUtils.findRenderedDOMComponentWithTag(component, 'button');
+    console.log(TestUtils);
+
+    // these will explode if they don't match, so works as a test
+    TestUtils.findRenderedDOMComponentWithTag(component, "input"),
+    TestUtils.findRenderedDOMComponentWithTag(component, "button");
   });
 });

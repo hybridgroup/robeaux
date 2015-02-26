@@ -1,9 +1,17 @@
 {
   "browser": true,
   "esnext": true,
+  "node": true,
   "globals": {
     "React": true,
-    "EventSource": true
+    "EventSource": true,
+
+    "TestUtils": true,
+    "source": true,
+    "beforeEach": true,
+    "describe": true,
+    "it": true,
+    "expect": true
   },
   "boss": true,
   "curly": true,
