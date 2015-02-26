@@ -45,18 +45,33 @@ export default React.createClass({
   },
 
   listeners: function() {
-    return Object.keys(this.state.listeners).map((name) => {
+    let listeners = Object.keys(this.state.listeners).map((name) => {
       return (
         <tr key={name} className="listener">
           <td>{name}</td>
-          <td className="remove" onClick={this.removeListener(name)}>remove</td>
+
+          <td className="remove" onClick={this.removeListener(name)}>
+            remove
+          </td>
         </tr>
       );
     });
+
+    return (
+      <table className="listeners">
+        <thead>
+          <th colSpan="2">Listeners</th>
+        </thead>
+
+        <tbody>
+          { listeners }
+        </tbody>
+      </table>
+    );
   },
 
   events: function() {
-    return this.state.events.map((event, idx) => {
+    let events = this.state.events.map((event, idx) => {
       return (
         <tr key={idx} className="event">
           <td>{event.name}</td>
@@ -64,41 +79,39 @@ export default React.createClass({
         </tr>
       );
     });
+
+    return (
+      <table className="events">
+        <thead>
+          <th colSpan="2">Events</th>
+        </thead>
+
+        <tbody>
+          { events }
+        </tbody>
+      </table>
+    );
   },
 
   render: function() {
+    let listeners = this.listeners(),
+        events = this.events();
+
     return (
       <div className="event-tool">
         <h1>Events</h1>
 
         <div className="input">
           <input placeholder="event"
-                 type="text"
                  value={this.state.name}
                  onChange={this.updateName} />
 
           <button onClick={this.listen}> Listen </button>
         </div>
 
-        <table className="listeners">
-          <thead>
-            <th colSpan="2">Listeners</th>
-          </thead>
+        { listeners }
 
-          <tbody>
-            { this.listeners() }
-          </tbody>
-        </table>
-
-        <table className="events">
-          <thead>
-            <th colSpan="2">Events</th>
-          </thead>
-
-          <tbody>
-            { this.events() }
-          </tbody>
-        </table>
+        { events }
       </div>
     );
   }
