@@ -2,7 +2,7 @@ import React from "react";
 
 export default React.createClass({
   render: function() {
-    var conn = this.props.conn;
+    let conn = this.props.conn;
 
     return (
       <div className="connection">

@@ -4,7 +4,7 @@ import RobotInfo from "../components/robot-info.es";
 
 export default React.createClass({
   robots: function() {
-    var bots = (this.props.data && this.props.data.robots || []);
+    let bots = (this.props.data && this.props.data.robots || []);
     return bots.map((bot) => <RobotInfo key={bot.name} bot={bot} />);
   },
 

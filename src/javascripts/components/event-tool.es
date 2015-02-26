@@ -21,7 +21,7 @@ export default React.createClass({
     let source = new EventSource(url);
 
     source.onmessage = (msg) => {
-      var events = this.state.events;
+      let events = this.state.events;
       events.unshift({ name: event, data: msg.data });
       if (events.length > 5) { events.pop(); }
       this.setState({ events: events });

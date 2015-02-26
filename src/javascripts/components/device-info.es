@@ -3,7 +3,7 @@ import {Link} from "react-router";
 
 export default React.createClass({
   render: function() {
-    var device = this.props.device,
+    let device = this.props.device,
         params = this.props.params;
 
     return (

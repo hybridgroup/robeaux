@@ -3,7 +3,7 @@ import {Link} from "react-router";
 
 export default React.createClass({
   render: function() {
-    var bot = this.props.bot,
+    let bot = this.props.bot,
         link = `/robots/${encodeURIComponent(bot.name)}`;
 
     return (
