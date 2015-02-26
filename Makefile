@@ -3,7 +3,7 @@ BIN := ./node_modules/.bin/
 ifneq (,$(shell sassc --version 2>/dev/null))
 	SASS_COMPILER := sassc
 	SASS_ARGS := src/stylesheets/style.scss css/style.css
-	SASS_WATCH_CMD := find ./src/stylesheets/*.scss | peat "$(SASS_COMPILER) $(SASS_ARGS)"
+	SASS_WATCH_CMD := find ./src/stylesheets/**/*.scss | peat "$(SASS_COMPILER) $(SASS_ARGS)"
 else
 	SASS_COMPILER := sass
 	SASS_ARGS := src/stylesheets/style.scss:css/style.css
