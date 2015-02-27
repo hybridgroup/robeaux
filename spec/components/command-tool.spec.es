@@ -33,7 +33,7 @@ describe("CommandTool", () => {
 
     findOne = searchOne(component);
     findMany = searchMany(component);
-  })
+  });
 
   beforeEach(() => {
     component.state = component.getInitialState();
