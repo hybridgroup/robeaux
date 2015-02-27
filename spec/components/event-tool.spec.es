@@ -19,15 +19,14 @@ function searchComponentForTag(component) {
 describe("EventTool", () => {
   let component, search, MockEventSource;
 
-  beforeEach(() => {
-    global.EventSource = MockEventSource = spy();
-
-    component = render({
-      commands: [ "commandA", "commandB", "commandC" ],
-      endpoint: "/api/endpoint"
-    });
-
+  before(() => {
+    component = render({ endpoint: "/api/endpoint" });
     search = searchComponentForTag(component);
+  });
+
+  beforeEach(() => {
+    component.state = component.getInitialState();
+    global.EventSource = MockEventSource = spy();
   });
 
   afterEach(() => {

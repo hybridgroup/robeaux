@@ -8,6 +8,7 @@
 
     "TestUtils": true,
     "source": true,
+    "before": true,
     "beforeEach": true,
     "afterEach": true,
     "describe": true,
