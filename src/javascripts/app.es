@@ -7,7 +7,7 @@ import Navigation from "./components/navigation.es";
 
 export default React.createClass({
   getInitialState: function() {
-    return { data: { robots: [] } };
+    return { loaded: false, data: {} };
   },
 
   componentDidMount: function() {
@@ -16,15 +16,21 @@ export default React.createClass({
           parsed = JSON.parse(json),
           MCP = parsed.MCP;
 
-      this.setState({ data: MCP });
+      this.setState({ loaded: true, data: MCP });
     });
   },
 
   render: function () {
+    let content = <h2> Loading, please wait </h2>;
+
+    if (this.state.loaded) {
+      content = <RouteHandler data={this.state.data} />
+    }
+
     return (
       <div>
         <Navigation/>
-        <RouteHandler data={this.state.data}/>
+        {content}
       </div>
     );
   }
