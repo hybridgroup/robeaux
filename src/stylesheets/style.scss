@@ -3,6 +3,4 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 
-body > .container {
-  @include outer-container;
-}
+@import "themes/default";
