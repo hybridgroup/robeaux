@@ -113,12 +113,12 @@ export default React.createClass({
         <div key={idx} className="input">
           <input placeholder="key"
                  onChange={update.key}
-                 onClick={add}
+                 onFocus={add}
                  value={param.key} />
 
           <input placeholder="value"
                  onChange={update.value}
-                 onClick={add}
+                 onFocus={add}
                  value={param.value} />
 
           <select onChange={update.type} value={param.type}>
