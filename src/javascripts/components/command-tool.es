@@ -132,13 +132,11 @@ export default React.createClass({
   },
 
   results: function() {
-    return this.state.results.map((res, idx) => {
-      return (
-        <div key={idx}>
-          <code>{res}</code>
-        </div>
-      );
-    });
+    return this.state.results.map((res, idx) => (
+      <div key={idx}>
+        <code>{res}</code>
+      </div>
+    ));
   },
 
   render: function() {
