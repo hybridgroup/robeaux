@@ -83,9 +83,11 @@ export default React.createClass({
 
   params: function() {
     return this.state.params.map((param, idx) => {
-      let length = this.state.params.length;
+      let length = this.state.params.length,
+          isLast = (idx + 1) === length;
 
-      let remove = this.removeParam(idx);
+      let add = isLast && this.addParam,
+          remove = this.removeParam(idx);
 
       let update = {
         key:   this.updateParam(idx, "key"),
@@ -93,21 +95,29 @@ export default React.createClass({
         type:  this.updateParam(idx, "type")
       };
 
+      let removeButton = null;
+
+      if (!isLast) {
+        removeButton = <button onClick={remove}>&#x2716;</button>;
+      }
+
       return (
         <div key={idx} className="input">
           <input placeholder="key"
                  onChange={update.key}
+                 onClick={add}
                  value={param.key} />
 
           <input placeholder="value"
                  onChange={update.value}
+                 onClick={add}
                  value={param.value} />
 
           <select onChange={update.type} value={param.type}>
             {generateOptions(["string", "boolean", "number"])}
           </select>
 
-          <button disabled={length === 1} onClick={remove}>&#x2716;</button>
+          {removeButton}
         </div>
       );
     });
@@ -138,7 +148,6 @@ export default React.createClass({
 
           <div className="params">
             {params}
-            <button onClick={this.addParam}>Add</button>
           </div>
 
           <button onClick={this.runCommand}> Run </button>
