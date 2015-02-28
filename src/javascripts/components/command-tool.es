@@ -142,7 +142,7 @@ export default React.createClass({
         <h1>Commands</h1>
 
         <div className="form">
-          <select value={this.state.command} onChange={this.selectCommand}>
+          <select value={this.state.command} onChange={this.chooseCommand}>
             {generateOptions(this.props.commands)}
           </select>
 
