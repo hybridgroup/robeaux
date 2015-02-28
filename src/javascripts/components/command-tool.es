@@ -33,7 +33,7 @@ export default React.createClass({
       command: nextProps.commands[0],
       params: [ { key: "", value: "", type: "string" } ],
       results: []
-    })
+    });
   },
 
   chooseCommand: function(event) {
