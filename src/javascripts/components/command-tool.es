@@ -28,6 +28,14 @@ export default React.createClass({
     };
   },
 
+  componentWillReceiveProps: function(nextProps) {
+    this.setState({
+      command: nextProps.commands[0],
+      params: [ { key: "", value: "", type: "string" } ],
+      results: []
+    })
+  },
+
   chooseCommand: function(event) {
     return this.setState({ command: event.target.value });
   },

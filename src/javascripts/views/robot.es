@@ -30,10 +30,12 @@ export default React.createClass({
   },
 
   devices: function(bot) {
-    let params = { robot: encodeURIComponent(bot.name) };
-
     return bot.devices.map((device) => {
-      params.device = encodeURIComponent(device.name);
+      let params = {
+        robot: encodeURIComponent(bot.name),
+        device: encodeURIComponent(device.name)
+      };
+
       return <DeviceInfo key={device.name} device={device} params={params} />;
     });
   },
