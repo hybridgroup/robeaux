@@ -2,18 +2,17 @@ import React from "react";
 
 export default React.createClass({
   render: function() {
-    let conn = this.props.conn;
+    let name = this.props.name,
+        port = this.props.port || "";
 
     return (
       <div className="connection">
         <button className="btn btn-device"> connection </button>
 
-        <span className="name">{conn.name}</span>
+        <span className="name"> {name} </span>
 
         <div className="details">
-          <span>
-            {conn.port ? conn.port : ""}
-          </span>
+          <span> {port} </span>
         </div>
       </div>
     );

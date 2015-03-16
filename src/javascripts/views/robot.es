@@ -36,13 +36,13 @@ export default React.createClass({
         device: encodeURIComponent(device.name)
       };
 
-      return <DeviceInfo key={device.name} device={device} params={params} />;
+      return <DeviceInfo key={device.name} {...device} params={params} />;
     });
   },
 
   connections: function(bot) {
     return bot.connections.map((conn) => {
-      return <ConnectionInfo key={conn.name} conn={conn}/>;
+      return <ConnectionInfo key={conn.name} {...conn} />;
     });
   },
 
@@ -53,7 +53,7 @@ export default React.createClass({
 
     return (
       <div className="robot">
-        <RobotInfo bot={bot} />
+        <RobotInfo {...bot} />
 
         {this.commandTool(bot)}
 

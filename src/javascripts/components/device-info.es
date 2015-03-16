@@ -3,8 +3,10 @@ import {Link} from "react-router";
 
 export default React.createClass({
   render: function() {
-    let device = this.props.device,
-        params = this.props.params;
+    let params = this.props.params;
+
+    let name = this.props.name,
+        connection = this.props.connection;
 
     return (
       <div className="device">
@@ -12,10 +14,10 @@ export default React.createClass({
           device
         </Link>
 
-        <span className="name">{device.name}</span>
+        <span className="name">{name}</span>
 
         <div className="details">
-          <span>{device.connection}</span>
+          <span>{connection}</span>
         </div>
       </div>
     );
