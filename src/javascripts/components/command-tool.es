@@ -73,7 +73,7 @@ export default React.createClass({
     post(url)
       .set("Content-Type", "application/json")
       .send(params)
-      .end((res) => {
+      .end((err, res) => {
         let results = this.state.results,
             body = res.body;
 

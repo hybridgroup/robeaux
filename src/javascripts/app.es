@@ -11,7 +11,7 @@ export default React.createClass({
   },
 
   componentDidMount: function() {
-    get("/api", (res) => {
+    get("/api", (err, res) => {
       let json = res.text,
           parsed = JSON.parse(json),
           MCP = parsed.MCP;
