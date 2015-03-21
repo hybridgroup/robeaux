@@ -24,13 +24,13 @@
     "react-router": "0.12.4",
 
     "babelify": "5.0.4",
-    "envify":   "3.3.1",
+    "envify":   "3.4.0",
 
     "sinon-chai": "2.7.0",
     "chai":       "2.1.2",
     "mocha":      "2.2.1",
-    "sinon":      "1.14.0",
+    "sinon":      "1.14.1",
     "jsdom":      "3.1.2",
-    "babel":      "4.7.12"
+    "babel":      "4.7.16"
   }
 }
