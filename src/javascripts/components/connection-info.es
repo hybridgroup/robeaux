@@ -7,7 +7,7 @@ export default React.createClass({
 
     return (
       <div className="connection">
-        <button className="btn btn-device"> connection </button>
+        <button className="btn btn-connect"> connection </button>
 
         <span className="name"> {name} </span>
 

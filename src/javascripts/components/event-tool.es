@@ -58,15 +58,17 @@ export default React.createClass({
     });
 
     return (
-      <table className="listeners">
-        <thead>
-          <th colSpan="2">Listeners</th>
-        </thead>
+      <div className="listeners-container">
+        <table className="listeners">
+          <thead>
+            <th colSpan="2">Listeners</th>
+          </thead>
 
-        <tbody>
-          { listeners }
-        </tbody>
-      </table>
+          <tbody>
+            { listeners }
+          </tbody>
+        </table>
+      </div>
     );
   },
 
@@ -99,7 +101,7 @@ export default React.createClass({
 
     return (
       <div className="event-tool">
-        <h1>Events</h1>
+        <h2>Events</h2>
 
         <div className="input event-listener">
           <input placeholder="event"

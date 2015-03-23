@@ -144,7 +144,7 @@ export default React.createClass({
 
     return (
       <div className="command-tool">
-        <h1>Commands</h1>
+        <h2>Commands</h2>
 
         <div className="form">
           <select className="command-state"
