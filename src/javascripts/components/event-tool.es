@@ -101,7 +101,7 @@ export default React.createClass({
       <div className="event-tool">
         <h1>Events</h1>
 
-        <div className="input">
+        <div className="input event-listener">
           <input placeholder="event"
                  value={this.state.name}
                  onChange={this.updateName} />

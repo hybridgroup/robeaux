@@ -10,21 +10,23 @@ export default React.createClass({
     let link = `/robots/${encodeURIComponent(name)}`;
 
     return (
-      <div className="robot-info" key={name}>
-        <Link to={link} className="btn btn-robot btn-big"> robot </Link>
+      <section className="row">
+        <div className="robot-info" key={name}>
+          <Link to={link} className="btn btn-robot btn-big"> robot </Link>
 
-        <span className="name">{name}</span>
+          <span className="name">{name}</span>
 
-        <div className="details">
-          <span className="bullet-connections">
-            <strong>Connections</strong> {connections.length}
-          </span>
+          <div className="details">
+            <span className="bullet-connections">
+              <strong>Connections</strong> {connections.length}
+            </span>
 
-          <span className="bullet-devices">
-            <strong>Devices</strong> {devices.length}
-          </span>
+            <span className="bullet-devices">
+              <strong>Devices</strong> {devices.length}
+            </span>
+          </div>
         </div>
-      </div>
+      </section>
     );
   }
 });

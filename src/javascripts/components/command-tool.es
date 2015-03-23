@@ -106,7 +106,7 @@ export default React.createClass({
       let removeButton = null;
 
       if (!isLast) {
-        removeButton = <button onClick={remove}>&#x2716;</button>;
+        removeButton = <span className="close" onClick={remove}>&#x2716;</span>;
       }
 
       return (
@@ -124,8 +124,7 @@ export default React.createClass({
           <select onChange={update.type} value={param.type}>
             {generateOptions(["string", "boolean", "number"])}
           </select>
-
-          {removeButton}
+            {removeButton}
         </div>
       );
     });
@@ -148,7 +147,7 @@ export default React.createClass({
         <h1>Commands</h1>
 
         <div className="form">
-          <select value={this.state.command} onChange={this.chooseCommand}>
+          <select className="command-state" value={this.state.command} onChange={this.chooseCommand}>
             {generateOptions(this.props.commands)}
           </select>
 
@@ -156,7 +155,7 @@ export default React.createClass({
             {params}
           </div>
 
-          <button onClick={this.runCommand}> Run </button>
+          <button className="btn btn-run" onClick={this.runCommand}> Run </button>
         </div>
 
         <div className="results">
