@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router";
 
 export default React.createClass({
-  render: function() {
+  render() {
     let name = this.props.name,
         connections = this.props.connections,
         devices = this.props.devices;

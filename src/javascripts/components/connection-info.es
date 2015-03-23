@@ -1,7 +1,7 @@
 import React from "react";
 
 export default React.createClass({
-  render: function() {
+  render() {
     let name = this.props.name,
         port = this.props.port || "";
 

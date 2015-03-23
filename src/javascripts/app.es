@@ -6,11 +6,11 @@ import {get} from "superagent";
 import Navigation from "./components/navigation.es";
 
 export default React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return { loaded: false, data: {} };
   },
 
-  componentDidMount: function() {
+  componentDidMount() {
     get("/api", (err, res) => {
       let json = res.text,
           parsed = JSON.parse(json),
@@ -20,7 +20,7 @@ export default React.createClass({
     });
   },
 
-  render: function () {
+  render() {
     let content = <h2> Loading, please wait </h2>;
 
     if (this.state.loaded) {

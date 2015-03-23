@@ -11,7 +11,7 @@ import CommandTool    from "../components/command-tool.es";
 export default React.createClass({
   mixins: [State],
 
-  findRobot: function() {
+  findRobot() {
     let name = this.getParams().robot,
         data = this.props.data;
 
@@ -20,7 +20,7 @@ export default React.createClass({
     return data.robots.filter((robot) => (robot.name === name))[0];
   },
 
-  commandTool: function(bot) {
+  commandTool(bot) {
     let name = encodeURIComponent(bot.name),
         endpoint = "/api/robots/" + name;
 
@@ -29,7 +29,7 @@ export default React.createClass({
     }
   },
 
-  devices: function(bot) {
+  devices(bot) {
     return bot.devices.map((device) => {
       let params = {
         robot: encodeURIComponent(bot.name),
@@ -40,13 +40,13 @@ export default React.createClass({
     });
   },
 
-  connections: function(bot) {
+  connections(bot) {
     return bot.connections.map((conn) => {
       return <ConnectionInfo key={conn.name} {...conn} />;
     });
   },
 
-  render: function() {
+  render() {
     let bot = this.findRobot();
 
     if (!bot) { return <NotFound />; }

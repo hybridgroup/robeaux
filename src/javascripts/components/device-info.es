@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router";
 
 export default React.createClass({
-  render: function() {
+  render() {
     let params = this.props.params;
 
     let name = this.props.name,

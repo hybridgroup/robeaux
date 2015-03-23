@@ -27,7 +27,7 @@ export default React.createClass({
     return [device, endpoint];
   },
 
-  render: function() {
+  render() {
     let name = this.getParams().device,
         [device, endpoint] = this.findDevice(name),
         commandTool;

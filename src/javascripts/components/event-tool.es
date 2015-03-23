@@ -1,15 +1,15 @@
 import React from "react";
 
 export default React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return { name: "", listeners: {}, events: [] };
   },
 
-  updateName: function(e) {
+  updateName(e) {
     this.setState({ name: e.target.value });
   },
 
-  listen: function() {
+  listen() {
     let event = this.state.name,
         listeners = this.state.listeners,
         url = `${this.props.endpoint}/events/${event}`;
@@ -35,7 +35,7 @@ export default React.createClass({
     });
   },
 
-  removeListener: function(name) {
+  removeListener(name) {
     return () => {
       let listeners = this.state.listeners;
       listeners[name].close();
@@ -44,7 +44,7 @@ export default React.createClass({
     };
   },
 
-  listeners: function() {
+  listeners() {
     let listeners = Object.keys(this.state.listeners).map((name) => {
       return (
         <tr key={name} className="listener">
@@ -70,7 +70,7 @@ export default React.createClass({
     );
   },
 
-  events: function() {
+  events() {
     let events = this.state.events.map((event, idx) => {
       return (
         <tr key={idx} className="event">
@@ -93,7 +93,7 @@ export default React.createClass({
     );
   },
 
-  render: function() {
+  render() {
     let listeners = this.listeners(),
         events = this.events();
 

@@ -20,7 +20,7 @@ function generateOptions(arr) {
 }
 
 export default React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return {
       command: this.props.commands[0],
       params: [ { key: "", value: "", type: "string" } ],
@@ -28,7 +28,7 @@ export default React.createClass({
     };
   },
 
-  componentWillReceiveProps: function(nextProps) {
+  componentWillReceiveProps(nextProps) {
     this.setState({
       command: nextProps.commands[0],
       params: [ { key: "", value: "", type: "string" } ],
@@ -36,17 +36,17 @@ export default React.createClass({
     });
   },
 
-  chooseCommand: function(event) {
+  chooseCommand(event) {
     return this.setState({ command: event.target.value });
   },
 
-  addParam: function() {
+  addParam() {
     let params = this.state.params;
     params.push({ key: "", value: "", type: "string" });
     this.setState({ params: params });
   },
 
-  updateParam: function(idx, prop) {
+  updateParam(idx, prop) {
     return (e) => {
       let params = this.state.params;
       params[idx][prop] = e.target.value;
@@ -54,7 +54,7 @@ export default React.createClass({
     };
   },
 
-  removeParam: function(idx) {
+  removeParam(idx) {
     return () => {
       let params = this.state.params;
 
@@ -65,7 +65,7 @@ export default React.createClass({
     };
   },
 
-  runCommand: function() {
+  runCommand() {
     let command = this.state.command,
         url = `${this.props.endpoint}/commands/${encodeURIComponent(command)}`,
         params = coerceParams(this.state.params);
@@ -89,7 +89,7 @@ export default React.createClass({
       });
   },
 
-  params: function() {
+  params() {
     return this.state.params.map((param, idx) => {
       let length = this.state.params.length,
           isLast = (idx + 1) === length;
@@ -130,7 +130,7 @@ export default React.createClass({
     });
   },
 
-  results: function() {
+  results() {
     return this.state.results.map((res, idx) => (
       <div key={idx}>
         <code>{res}</code>
@@ -138,7 +138,7 @@ export default React.createClass({
     ));
   },
 
-  render: function() {
+  render() {
     let params = this.params(),
         results = this.results();
 
