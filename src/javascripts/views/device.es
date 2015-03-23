@@ -44,8 +44,12 @@ export default React.createClass({
 
     return (
       <div>
-        {commandTool}
-        <EventTool endpoint={endpoint} />
+        <section className="row">
+          <div className="device-commands">
+            {commandTool}
+            <EventTool endpoint={endpoint} />
+          </div>
+        </section>
       </div>
     );
   }

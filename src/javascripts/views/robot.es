@@ -55,12 +55,16 @@ export default React.createClass({
       <div className="robot">
         <RobotInfo {...bot} />
 
-        {this.commandTool(bot)}
+          {this.commandTool(bot)}
 
         <RouteHandler bot={bot} />
 
-        {this.devices(bot)}
-        {this.connections(bot)}
+        <section className="row">
+          <div className="connections">
+            {this.devices(bot)}
+            {this.connections(bot)}
+          </div>
+        </section>
       </div>
     );
   }
