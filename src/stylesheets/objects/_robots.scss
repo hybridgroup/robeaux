@@ -4,7 +4,8 @@
   .details {
     float: right;
     line-height: 43px;
-    span {
+
+    .bullet-connections, .bullet-devices {
       color: $connection-digits-color;
       margin-left: 50px;
     }
@@ -55,10 +56,15 @@
       font-weight: bold;
     }
 
-    .details {
+    .details,  {
       display: inline-block;
       margin-left: 20px;
       color: $color04;
     }
+  }
+
+  .connection .name{
+    @extend .details;
+    font-weight: normal;
   }
 }

@@ -19,7 +19,9 @@ input, select, textarea {
   line-height: $line-height-base;
   font-size: $body-font-size;
   color: $body-text-color;
+  padding: 8px 12px;
   @extend .form-control;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   @include form-control-focus($input-border-color-focus);
   box-sizing: border-box;
 }
@@ -46,7 +48,7 @@ input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
 
 .event-tool, .command-tool {
 
-    h1{
+    h2{
       text-align: center;
     }
     .params{
@@ -83,8 +85,8 @@ input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
 
     .close {
       @include span-columns( 1 of 12);
-      float: right;
       line-height: 34px;
+      margin-top: 12px;
 
       &:hover {
         color: #f00;

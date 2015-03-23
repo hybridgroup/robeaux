@@ -4,15 +4,21 @@
   .command-tool, .event-tool{
     @include span-columns(6 of 12);
   }
-
-  button {
+  .form {
+    text-align: center;
+  }
+  .btn-run {
     @include span-columns(5 of 12);
+    float: none;
+    display: inline-block;
   }
 
-  .listeners-div {
+  .listeners-container {
     @include span-columns(6 of 12);
+    @include omega;
+    display: inline-block;
     margin-bottom: 30px;
-    table {
+    .listeners {
       width: 100%;
     }
   }
@@ -23,5 +29,6 @@
 
   .remove {
     width: 10%;
+    margin-top: 12px;
   }
 }
