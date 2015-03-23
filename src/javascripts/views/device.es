@@ -43,14 +43,12 @@ export default React.createClass({
     }
 
     return (
-      <div>
-        <section className="row">
-          <div className="device-commands">
-            {commandTool}
-            <EventTool endpoint={endpoint} />
-          </div>
-        </section>
-      </div>
+      <section className="row">
+        <div className="device-commands">
+          {commandTool}
+          <EventTool endpoint={endpoint} />
+        </div>
+      </section>
     );
   }
 });
