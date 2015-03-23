@@ -1,0 +1,106 @@
+body {
+  background: $body-background-color;
+  font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $body-text-color;
+}
+
+.row{
+  background: #fff;
+  padding: 15px 0;
+  margin-top: 10px;
+}
+
+.container {
+  @include outer-container;
+}
+
+input, select, textarea {
+  display: inline-block;
+  line-height: $line-height-base;
+  font-size: $body-font-size;
+  color: $body-text-color;
+  @extend .form-control;
+  @include form-control-focus($input-border-color-focus);
+  box-sizing: border-box;
+}
+
+button {
+  outline: none;
+}
+
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"] > input[type="button"]::-moz-focus-inner {
+  outline: none;
+}
+
+button:focus::-moz-focus-inner,
+input[type="reset"]:focus::-moz-focus-inner,
+input[type="button"]:focus::-moz-focus-inner,
+input[type="submit"]:focus::-moz-focus-inner,
+input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
+  outline: none;
+}
+
+.event-tool, .command-tool {
+
+    h1{
+      text-align: center;
+    }
+    .params{
+
+      .input :first-child{
+        margin-left: 0;
+      }
+      input, select{
+        @include span-columns(3.5 of 12);
+        display: inline;
+        float: left;
+        margin: 10px 2.08333333%;
+      }
+    }
+
+  .event-listener{
+    @include span-columns( 6 of 12);
+
+    input, button{
+      @include span-columns( 6 of 12);
+    }
+    button{
+      @extend .btn, .btn-robot;
+    }
+  }
+
+    input[type='text'] {
+      @include span-columns( 4 of 12);
+    }
+
+    .command-state {
+      @include span-columns( 12 of 12);
+    }
+
+    .close {
+      @include span-columns( 1 of 12);
+      float: right;
+      line-height: 34px;
+
+      &:hover {
+        color: #f00;
+        cursor: pointer;
+      }
+    }
+  }
+
+  table {
+    th {
+      border-bottom: 1px solid #ccc;
+      line-height: 34px;
+    }
+
+    td {
+      font-family: $code-font-family;
+      padding: 3px;
+    }
+  }

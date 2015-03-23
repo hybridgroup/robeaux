@@ -1,0 +1,27 @@
+.device-commands {
+  @extend .container;
+
+  .command-tool, .event-tool{
+    @include span-columns(6 of 12);
+  }
+
+  button {
+    @include span-columns(5 of 12);
+  }
+
+  .listeners-div {
+    @include span-columns(6 of 12);
+    margin-bottom: 30px;
+    table {
+      width: 100%;
+    }
+  }
+
+  .events {
+    width: 100%;
+  }
+
+  .remove {
+    width: 10%;
+  }
+}
