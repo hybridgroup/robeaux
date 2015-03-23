@@ -147,7 +147,9 @@ export default React.createClass({
         <h1>Commands</h1>
 
         <div className="form">
-          <select className="command-state" value={this.state.command} onChange={this.chooseCommand}>
+          <select className="command-state"
+                  value={this.state.command}
+                  onChange={this.chooseCommand}>
             {generateOptions(this.props.commands)}
           </select>
 
@@ -155,7 +157,9 @@ export default React.createClass({
             {params}
           </div>
 
-          <button className="btn btn-run" onClick={this.runCommand}> Run </button>
+          <button className="btn btn-run" onClick={this.runCommand}>
+            Run
+          </button>
         </div>
 
         <div className="results">
