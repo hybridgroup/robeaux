@@ -3,11 +3,11 @@ TEST_FILES := spec/helper.js $(shell find spec/components -type f)
 
 ifneq (,$(shell sassc --version 2>/dev/null))
 	SASS_COMPILER := sassc
-	SASS_ARGS := src/stylesheets/style.scss css/style.css
+	SASS_ARGS := src/stylesheets/application.scss css/application.css
 	SASS_WATCH_CMD := find ./src/stylesheets -type f | grep -v "bourbon" | grep -v "neat" | peat "$(SASS_COMPILER) $(SASS_ARGS)"
 else
 	SASS_COMPILER := sass
-	SASS_ARGS := src/stylesheets/style.scss:css/style.css
+	SASS_ARGS := src/stylesheets/application.scss:css/application.css
 	SASS_WATCH_CMD := $(SASS_COMPILER) --watch $(SASS_ARGS)
 endif
 
