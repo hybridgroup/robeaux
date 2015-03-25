@@ -1,5 +1,5 @@
-@import "normalize";
-@import "fonts";
+@import "vendor/normalize";
+@import "vendor/fonts";
 @import "bourbon/bourbon";
 @import "neat/neat";
 
@@ -20,7 +20,8 @@ $body-background-color: $color01;
 $body-text-color      : $color02;
 $body-font-family     : "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
 $body-font-size       : 15px;
-$line-height-base     : 1.428571429;
+$line-height-base     : 1.428571429; // 20/14
+$line-height-computed : floor(($body-font-size * $line-height-base)); // ~20px
 
 /* Code Font */
 $code-font-family     : Inconsolata, monospace;
@@ -52,10 +53,12 @@ $connection-digits-color: $color04;
 /* Widgets */
 $modal-bg-color: #fff;
 
+
+@import "support/mixins";
 @import "support/buttons";
-@import "themes/default";
 @import "views/body";
-@import "objects/buttons";
 @import "objects/device";
 @import "objects/nav";
 @import "objects/robots";
+@import "objects/connections";
+@import "objects/tool";
