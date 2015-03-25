@@ -1,5 +1,5 @@
 .device-commands {
-  @extend .container;
+  @include outer-container;
 
   .command-tool, .event-tool{
     @include span-columns(6 of 12);

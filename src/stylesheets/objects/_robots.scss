@@ -1,5 +1,5 @@
 .robot-info {
-  @include outer-container();
+  @include outer-container;
 
   .details {
     float: right;
@@ -40,31 +40,5 @@
         padding: 3px;
       }
     }
-  }
-}
-
-.connections{
-  @extend .container;
-
-  .device, .connection {
-    @include span-columns(6 of 12);
-    @include omega;
-
-    .name {
-      display: inline-block;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    .details,  {
-      display: inline-block;
-      margin-left: 20px;
-      color: $color04;
-    }
-  }
-
-  .connection .name{
-    @extend .details;
-    font-weight: normal;
   }
 }

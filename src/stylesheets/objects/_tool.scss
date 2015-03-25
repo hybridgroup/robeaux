@@ -1,0 +1,49 @@
+.event-tool, .command-tool {
+  h2{
+    text-align: center;
+  }
+
+  .params{
+    .input :first-child{
+      margin-left: 0;
+    }
+
+    input, select{
+      @include span-columns(3.5 of 12);
+      display: inline;
+      float: left;
+      margin: 10px 2.08333333%;
+    }
+  }
+
+  .event-listener{
+    @include span-columns( 6 of 12);
+
+    input, button{
+      @include span-columns( 6 of 12);
+    }
+
+    button{
+      @extend .btn, .btn-robot;
+    }
+  }
+
+  input[type='text'] {
+    @include span-columns( 4 of 12);
+  }
+
+  .command-state {
+    @include span-columns( 12 of 12);
+  }
+
+  .close {
+    @include span-columns( 1 of 12);
+    line-height: 34px;
+    margin-top: 12px;
+
+    &:hover {
+      color: #f00;
+      cursor: pointer;
+    }
+  }
+}

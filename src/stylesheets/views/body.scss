@@ -20,7 +20,7 @@ input, select, textarea {
   font-size: $body-font-size;
   color: $body-text-color;
   padding: 8px 12px;
-  @extend .form-control;
+  @extend %form-control;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
   @include form-control-focus($input-border-color-focus);
   box-sizing: border-box;
@@ -46,63 +46,14 @@ input[type="file"] > input[type="button"]:focus::-moz-focus-inner {
   outline: none;
 }
 
-.event-tool, .command-tool {
-
-    h2{
-      text-align: center;
-    }
-    .params{
-
-      .input :first-child{
-        margin-left: 0;
-      }
-      input, select{
-        @include span-columns(3.5 of 12);
-        display: inline;
-        float: left;
-        margin: 10px 2.08333333%;
-      }
-    }
-
-  .event-listener{
-    @include span-columns( 6 of 12);
-
-    input, button{
-      @include span-columns( 6 of 12);
-    }
-    button{
-      @extend .btn, .btn-robot;
-    }
+table {
+  th {
+    border-bottom: 1px solid #ccc;
+    line-height: 34px;
   }
 
-    input[type='text'] {
-      @include span-columns( 4 of 12);
-    }
-
-    .command-state {
-      @include span-columns( 12 of 12);
-    }
-
-    .close {
-      @include span-columns( 1 of 12);
-      line-height: 34px;
-      margin-top: 12px;
-
-      &:hover {
-        color: #f00;
-        cursor: pointer;
-      }
-    }
+  td {
+    font-family: $code-font-family;
+    padding: 3px;
   }
-
-  table {
-    th {
-      border-bottom: 1px solid #ccc;
-      line-height: 34px;
-    }
-
-    td {
-      font-family: $code-font-family;
-      padding: 3px;
-    }
-  }
+}
