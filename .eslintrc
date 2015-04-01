@@ -1,0 +1,32 @@
+{
+  "ecmaFeatures": {
+    "modules": true,
+    "jsx": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true
+  },
+  "globals": {
+    "React": true,
+    "EventSource": true,
+
+    "TestUtils": true,
+    "source": true,
+    "before": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "describe": true,
+    "context": true,
+    "it": true,
+    "spy": true,
+    "expect": true
+  },
+  "rules": {
+    "indent": [2, 2],
+    "no-var": true,
+    "quotes": [1, "double"],
+    "max-len": [2, 80, 4]
+  }
+}

@@ -3,10 +3,10 @@ import {State, RouteHandler} from "react-router";
 
 import NotFound from "./not-found.es";
 
-import RobotInfo      from "../components/robot-info.es";
-import DeviceInfo     from "../components/device-info.es";
+import RobotInfo from "../components/robot-info.es";
+import DeviceInfo from "../components/device-info.es";
 import ConnectionInfo from "../components/connection-info.es";
-import CommandTool    from "../components/command-tool.es";
+import CommandTool from "../components/command-tool.es";
 
 export default React.createClass({
   mixins: [State],

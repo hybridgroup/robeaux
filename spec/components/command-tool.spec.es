@@ -1,4 +1,4 @@
-// jshint expr:true
+/* eslint no-unused-vars:0 */
 
 "use strict";
 
@@ -10,29 +10,14 @@ function render(props = {}) {
   );
 }
 
-function searchMany(component) {
-  return function(tag) {
-    return TestUtils.scryRenderedDOMComponentsWithTag(component, tag);
-  };
-}
-
-function searchOne(component) {
-  return function(tag) {
-    return TestUtils.findRenderedDOMComponentWithTag(component, tag);
-  };
-}
-
 describe("CommandTool", () => {
-  let component, findOne, findMany;
+  let component;
 
   before(() => {
     component = render({
       commands: [ "commandA", "commandB", "commandC" ],
       endpoint: "/api/endpoint"
     });
-
-    findOne = searchOne(component);
-    findMany = searchMany(component);
   });
 
   beforeEach(() => {

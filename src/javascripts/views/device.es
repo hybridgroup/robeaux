@@ -13,8 +13,8 @@ export default React.createClass({
     let robot = this.props.bot,
         endpoint;
 
-    let device = robot.devices.filter(function(device) {
-      return (device.name === name);
+    let device = robot.devices.filter(function(d) {
+      return (d.name === name);
     })[0];
 
     if (device) {

@@ -3,7 +3,7 @@ import {RouteHandler} from "react-router";
 
 import {get} from "superagent";
 
-import Navigation from "./components/navigation.es";
+import Navigation from './components/navigation.es';
 
 export default React.createClass({
   getInitialState() {

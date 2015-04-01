@@ -74,6 +74,11 @@ export default React.createClass({
       .set("Content-Type", "application/json")
       .send(params)
       .end((err, res) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+
         let results = this.state.results,
             body = res.body;
 
@@ -98,9 +103,9 @@ export default React.createClass({
           remove = this.removeParam(idx);
 
       let update = {
-        key:   this.updateParam(idx, "key"),
+        key: this.updateParam(idx, "key"),
         value: this.updateParam(idx, "value"),
-        type:  this.updateParam(idx, "type")
+        type: this.updateParam(idx, "type")
       };
 
       let removeButton = null;
