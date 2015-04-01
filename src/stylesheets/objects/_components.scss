@@ -3,6 +3,7 @@
 
   .device, .connection {
     @include omega;
+    padding: 15px 0;
 
     .name {
       display: inline-block;
