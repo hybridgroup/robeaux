@@ -144,12 +144,14 @@ export default React.createClass({
   },
 
   render() {
+    let name = this.props.name || "Commands";
+
     let params = this.params(),
         results = this.results();
 
     return (
       <div className="command-tool">
-        <h2>Commands</h2>
+        <h2>{name}</h2>
 
         <div className="form">
           <select className="command-state"

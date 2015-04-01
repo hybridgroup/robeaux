@@ -96,12 +96,13 @@ export default React.createClass({
   },
 
   render() {
+    let name = this.props.name || "Events";
     let listeners = this.listeners(),
         events = this.events();
 
     return (
       <div className="event-tool">
-        <h2>Events</h2>
+        <h2>{name}</h2>
 
         <div className="input event-listener">
           <input placeholder="event"

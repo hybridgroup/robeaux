@@ -36,7 +36,9 @@ export default React.createClass({
 
     if (device.commands.length) {
       commandTool = (
-        <CommandTool commands={device.commands} endpoint={endpoint} />
+        <CommandTool name="Device Commands"
+                     commands={device.commands}
+                     endpoint={endpoint} />
       );
     } else {
       commandTool = "";
@@ -46,7 +48,7 @@ export default React.createClass({
       <section className="row">
         <div className="device-commands">
           {commandTool}
-          <EventTool endpoint={endpoint} />
+          <EventTool name="Device Events" endpoint={endpoint} />
         </div>
       </section>
     );
