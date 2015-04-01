@@ -10,6 +10,7 @@ help:
 	@echo ""
 	@echo "  make clean     - removes built files"
 	@echo "  make lint      - runs JSXHint against src/javascripts"
+	@echo "  make serve     - run development server with dummy data on :3000"
 	@echo "  make js        - builds JavaScript with Browserify"
 	@echo "  make css       - builds CSS with Sass"
 	@echo "  make watch-js  - watches/builds JavaScript with Browserify"
@@ -56,4 +57,7 @@ minified: clean
 test:
 	@$(BIN)mocha --colors -R dot $(TEST_FILES)
 
-.PHONY: help lint css js watch-js watch-css clean all minified test
+serve:
+	@node ./script/dev-server.js
+
+.PHONY: help lint css js watch-js watch-css clean all minified test serve
