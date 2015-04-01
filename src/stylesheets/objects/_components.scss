@@ -1,8 +1,7 @@
-.connections{
+.components {
   @include outer-container;
 
   .device, .connection {
-    @include span-columns(6 of 12);
     @include omega;
 
     .name {
@@ -16,6 +15,11 @@
       margin-left: 20px;
       color: $color04;
     }
+  }
+
+  .devices, .connections {
+    @include span-columns(6 of 12);
+    @include omega;
   }
 
   .connection .name{

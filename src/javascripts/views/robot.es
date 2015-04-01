@@ -62,9 +62,14 @@ export default React.createClass({
         <RouteHandler bot={bot} />
 
         <section className="row">
-          <div className="connections">
-            {this.devices(bot)}
-            {this.connections(bot)}
+          <div className="components">
+            <div className="devices">
+              {this.devices(bot)}
+            </div>
+
+            <div className="connections">
+              {this.connections(bot)}
+            </div>
           </div>
         </section>
       </div>
