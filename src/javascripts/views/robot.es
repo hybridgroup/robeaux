@@ -55,9 +55,9 @@ export default React.createClass({
       <div className="robot">
         <RobotInfo {...bot} />
 
-        <div className="container">
+        <section className="row">
           {this.commandTool(bot)}
-        </div>
+        </section>
 
         <RouteHandler bot={bot} />
 
