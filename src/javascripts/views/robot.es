@@ -25,7 +25,11 @@ export default React.createClass({
         endpoint = "/api/robots/" + name;
 
     if (bot.commands.length) {
-      return <CommandTool commands={bot.commands} endpoint={endpoint} />;
+      return (
+        <section className="row">
+          <CommandTool commands={bot.commands} endpoint={endpoint} />;
+        </section>
+      )
     }
   },
 
@@ -55,9 +59,7 @@ export default React.createClass({
       <div className="robot">
         <RobotInfo {...bot} />
 
-        <section className="row">
-          {this.commandTool(bot)}
-        </section>
+        {this.commandTool(bot)}
 
         <RouteHandler bot={bot} />
 
