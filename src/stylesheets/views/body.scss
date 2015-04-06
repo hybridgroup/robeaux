@@ -9,6 +9,11 @@ body {
   text-align: center;
 }
 
+#not-found {
+  @include outer-container;
+  text-align: center;
+}
+
 .row{
   background: #fff;
   padding: 15px 0;
