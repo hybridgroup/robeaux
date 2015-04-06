@@ -5,6 +5,10 @@ function coerceParams(params) {
   var opts = {};
 
   params.forEach(function(param) {
+    if (param.key === "") {
+      return;
+    }
+
     if (param.type === "boolean") {
       param.value = !!~["true", "t"].indexOf(param.value.toLowerCase());
     }
@@ -13,7 +17,7 @@ function coerceParams(params) {
       param.value = +param.value;
     }
 
-    opts[param.key] = opts[param.value];
+    opts[param.key] = param.value;
   });
 
   return opts;
@@ -74,8 +78,9 @@ export default React.createClass({
         url = `${this.props.endpoint}/commands/${encodeURIComponent(command)}`,
         params = coerceParams(this.state.params);
 
+    console.log(params);
+
     post(url)
-      .set("Content-Type", "application/json")
       .send(params)
       .end((err, res) => {
         if (err) {
