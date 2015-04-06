@@ -5,6 +5,8 @@ SASS_COMPILER := sass
 SASS_ARGS := src/stylesheets/application.scss:css/application.css
 SASS_WATCH_CMD := $(SASS_COMPILER) --watch $(SASS_ARGS)
 
+all: clean js css
+
 help:
 	@echo "make [task]"
 	@echo ""
@@ -41,8 +43,6 @@ watch-css:
 
 lint:
 	@$(BIN)eslint ./src/javascripts/**/*.es $(TEST_FILES)
-
-all: clean js css
 
 minified: clean
 	@echo "Compiling compressed JavaScript"
