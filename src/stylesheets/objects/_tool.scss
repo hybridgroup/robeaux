@@ -3,9 +3,13 @@
     text-align: center;
   }
 
-  .params{
+  .params {
     .input :first-child{
       margin-left: 0;
+    }
+
+    .input {
+      clear: both;
     }
 
     input, select{
