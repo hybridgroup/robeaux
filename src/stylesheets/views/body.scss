@@ -27,6 +27,7 @@ body {
 input, select, textarea {
   display: inline-block;
   line-height: $line-height-base;
+  height: $line-height-base;
   font-size: $body-font-size;
   color: $body-text-color;
   padding: 8px 12px;
