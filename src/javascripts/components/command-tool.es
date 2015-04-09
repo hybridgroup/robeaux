@@ -37,11 +37,17 @@ export default React.createClass({
   },
 
   componentWillReceiveProps(nextProps) {
-    this.setState({
-      command: nextProps.commands[0],
-      params: [ { key: "", value: "", type: "string" } ],
-      results: []
-    });
+    let command = this.state.command,
+        params = this.state.params,
+        results = this.state.results;
+
+    if (this.props.endpoint !== nextProps.endpoint) {
+      command = nextProps.commands[0];
+      params = [ { key: "", value: "", type: "string" } ];
+      results = [];
+    }
+
+    this.setState({ command, params, results });
   },
 
   chooseCommand(event) {
