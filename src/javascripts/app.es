@@ -12,6 +12,11 @@ export default React.createClass({
 
   componentDidMount() {
     get("/api", (err, res) => {
+
+      if (err) {
+        console.error("An error occured while fetching data:", err)
+        return;
+      }
       let json = res.text,
           parsed = JSON.parse(json),
           MCP = parsed.MCP;
