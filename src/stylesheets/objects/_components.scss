@@ -5,10 +5,23 @@
     @include omega;
     padding: 15px 0;
 
+    @include media($tablet) {
+      text-align: center;
+
+      .btn{
+        display: table;
+        margin: 0 auto 10px;
+      }
+    }
+
     .name {
       display: inline-block;
       margin-left: 20px;
       font-weight: bold;
+
+      @include media($tablet) {
+        margin-left: 0px;
+      }
     }
 
     .details {

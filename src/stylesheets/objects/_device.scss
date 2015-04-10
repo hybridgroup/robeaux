@@ -3,10 +3,16 @@
 
   .command-tool, .event-tool{
     @include span-columns(6 of 12);
+
+    @include media($tablet) {
+      @include span-columns(12 of 12);
+    }
   }
+
   .form {
     text-align: center;
   }
+
   .btn-run {
     @include span-columns(5 of 12);
     float: none;
@@ -30,5 +36,13 @@
   .remove {
     width: 10%;
     margin-top: 12px;
+  }
+}
+
+@include media($tablet) {
+  .device-commands {
+    .command-tool, .event-tool {
+      @include span-columns(12 of 12);
+    }
   }
 }

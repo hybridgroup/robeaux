@@ -1,13 +1,26 @@
 .robot-info {
   @include outer-container;
 
+  @include media($tablet) {
+    text-align: center;
+  }
+
   .details {
     float: right;
     line-height: 43px;
 
+    @include media($tablet) {
+      @include span-columns(12 of 12);
+      margin-bottom: -15px;
+    }
+
     .bullet-connections, .bullet-devices {
       color: $connection-digits-color;
       margin-left: 50px;
+
+      @include media($tablet) {
+        margin-left: 20px;
+      }
     }
 
     strong {
