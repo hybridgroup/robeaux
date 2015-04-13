@@ -68,5 +68,6 @@ release: test minified
 	@gem build robeaux.gemspec
 	@gem push robeaux-$(VERSION).gem
 	@npm publish ./
+	@rm robeaux-$(VERSION).gem
 
 .PHONY: help lint css js watch-js watch-css clean all minified test serve
