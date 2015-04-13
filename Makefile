@@ -60,4 +60,11 @@ test:
 serve:
 	@node ./script/dev-server.js
 
+release: test minified
+	@git tag -m "$(VERSION)" v$(VERSION)
+	@git push --tags
+	@gem build robeaux.gemspec
+	@gem push robeaux-$(VERSION).gem
+	@npm publish ./
+
 .PHONY: help lint css js watch-js watch-css clean all minified test serve
