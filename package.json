@@ -1,6 +1,6 @@
 {
   "name": "robeaux",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A React-based front-end for CPPP-IO APIs",
   "homepage": "http://cylonjs.com",
   "bugs": "https://github.com/hybridgroup/robeaux/issues",

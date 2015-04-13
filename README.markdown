@@ -39,6 +39,19 @@ Command          | Result
 
 *: depends on having [peat](https://github.com/sjl/peat) installed if you use `sassc`.
 
+## Releases
+
+Version | Description
+------- | -----------
+0.4.0   | Re-implementation with React
+0.3.0   | New style updates
+0.2.0   | Update for CPP-IO API spec
+0.1.1   | Remove dependency on Google WebFonts
+0.1.0   | Full rewrite. Supports Server-Sent-Events.
+0.0.4   | Feature improvements
+0.0.3   | Feature improvements
+0.0.2   | Initial release.
+
 ## License
 
 Copyright (c) 2014-2015 The Hybrid Group
