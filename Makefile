@@ -1,6 +1,8 @@
 BIN := ./node_modules/.bin/
 TEST_FILES := spec/helper.js $(shell find spec/components -type f)
 
+VERSION := $(shell node -e "console.log(require('./package.json').version)")
+
 SASS_COMPILER := sass
 SASS_ARGS := src/stylesheets/application.scss:css/application.css
 SASS_WATCH_CMD := $(SASS_COMPILER) --watch $(SASS_ARGS)
