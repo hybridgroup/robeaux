@@ -27,7 +27,7 @@ export default React.createClass({
     if (bot.commands.length) {
       return (
         <section className="row">
-          <CommandTool commands={bot.commands} endpoint={endpoint} />;
+          <CommandTool commands={bot.commands} endpoint={endpoint} />
         </section>
       )
     }
