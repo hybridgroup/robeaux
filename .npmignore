@@ -1,3 +1,6 @@
 src
 spec
 script
+robeaux.gemspec
+*.gem
+/.*

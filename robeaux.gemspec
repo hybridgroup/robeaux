@@ -1,20 +1,6 @@
 # -*- encoding: utf-8 -*-
 
-def files
-  included = []
-
-  included << "index.html"
-  included << "README.markdown"
-  included << "Makefile"
-  included << "robeaux.gemspec"
-
-  included << Dir[File.join("css", "**", "*")]
-  included << Dir[File.join("js", "**", "*")]
-  included << Dir[File.join("fonts", "**", "*")]
-  included << Dir[File.join("images", "**", "*")]
-
-  included.flatten
-end
+require "rake"
 
 Gem::Specification.new do |s|
   s.name        = "robeaux"
@@ -27,5 +13,13 @@ Gem::Specification.new do |s|
   s.description = s.summary
   s.license     = 'Apache 2.0'
 
-  s.files         = files
+  s.files       = FileList[
+    "index.html",
+    "README.markdown",
+    "robeaux.gemspec",
+    "css/**/*",
+    "js/**/*",
+    "fonts/**/*",
+    "images/**/*"
+  ].to_a
 end
