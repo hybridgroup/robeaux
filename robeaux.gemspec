@@ -4,7 +4,7 @@ require "rake"
 
 Gem::Specification.new do |s|
   s.name        = "robeaux"
-  s.version     = "0.4.0"
+  s.version     = "0.4.1"
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["The Hybrid Group"]
   s.email       = ["cylonjs@hybridgroup.com"]

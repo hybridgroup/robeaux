@@ -43,6 +43,7 @@ Command          | Result
 
 Version | Description
 ------- | -----------
+0.4.1   | Remove an errant semi-colon in a template
 0.4.0   | Re-implementation with React
 0.3.0   | New style updates
 0.2.0   | Update for CPP-IO API spec
