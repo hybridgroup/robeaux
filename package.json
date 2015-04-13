@@ -14,25 +14,25 @@
   "license": "Apache 2.0",
 
   "devDependencies": {
-    "browserify": "9.0.3",
+    "browserify": "9.0.8",
     "uglify-js":  "2.4.19",
     "watchify":   "3.1.0",
-    "eslint":     "0.18.0",
+    "jsxhint":    "0.14.0",
 
-    "express": "4.12.3",
+    "express":    "4.12.3",
 
     "superagent":   "1.1.0",
     "react":        "0.13.1",
     "react-router": "0.13.2",
 
-    "babelify": "5.0.4",
+    "babelify": "6.0.2",
     "envify":   "3.4.0",
 
     "sinon-chai": "2.7.0",
     "chai":       "2.2.0",
-    "mocha":      "2.2.1",
+    "mocha":      "2.2.4",
     "sinon":      "1.14.1",
     "jsdom":      "3.1.2",
-    "babel":      "4.7.16"
+    "babel":      "5.1.2"
   }
 }
