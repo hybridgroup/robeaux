@@ -84,8 +84,6 @@ export default React.createClass({
         url = `${this.props.endpoint}/commands/${encodeURIComponent(command)}`,
         params = coerceParams(this.state.params);
 
-    console.log(params);
-
     post(url)
       .send(params)
       .end((err, res) => {
