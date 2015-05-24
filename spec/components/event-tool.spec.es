@@ -1,5 +1,3 @@
-/* eslint no-unused-vars:0 no-unused-expressions:0 */
-
 "use strict";
 
 const EventTool = source("components/event-tool.es");
@@ -54,7 +52,7 @@ describe("EventTool", () => {
   it("updates state.name when the input is edited", () => {
     let input = search("input");
 
-    TestUtils.Simulate.change(input, { target: { value: "new-event"} } );
+    TestUtils.Simulate.change(input, { target: { value: "new-event"} });
     expect(component.state.name).to.be.eql("new-event");
   });
 

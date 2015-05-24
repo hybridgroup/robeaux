@@ -1,5 +1,7 @@
 "use strict";
 
+/* eslint no-var: 0 */
+
 process.env.NODE_ENV = "test";
 
 var path = require("path");

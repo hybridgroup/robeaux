@@ -2,7 +2,7 @@ import React from "react";
 import {post} from "superagent";
 
 function coerceParams(params) {
-  var opts = {};
+  const opts = {};
 
   params.forEach(function(param) {
     if (param.key === "") {
@@ -24,7 +24,7 @@ function coerceParams(params) {
 }
 
 function generateOptions(arr) {
-  return arr.map((val) => <option key={val} value={val}> {val} </option> );
+  return arr.map((val) => <option key={val} value={val}> {val} </option>);
 }
 
 export default React.createClass({

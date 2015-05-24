@@ -1,0 +1,16 @@
+globals:
+  source: true
+  describe: true
+  it: true
+  TestUtils: true
+  expect: true
+  before: true,
+  beforeEach: true
+  spy: true
+  after: true
+  afterEach: true
+  context: true
+
+rules:
+  max-nested-callbacks: 0
+  no-unused-expressions: 0

@@ -29,7 +29,7 @@ export default React.createClass({
         <section className="row">
           <CommandTool commands={bot.commands} endpoint={endpoint} />
         </section>
-      )
+      );
     }
   },
 
