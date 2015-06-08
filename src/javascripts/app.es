@@ -1,9 +1,9 @@
 import React from "react";
 import {RouteHandler} from "react-router";
 
-import {get} from "superagent";
+import Navigation from "./components/navigation.es";
 
-import Navigation from './components/navigation.es';
+import fetch from "./fetch.es";
 
 export default React.createClass({
   getInitialState() {
@@ -11,17 +11,13 @@ export default React.createClass({
   },
 
   componentDidMount() {
-    get("/api", (err, res) => {
-
+    fetch((err, json) => {
       if (err) {
-        console.error("An error occured while fetching data:", err)
+        console.error("An error occured while fetching data:", err);
         return;
       }
-      let json = res.text,
-          parsed = JSON.parse(json),
-          MCP = parsed.MCP;
 
-      this.setState({ loaded: true, data: MCP });
+      this.setState({ loaded: true, data: json.MCP });
     });
   },
 
@@ -29,7 +25,7 @@ export default React.createClass({
     let content = <h2> Loading, please wait </h2>;
 
     if (this.state.loaded) {
-      content = <RouteHandler data={this.state.data} />
+      content = <RouteHandler data={this.state.data} />;
     }
 
     return (
