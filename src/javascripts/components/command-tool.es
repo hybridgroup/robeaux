@@ -2,9 +2,7 @@ import React from "react";
 import {post} from "superagent";
 
 function coerceParams(params) {
-  const opts = {};
-
-  params.forEach(function(param) {
+  function coerce(opts, param) {
     if (param.key === "") {
       return;
     }
@@ -18,9 +16,9 @@ function coerceParams(params) {
     }
 
     opts[param.key] = param.value;
-  });
+  }
 
-  return opts;
+  return params.reduce(coerce, {});
 }
 
 function generateOptions(arr) {

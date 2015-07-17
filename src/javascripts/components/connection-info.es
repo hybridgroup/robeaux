@@ -2,8 +2,9 @@ import React from "react";
 
 export default React.createClass({
   render() {
-    let name = this.props.name,
-        port = this.props.port || "";
+    let {name, port} = this.props.connection;
+
+    port = port || "";
 
     return (
       <div className="connection">
