@@ -1,5 +1,19 @@
 import React from "react";
 
+function select(e) {
+  let range;
+
+  if (document.selection) {
+    range = document.body.createTextRange();
+    range.moveToElementText(e.target);
+    range.select();
+  } else if (window.getSelection) {
+    range = document.createRange();
+    range.selectNode(e.target);
+    window.getSelection().addRange(range);
+  }
+}
+
 function generateRow(opts) {
   return (
     <tr className={ opts.klass }>
@@ -9,18 +23,6 @@ function generateRow(opts) {
       </td>
     </tr>
   );
-}
-
-function select(e) {
-  if (document.selection) {
-    var range = document.body.createTextRange();
-    range.moveToElementText(e.target);
-    range.select();
-  } else if (window.getSelection) {
-    var range = document.createRange();
-    range.selectNode(e.target);
-    window.getSelection().addRange(range);
-  }
 }
 
 export default React.createClass({
