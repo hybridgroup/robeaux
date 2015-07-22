@@ -11,10 +11,14 @@
     font-weight: bold;
     text-align: right;
     padding-right: 10px;
+    white-space: nowrap;
   }
 
   .value div {
     display: inline-block;
+    overflow: scroll;
     border-bottom: 2px solid #ddd;
+    white-space: nowrap;
+    color: #888;
   }
 }
