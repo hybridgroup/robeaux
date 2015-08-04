@@ -1,12 +1,35 @@
 import React from "react";
 import {Link} from "react-router";
 
+import Details from "./details.es";
+
 export default React.createClass({
+  getInitialState() {
+    return { details: false };
+  },
+
+  showDetails() {
+    this.setState({ details: !this.state.details });
+  },
+
+  details() {
+    if (!this.state.details) { return null; }
+
+    let bot = encodeURIComponent(this.props.params.robot),
+        device = encodeURIComponent(this.props.params.device);
+
+    let opts = {
+      path: `robots/${bot}/devices/${device}`,
+      json: this.props.device
+    };
+
+    return <Details {...opts}/>;
+  },
+
   render() {
     let params = this.props.params;
 
-    let name = this.props.name,
-        connection = this.props.connection;
+    let {name, connection} = this.props.device;
 
     return (
       <div className="device">
@@ -14,11 +37,13 @@ export default React.createClass({
           device
         </Link>
 
-        <span className="name">{name}</span>
+        <span className="name" onClick={this.showDetails}>{name}</span>
 
         <div className="details">
           <span>{connection}</span>
         </div>
+
+        { this.details() }
       </div>
     );
   }

@@ -1,20 +1,41 @@
 import React from "react";
 import {Link} from "react-router";
 
+import Details from "./details.es";
+
 export default React.createClass({
+  getInitialState() {
+    return { details: false };
+  },
+
+  showDetails() {
+    this.setState({ details: !this.state.details });
+  },
+
+  details() {
+    if (!this.state.details) { return null; }
+
+    let props = this.props.robot;
+
+    let opts = {
+      path: `robots/${encodeURIComponent(props.name)}`,
+      json: props
+    };
+
+    return <Details {...opts} />;
+  },
+
   render() {
-    let name = this.props.name,
-        connections = this.props.connections,
-        devices = this.props.devices;
+    let {name, connections, devices} = this.props.robot;
 
     let link = `/robots/${encodeURIComponent(name)}`;
 
     return (
-      <section className="row">
-        <div className="robot-info" key={name}>
+      <section className="row" key={name}>
+        <div className="robot-info">
           <Link to={link} className="btn btn-robot btn-big"> robot </Link>
 
-          <span className="name">{name}</span>
+          <span className="name" onClick={this.showDetails}>{name}</span>
 
           <div className="details">
             <span className="bullet-connections">
@@ -26,6 +47,8 @@ export default React.createClass({
             </span>
           </div>
         </div>
+
+        { this.details() }
       </section>
     );
   }
