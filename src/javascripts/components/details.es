@@ -35,7 +35,7 @@ export default React.createClass({
       { klass: "path", key: "CPPP-IO Path", value: path },
       { klass: "curl", key: "cURL", value: `curl ${root + path}` },
       { klass: "commands", key: "Commands", value: obj.commands.join(", ") },
-      { klass: "events", key: "Events", value: obj.events.join(", ") },
+      { klass: "events", key: "Events", value: obj.events.join(", ") }
     ];
 
     return (
