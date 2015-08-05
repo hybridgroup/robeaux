@@ -43,6 +43,7 @@ Command          | Result
 
 Version | Description
 ------- | -----------
+0.5.0   | Add CPPP-IO details dropdown (click on robot/device names)
 0.4.1   | Remove an errant semi-colon in a template
 0.4.0   | Re-implementation with React
 0.3.0   | New style updates
