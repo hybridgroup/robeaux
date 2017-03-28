@@ -4,7 +4,7 @@ import {post} from "superagent";
 function coerceParams(params) {
   function coerce(opts, param) {
     if (param.key === "") {
-      return;
+      return opts;
     }
 
     if (param.type === "boolean") {
