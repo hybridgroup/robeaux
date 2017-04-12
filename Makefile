@@ -39,7 +39,7 @@ lint:
 
 minified: clean
 	@echo "Compiling compressed JavaScript"
-	@NODE_ENV=production $(BIN)browserify $(BROWSERIFY_ARGS) | $(bin)uglifyjs $(UGLIFY_ARGS) > js/script.js
+	@NODE_ENV=production $(BIN)browserify $(BROWSERIFY_ARGS) | $(BIN)uglifyjs $(UGLIFY_ARGS) > js/script.js
 
 	@echo "Compiling compressed CSS"
 	@sass -t compressed $(SASS_ARGS)
