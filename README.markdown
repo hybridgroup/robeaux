@@ -43,6 +43,7 @@ Command          | Result
 
 Version | Description
 ------- | -----------
+0.5.1   | Correct params sent
 0.5.0   | Add CPPP-IO details dropdown (click on robot/device names)
 0.4.1   | Remove an errant semi-colon in a template
 0.4.0   | Re-implementation with React
@@ -56,7 +57,7 @@ Version | Description
 
 ## License
 
-Copyright (c) 2014-2015 The Hybrid Group
+Copyright (c) 2014-2017 The Hybrid Group
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use
 this file except in compliance with the License. You may obtain a copy of the
