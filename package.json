@@ -22,7 +22,7 @@
 
     "express":    "^4.13.3",
 
-    "superagent":   "1.2.0",
+    "superagent":   "5.1.0",
     "react":        "0.13.3",
     "react-router": "0.13.3",
 
